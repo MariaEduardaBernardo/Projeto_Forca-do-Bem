@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Cadastro</title>
+		<link rel="stylesheet" href="CSS/cadastro.css">
+	</head>
+
+	<body>
+		<header>
+			<a href=""><img src="IMG/logo.png" alt="Logo do projeto" id="logo"></a>
+		</header>
+
+		<div class="container" id="container">
+			<div class="form-container sign-up-container">
+				<form action="#">
+					<h1>Conta de ONG</h1><br>
+
+					<span>E-mail</span><input type="email" id="email" name="email" required/>
+					<span>Senha</span><input type="password" id="senha" name="senha" required/>
+					<br>
+					<button>Cadastrar</button>
+					<span>Não possui conta, <a href="cadastro.html">Cadastrar</a></span>
+				</form>
+			</div>
+
+			<div class="form-container sign-in-container">
+				<form action="#">
+					<h1>Conta de usuario</h1><br>
+
+					<span>E-mail</span><input type="email" id="email" name="email" required/>
+					<span>Senha</span><input type="password" id="senha" name="senha" required/>
+					<br>
+					<button>Entrar</button>
+					<span>Não possui conta, <a href="cadastro.html">Cadastrar</a></span>
+				</form>
+			</div>
+
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-panel overlay-left">
+						<h1>Bem-vindo(a) de volta!</h1><br>
+						<button class="ghost" id="signIn">Entrar como usuario</button>
+					</div>
+					<div class="overlay-panel overlay-right">
+						<h1>Bem-vindo(a) de volta!</h1><br>
+						<button class="ghost" id="signUp">Entrar como ONG</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<script>
+		const signUpButton = document.getElementById('signUp');
+		const signInButton = document.getElementById('signIn');
+		const container = document.getElementById('container');
+
+		signUpButton.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+		signInButton.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});
+	</script>
+
+	</body>
+</html>
