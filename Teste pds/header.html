@@ -1,0 +1,90 @@
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" height="45" alt="Icone do projeto">
+    <a class="navbar-brand" href="/index.html">Força do bem</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Usuários
+         </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/ONGs.html">ONG</a></li>
+            <li><a class="dropdown-item" href="#">Voluntário</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="accountDropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="accountLink">
+            Entrar na conta
+          </a>
+          <ul class="dropdown-menu">
+            <li id="registerOption"><a class="dropdown-item" href="/AcessoUser.html">Cadastrar</a></li>
+            <li><a class="dropdown-item" href="/AcessoUser.html">Login</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<script>
+  // Verificar o estado de autenticação ao carregar a página
+  window.addEventListener('DOMContentLoaded', () => {
+    // Adicionar listener para o evento onAuthStateChanged
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // O usuário está autenticado
+        console.log('Usuário autenticado:', user.email);
+
+        // Exibir o email do usuário
+        let userEmailElement = document.getElementById("userEmail");
+        userEmailElement.textContent = user.email;
+
+        // Obter o nome do usuário do banco de dados
+        db.where("idEmail", "==", user.email.toLowerCase())
+          .get()
+          .then((snapshot) => {
+            if (!snapshot.empty) {
+              const userData = snapshot.docs[0].data();
+              const userNameElement = document.getElementById("userName");
+              userNameElement.textContent = "" + userData.idName;
+
+              // Atualizar o link no menu para exibir o nome do usuário
+              var accountLink = document.getElementById("accountLink");
+              accountLink.textContent = userData.idName;
+            }
+          })
+          .catch((error) => {
+            console.log("Erro ao obter o nome do usuário:", error);
+          });
+
+        // Exibir o contêiner com as informações do usuário
+        document.getElementById("dadosUser").style.display = "block";
+
+        // Exibir o botão "Fazer teste"
+        var fazerTesteButton = document.getElementById("escolha_help");
+        if (fazerTesteButton) {
+          fazerTesteButton.style.display = "block";
+        }
+
+        // Ocultar a mensagem
+        var mensagemConta = document.getElementById("mensagemConta");
+        if (mensagemConta) {
+          mensagemConta.style.display = "none";
+        }
+      }
+    });
+  });
+</script>
