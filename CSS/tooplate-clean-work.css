@@ -1065,29 +1065,7 @@ strong {
 
 
 /*---------------------------------------
-  COUNTER NUMBERS
------------------------------------------*/
-.counter-thumb {
-  margin: 20px;
-  margin-top: 0;
-}
-
-.counter-number {
-  color: var(--secondary-color);
-  display: block;
-}
-
-.counter-number,
-.counter-number-text {
-  color: var(--secondary-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-weight-bold);
-  line-height: normal;
-}
-
-
-/*---------------------------------------
-  CONTACT
+  CONTATO - FORMULARIO
 -----------------------------------------*/
 .contact-section {
   background: var(--white-color);
@@ -1120,7 +1098,7 @@ strong {
 
 
 /*---------------------------------------
-  CUSTOM FORM
+  CONTATO - FORMULARIO
 -----------------------------------------*/
 .custom-form .form-control,
 .input-group-file {
