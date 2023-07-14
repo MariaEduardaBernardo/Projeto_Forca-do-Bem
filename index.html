@@ -1,55 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Página Inicial</title>
+  <link rel="icon" type="imagem/png"
+    href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/CSS/Elementos.css">
+  <link rel="stylesheet" href="/CSS/Principais.css">
+  <link rel="stylesheet" href="/CSS/Carousel.css">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="css/tooplate-clean-work.css" rel="stylesheet">
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+  <!-- Script menu-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+  <header id="headerContainer"></header>
 
-    <header>
-       <a href=""><img src="logo.png" alt="Logo do projeto" id="logo"></a>
-    </header>
-    
-    <div class="conta">
-        <div id="foto_perfil">
-            <img src="OIP.jpg" alt="">
-            <p id="name">Duda</p>
-            <div id="opc">
+  <div class="carousel">
+    <div class="progress-bar progress-bar--primary hide-on-desktop">
+      <div class="progress-bar__fill"></div>
+    </div>
+
+    <div class="main-post-wrapper">
+      <div class="slides">
+
+        <article class="main-post main-post--active">
+          <div class="main-post__image">
+            <img
+              src="https://img.freepik.com/vetores-gratis/pequenos-funcionarios-de-escritorio-trabalhando-em-maos-abstratas-e-carinhosas_74855-19924.jpg?w=740&t=st=1683550659~exp=1683551259~hmac=3105b41de750814bd6b2ef15b4256016b8310f70206a5172c6c1dd0ef4e290d1"
+              alt="New McLaren wind tunnel 'critical' to future performance, says Tech Director Key" />
+          </div>
+          <div class="main-post__content">
+            <div class="main-post__tag-wrapper">
+              <span class="main-post__tag">O que é uma ONG?</span>
             </div>
+            <h1 class="main-post__title">ONG nada mais é que, uma abreviação de Organização não governamental, que têm
+              por finalidade a promoção de assistência social, cultural, defesa de interesses de classe, filantropia.
+            </h1>
+          </div>
+        </article>
+
+        <article class="main-post main-post--not-active">
+          <div class="main-post__image">
+            <img
+              src="https://img.freepik.com/vetores-gratis/pessoas-que-transportam-doacao-e-caridade-relacionados-com-icones_53876-43091.jpg?w=740&t=st=1683550745~exp=1683551345~hmac=b0c178fbdbe2dbc89aac91aff3c2107506ed33bae5b4038838b8a0794a7565f4"
+              alt="What To Watch For in the 2019 Hungarian Grand Prix" />
+          </div>
+          <div class="main-post__content">
+            <div class="main-post__tag-wrapper">
+              <span class="main-post__tag">O que elas fazem?</span>
+            </div>
+            <h1 class="main-post__title">Esse tipo de organização tem como principal objetivo ceder seu tempo em prol do
+              bem alheio. Por isso, tais, devem buscar formas de se organizarem e gerenciarem tudo que ganham e doam de
+              formas mais eficientes e ágeis.</h1>
+          </div>
+        </article>
+
+        <article class="main-post main-post--not-active">
+          <div class="main-post__image">
+            <img
+              src="https://img.freepik.com/vetores-gratis/voluntarios-com-ilustracao-de-icones-de-caridade_53876-43180.jpg?t=st=1683550847~exp=1683551447~hmac=f36e27f000c890f2bf98bd99834ea6a3353efc6e416703da963041b65ed4e164"
+              alt="Hamilton wants harder championship fight from Leclerc and
+            Verstappen" />
+          </div>
+          <div class="main-post__content">
+            <div class="main-post__tag-wrapper">
+              <span class="main-post__tag">Formas de ajudar</span>
+            </div>
+            <h1 class="main-post__title">Ajudar uma ONG não se limita apenas em contribuições em dinheiro, há diversas
+              outras formas de ajudar como: trabalho voluntário, divulgar as campanhas da instituição, recolher
+              alimentos, roupas e outros mantimentos.</h1>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="posts-wrapper hide-on-mobile">
+
+      <article class="post post--active">
+        <div class="progress-bar">
+          <div class="progress-bar__fill"></div>
         </div>
-    </div>
+        <span> O que é uma ONG?</span>
+      </article>
 
-    <div>
-        <p id="escolha">Escolha as opções de como você pode ajudar uma ONG e encontraremos uma mais adequada com suas escolhas.</p>
-        <div class="itens">
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de dinheiro</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de brinquedos</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de roupas</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de alimentos</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de ração para animais</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de produtos de higiene pessoal</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de produtos de limpeza</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de ração de animais</div> </label>
-            <label class="todo_item"> <input type="checkbox"> <div>Doação de eletrodomestico</div> </label>
+      <article class="post">
+        <div class="progress-bar">
+          <div class="progress-bar__fill"></div>
         </div>
+        <span> O que elas fazem?</span>
+      </article>
+
+      <article class="post">
+        <div class="progress-bar">
+          <div class="progress-bar__fill"></div>
+        </div>
+        <span> Formas de ajudar</span>
+      </article>
+
+    </div>
+  </div>
+
+  <br>
+  <div class="container">
+    <h2 class="my-3">Conheça algumas ONGs</h2>
+  </div><br>
+
+
+  <div class="Ex_ONGs">
+    <div class="Ex_ONGs-item">
+      <img src="https://uploaddeimagens.com.br/images/004/544/842/full/imagem_2023-07-14_115108453.png?1689346280"
+        alt="Icone ONG Mara Gabrilli">
+      <h4>Instituto Mara Gabrilli</h4>
+      <p>Instituto Mara Gabrilli Fundado em 1997, pela publicitária e psicóloga Mara Gabrilli. Seus objetivos são
+        promover às pesquisas para a cura de paralisias e apoio ao esporte paradesporto. O instituto trabalha com
+        projetos que ajudam pessoas a resgatarem a autonomia e a dignidade, além de oferecer suporte para que elas
+        conheçam os seus direitos e tenham acesso a eles.</p>
     </div>
 
-    <br>
-    <div class="todo_list" id="todoList">
+
+
+    <div class="Ex_ONGs-item">
+      <img src="https://uploaddeimagens.com.br/images/004/456/692/thumb/imagem_2023-05-07_131637551.png?1683476201"
+        alt="Icone ONG Themis Furigo">
+      <h4>Themis Furigo</h4>
+      <p>O Instituto Themis Furigo foi fundado em 05 de novembro de 2018 pela Themis Furigo dos Santos. A ONG tem como
+        objetivo dar suporte a pessoas, promover a prosperidade e o bem-estar para todos, proteger o meio ambiente e
+        contribuir com o desenvolvimento sustentável, apoiar iniciativas de transformar o lixo em energia elétrica,
+        eliminando aterros sanitários das cidades.</p>
+
     </div>
 
-    <div class="new-item" id="newItem">
-        <p>Deseja ajudar de outra forma? Digite como e pressione enter para adicionar a tarefa</p>
-        <input type="text">
-        <button type="submit">Salvar opções</button>
-       <a href="cadastro.html">Clique aqui</a>
+    <div class="Ex_ONGs-item">
+      <img src="https://uploaddeimagens.com.br/images/004/544/840/full/imagem_2023-07-14_114824488.png?1689346147"
+        alt="Icone ONG Caminha Down">
+      <h4>Caminha Down</h4>
+      <p>Surgiu em 2015, e foi idealizado por Rosna Bignami. É um evento na cidade de São Paulo em comemoração ao Dia
+        Internacional da Síndrome de Down. Esse evento foi inspirado em diversas caminhadas que ocorrem ao redor do
+        mundo em defesa dos direitos das pessoas com síndrome de Down e demais deficiências. </p>
+
     </div>
 
-    <footer></footer>
+    <div class="Ex_ONGs-item">
+      <img src="https://uploaddeimagens.com.br/images/004/464/576/full/imagem_2023-05-12_231228956.png?1683943994"
+        alt="Icone ONG a gente ajuda" height="30%">
+      <h4>A gente ajuda</h4>
+      <p>A ONG A Gente Ajuda é uma organização sem fins lucrativos que tem como missão contribuir para o desenvolvimento
+        social de comunidades carentes. A organização foi fundada em 2014 por um grupo de amigos que buscavam formas de
+        ajudar pessoas em situação de vulnerabilidade.</p>
 
-    <script src="app.js"></script>
+    </div>
+
+    <div class="Ex_ONGs-item">
+      <img src="https://uploaddeimagens.com.br/images/004/456/690/full/imagem_2023-05-07_131347971.png?1683476032"
+        alt="Icone ONG Hamburgada" height="30%">
+      <h4>Hamburgada do bem</h4>
+      <p>É uma organização não governamental brasileira que tem como objetivo combater a fome e promover a solidariedade por meio da distribuição de alimentos e ações sociais. A organização foi fundada em 2014 por um grupo de amigos em São Paulo e desde então tem crescido e se expandido para outras regiões do país.</p>
+
+    </div>
+
+  </div>
+
+  <br>
+  <section class="services-section section-padding section-bg">
+    <div class="container">
+
+      <div class="services-info mt-4 mt-lg-0 mt-md-0">
+
+        <p>Se você ainda está indeciso sobre qual ONG doar, não se preocupe, nós podemos te ajudar! Você apenas
+          precisa responder um breve questionário de opções (checklist) que nos ajudadrá a entender suas
+          preferências e valores.
+
+          Com base nas suas respostas, recomendaremos algumas ONGs que se encaixam no seu perfil e que fazem
+          um trabalho significativo na área em que você está interessado em ajudar.
+
+          Então, não perca mais tempo e responda ao questionário agora mesmo para fazer a diferença na vida de
+          quem precisa!</p>
+        <p id="mensagemConta">O checklist ainda não está funcionando, mas é possível ver como ele está.</p>
+        <button id="escolha_help" onclick="openModal()">Fazer Teste</button>
+      </div>
+
+    </div>
+  </section>
+  </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <div class="escolha_checklist">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h4>Escolha as opções de como ajudar</h4><br>
+
+      <ul class="checklist">
+        <li><input type="checkbox" id="op1" name="op1" value="op1"><label for="op1">Doação de dinheiro</label></li>
+        <li><input type="checkbox" id="op2" name="op2" value="op2"><label for="op2">Doação de roupa infantil</label>
+        </li>
+        <li><input type="checkbox" id="op3" name="op3" value="op3"><label for="op3">Doação de roupa de adulto</label>
+        </li>
+
+        <li><input type="checkbox" id="op4" name="op4" value="op4"><label for="op4">Doação de alimentos não
+            perecíveis</label></li>
+        <li><input type="checkbox" id="op5" name="op5" value="op5"><label for="op5">Doação de produtos de
+            higiene</label></li>
+        <li><input type="checkbox" id="op6" name="op6" value="op6"><label for="op6">Doação de produtos de
+            limpeza</label></li>
+
+        <li><input type="checkbox" id="op7" name="op7" value="op7"><label for="op7">Doação de ração para animais</label>
+        </li>
+        <li><input type="checkbox" id="op8" name="op8" value="op8"><label for="op8">Doação de brinquedos</label></li>
+        <li><input type="checkbox" id="op9" name="op9" value="op9"><label for="op9">Doação de cobertor</label></li>
+
+        <li><input type="checkbox" id="op10" name="op10" value="op10"><label for="op10">Horário da manhã</label></li>
+        <li><input type="checkbox" id="op11" name="op11" value="op11"><label for="op11">Horário da tarde</label></li>
+        <li><input type="checkbox" id="op12" name="op12" value="op12"><label for="op12">Horário da noite</label></li>
+
+        <li><input type="checkbox" id="op13" name="op13" value="op13"><label for="op13">Presencial</label></li>
+        <li><input type="checkbox" id="op14" name="op14" value="op14"><label for="op14">Remoto</label></li>
+        <li><input type="checkbox" id="op15" name="op15" value="op15"><label for="op15">Hibrído</label></li>
+
+        <li><input type="checkbox" id="op16" name="op16" value="op16"><label for="op16">Doação de livros</label></li>
+        <li><input type="checkbox" id="op17" name="op17" value="op17"><label for="op17">Doação de material
+            escolar</label></li>
+        <li><input type="checkbox" id="op18" name="op18" value="op18"><label for="op18">Apoio a idosos</label></li>
+      </ul>
+      <br>
+      <button id="escolha_help">Descobrir agora</button>
+    </div>
+  </div>
+  </div>
+
+  <br>
+
+  <section class="contact-section section-padding">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-5 col-12 me-auto mb-lg-0 mb-5">
+          <h2 class="my-3">Ficou com alguma dúvida?</h2>
+
+          <p>Você pode enviar um e-mail ou utilizar um dos nossos meios de contato. Tentaremos responder o mais breve
+            possível! </p>
+
+          <div class="contact-info bg-white shadow-lg">
+            <h3 class="mb-4">Nossos canais</h3>
+
+            <h5 class="d-flex mb-3">
+
+              <a href="https://agilitytech.blogspot.com">
+                Blogger
+              </a>
+            </h5>
+            <h5 class="d-flex mb-3">
+              <a href="youtube.com">
+                Youtube
+              </a>
+            </h5>
+
+            <h5 class="d-flex">
+
+              <a href="equipe5.agilitytech@gmail.com">
+                equipe5.agilitytech@gmail.com
+              </a>
+            </h5>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <form class="custom-form consulting-form bg-white shadow-lg mb-5 mb-lg-0"
+            action="equipe5.agilitytech@gmail.com" method="post" role="form">
+            <div class="consulting-form-header d-flex align-items-center">
+              <h3 class="mb-4">Envie sua mensagem</h3>
+            </div>
+
+            <div class="consulting-form-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <label for="">Nome<input type="text" name="volunteer-name" id="volunteer-name" class="form-control"
+                      required></label>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-12">
+                  <label for="">E-mail<input type="email" name="volunteer-email" id="volunteer-email"
+                      pattern="[^ @]*@[^ @]*" class="form-control" required></label>
+                </div>
+              </div>
+
+              <select class="form-select form-control" name="job-salary" id="job-salary"
+                aria-label="Default select example">
+                <option selected>Você é um(a)</option>
+                <option value="1">ONG</option>
+                <option value="2">Voluntário(a)</option>
+              </select>
+
+              <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message"
+                placeholder="Mensagem"></textarea>
+
+              <div class="col-lg-6 col-md-10 col-8 mx-auto">
+                <button type="submit" class="form-control">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rodape">
+      <p>Desenvolvimento by Agility Tech</p>
+      <p>&copy; 2023 - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="/JS/script.js"></script>
+  <script src="/JS/CadUser.js"></script>
+
 </body>
+
 </html>
