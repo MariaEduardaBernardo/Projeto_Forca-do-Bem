@@ -784,32 +784,32 @@ main {
   font-size: 1.2em;
 }
 
+/*Página onde está todas as ONGs*/
+
 #home{
   background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
-
-/*background: url('https://media.giphy.com/media/xSmRrzKy4UInZkhVB9/giphy.gif')center center/cover no-repeat;*/
   height: 30em;
+}
+
+#fundo_infOngs{
 
 }
 
-#fundo_infOngs2 {
-  align-items: center;
-  background-image: url(https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926);
-  max-width: 100%; /* Adicione um valor máximo para limitar a largura do bloco */
-  padding: 20px;
-  height: 30em; /* Altere para 'auto' para tornar a altura do bloco flexível */
-  box-sizing: border-box;
+#fundo_infOngs ul {
+  list-style: none;
+  padding: 0;
 }
 
-#fundo_infOngs2 h1{
-color: rgb(255, 255, 255);
-margin: 2% 5% 0 5%;
-text-align: center;
+#fundo_infOngs ul li:before {
+  content: "✓";
+  color: rgb(140, 243, 131);
+  display: inline-block;
+  width: 10px;
+  margin-right: 10px;
 }
 
-#fundo_infOngs2 p {
-  text-align: center;
-color: rgb(255, 255, 255);
-margin: 3% 5% 0 5%;
-font-size: 1.2em;
+#fundo_infOngs li {
+  color: rgb(255, 255, 255);
+  margin: 3% 5% 0 5%;
+  text-align: left;
 }
