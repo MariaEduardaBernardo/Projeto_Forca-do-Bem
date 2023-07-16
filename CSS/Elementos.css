@@ -34,7 +34,32 @@
   right: 10px;
 }
 
-/*Checklist*/
+.main-post__title {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+  .main-post__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .main-post__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .main-post__title {
+    font-size: 30px;
+  }
+}
+
+
+/* --------------------- /
+Checklist
+----------------------- */
 .modal_escolhas {
   display: none;
   position: fixed;
@@ -748,6 +773,16 @@ main {
 }
 
 /*Página onde está todas as ONGs*/
+
+#home{
+  background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
+  height: 30em;
+}
+
+#fundo_infOngs{
+
+}
+
 #fundo_infOngs ul {
   list-style: none;
   padding: 0;
@@ -761,55 +796,8 @@ main {
   margin-right: 10px;
 }
 
-
-#fundo_infOngs {
-  align-items: center;
-  background-image: url(https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926);
-  max-width: 100%;
-  /* Adicione um valor máximo para limitar a largura do bloco */
-  padding: 20px;
-  height: 30em;
-  /* Altere para 'auto' para tornar a altura do bloco flexível */
-  box-sizing: border-box;
-}
-
-#fundo_infOngs h1 {
-  color: rgb(255, 255, 255);
-  margin: 2% 5% 0 5%;
-}
-
 #fundo_infOngs li {
   color: rgb(255, 255, 255);
-  margin: 2% 5% 0 5%;
-  font-size: 1.2em;
-}
-
-#home{
-  background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
-
-/*background: url('https://media.giphy.com/media/xSmRrzKy4UInZkhVB9/giphy.gif')center center/cover no-repeat;*/
-  height: 30em;
-
-}
-
-#fundo_infOngs2 {
-  align-items: center;
-  background-image: url(https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926);
-  max-width: 100%; /* Adicione um valor máximo para limitar a largura do bloco */
-  padding: 20px;
-  height: 30em; /* Altere para 'auto' para tornar a altura do bloco flexível */
-  box-sizing: border-box;
-}
-
-#fundo_infOngs2 h1{
-color: rgb(255, 255, 255);
-margin: 2% 5% 0 5%;
-text-align: center;
-}
-
-#fundo_infOngs2 p {
-  text-align: center;
-color: rgb(255, 255, 255);
-margin: 3% 5% 0 5%;
-font-size: 1.2em;
+  margin: 3% 5% 0 5%;
+  text-align: left;
 }
