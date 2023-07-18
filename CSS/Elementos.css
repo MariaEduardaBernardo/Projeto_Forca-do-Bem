@@ -822,3 +822,27 @@ CHECKLIST*/
 #subTituloChecklist p{
   font-size: 1.2rem;
 }
+
+/*---------------------
+CHECKLIST*/
+#ongList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.ong-card {
+  flex: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+}
+
+#ongList h6{
+  text-align: center;
+  margin: 0.5em 0 0 0;
+  font-size: 1.2rem;
+}
+
+#subTituloChecklist p{
+  font-size: 1.2rem;
+}
