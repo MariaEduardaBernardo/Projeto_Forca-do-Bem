@@ -772,15 +772,12 @@ main {
   display: flex;
 }
 
-/*Página onde está todas as ONGs*/
+/*---------------------
+PÁGINAS DE TODAS ONGS*/
 
 #home{
   background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
   height: 30em;
-}
-
-#fundo_infOngs{
-
 }
 
 #fundo_infOngs ul {
@@ -800,4 +797,28 @@ main {
   color: rgb(255, 255, 255);
   margin: 3% 5% 0 5%;
   text-align: left;
+}
+
+/*---------------------
+CHECKLIST*/
+#ongList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.ong-card {
+  flex: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+}
+
+#ongList h6{
+  text-align: center;
+  margin: 0.5em 0 0 0;
+  font-size: 1.2rem;
+}
+
+#subTituloChecklist p{
+  font-size: 1.2rem;
 }
