@@ -47,7 +47,6 @@
 
     <div class="main-post-wrapper">
       <div class="slides">
-
         <article class="main-post main-post--active">
           <div class="main-post__image">
             <img
@@ -200,60 +199,69 @@
 
           Então, não perca mais tempo e responda ao questionário agora mesmo para fazer a diferença na vida de
           quem precisa!</p>
-        <p id="mensagemConta">O checklist ainda não está funcionando, mas é possível ver como ele está.</p>
-        <button id="escolha_help" onclick="openModal()">Fazer Teste</button>
-      </div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Fazer teste
+        </button>
 
+            <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <ul class="list-group list-group">
+                    <ul class="list-group">
+                        <li class="list-group-item ">
+                            <input class="form-check-input me-1" type="checkbox" value="Financeira" id="forma1">
+                            <label class="form-check-label" for="forma1">Ajuda Financeira</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Roupa" id="forma2">
+                            <label class="form-check-label" for="forma2">Doação de Roupa</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Alimento" id="forma3">
+                            <label class="form-check-label" for="forma3">Doação de Alimento não perecível</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Brinquedo" id="forma7">
+                            <label class="form-check-label" for="forma7">Doação de Brinquedo</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Cobertor" id="forma8">
+                            <label class="form-check-label" for="forma8">Doação de Cobertor</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Voluntario" id="forma9">
+                            <label class="form-check-label" for="forma9">Ser Voluntário(a)</label>
+                        </li>
+
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Campanha" id="forma10">
+                            <label class="form-check-label" for="forma10">Apoiar Campanhas</label>
+                        </li>
+                    </ul>
+            </div>
+            <div class="modal-footer">
+                <button onclick="showRelatedONGs()">Descobrir</button>
+            </div>
+        </div>
+    </div>
+</div>
+      </div>
     </div>
   </section>
-  </div>
-  </div>
 
-
-  <div id="myModal" class="modal">
-    <div class="escolha_checklist">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h4>Escolha as opções de como ajudar</h4><br>
-
-      <ul class="checklist">
-        <li><input type="checkbox" id="op1" name="op1" value="op1"><label for="op1">Doação de dinheiro</label></li>
-        <li><input type="checkbox" id="op2" name="op2" value="op2"><label for="op2">Doação de roupa infantil</label>
-        </li>
-        <li><input type="checkbox" id="op3" name="op3" value="op3"><label for="op3">Doação de roupa de adulto</label>
-        </li>
-
-        <li><input type="checkbox" id="op4" name="op4" value="op4"><label for="op4">Doação de alimentos não
-            perecíveis</label></li>
-        <li><input type="checkbox" id="op5" name="op5" value="op5"><label for="op5">Doação de produtos de
-            higiene</label></li>
-        <li><input type="checkbox" id="op6" name="op6" value="op6"><label for="op6">Doação de produtos de
-            limpeza</label></li>
-
-        <li><input type="checkbox" id="op7" name="op7" value="op7"><label for="op7">Doação de ração para animais</label>
-        </li>
-        <li><input type="checkbox" id="op8" name="op8" value="op8"><label for="op8">Doação de brinquedos</label></li>
-        <li><input type="checkbox" id="op9" name="op9" value="op9"><label for="op9">Doação de cobertor</label></li>
-
-        <li><input type="checkbox" id="op10" name="op10" value="op10"><label for="op10">Horário da manhã</label></li>
-        <li><input type="checkbox" id="op11" name="op11" value="op11"><label for="op11">Horário da tarde</label></li>
-        <li><input type="checkbox" id="op12" name="op12" value="op12"><label for="op12">Horário da noite</label></li>
-
-        <li><input type="checkbox" id="op13" name="op13" value="op13"><label for="op13">Presencial</label></li>
-        <li><input type="checkbox" id="op14" name="op14" value="op14"><label for="op14">Remoto</label></li>
-        <li><input type="checkbox" id="op15" name="op15" value="op15"><label for="op15">Hibrído</label></li>
-
-        <li><input type="checkbox" id="op16" name="op16" value="op16"><label for="op16">Doação de livros</label></li>
-        <li><input type="checkbox" id="op17" name="op17" value="op17"><label for="op17">Doação de material
-            escolar</label></li>
-        <li><input type="checkbox" id="op18" name="op18" value="op18"><label for="op18">Apoio a idosos</label></li>
-      </ul>
-      <br>
-      <button id="escolha_help">Descobrir agora</button>
-    </div>
-  </div>
-  </div>
-
-  <br>
 
   <section class="contact-section section-padding">
     <div class="container">
@@ -325,7 +333,6 @@
             </div>
           </form>
         </div>
-
       </div>
     </div>
   </section>
@@ -337,9 +344,9 @@
     </div>
   </footer>
 
+  <script src="JS/checklist.js"></script>
   <script src="/JS/script.js"></script>
   <script src="/JS/CadUser.js"></script>
 
 </body>
-
 </html>
