@@ -4,21 +4,23 @@ html,body{
   font-size: 1rem;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-}
 
+  @media screen and (max-width: 600px) {
+    /* Estilos para telas menores que 600px */
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos para telas entre 601px e 1024px */
+  }
+
+  @media screen and (min-width: 1025px) {
+    /* Estilos para telas maiores que 1024px */
+  }
+
+}
 
 body h1,h2,h3,h4,h5,p,span{
   font-family: cu;
-}
-
-
-.cabecalho {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cabecalho img{
-  height: 3.5em;
 }
 
 #img_user{
