@@ -1,11 +1,11 @@
 const ongs = [
     {
       nome: "A gente ajuda",
-      itens: ["Financeira", "Roupa","Alimento","Voluntario"]
+      itens: ["Financeira", "Roupa","Alimento","Voluntario","Campanha"]
     },
     {
       nome: "Ação da cidadania",
-      itens: ["Financeira", "Roupa","Brinquedo","Alimento","Voluntario","Cobertor"]
+      itens: ["Financeira", "Roupa","Brinquedo","Alimento","Voluntario","Cobertor","Campanha","Animais","Higiene"]
     },
     {
       nome: "Caminha Down",

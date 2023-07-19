@@ -846,3 +846,8 @@ CHECKLIST*/
 #subTituloChecklist p{
   font-size: 1.2rem;
 }
+
+#imagem_ONG img{
+  height: 100%;
+  width: 100%;
+}
