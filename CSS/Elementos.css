@@ -34,6 +34,7 @@
   right: 10px;
 }
 
+
 /*Checklist*/
 .modal_escolhas {
   display: none;
@@ -152,7 +153,7 @@
   background-color: #16a085;
 }
 
-/*Página inicial - HOME*/
+/*Página inicial*/
 
 .Test_pagInicial {
   background: white;
@@ -782,11 +783,6 @@ PÁGINAS DAS ONGS*/
   margin: 2% 5% 0 5%; /* Altere os valores para porcentagens */
   font-size: 1.2em;
   text-align: left;
-}
-
-#home{
-  background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
-  height: 30em;
 }
 
 /*---------------------
