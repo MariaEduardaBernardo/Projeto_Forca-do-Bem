@@ -34,32 +34,7 @@
   right: 10px;
 }
 
-.main-post__title {
-  font-size: 24px;
-}
-
-@media screen and (max-width: 600px) {
-  .main-post__title {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .main-post__title {
-    font-size: 24px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .main-post__title {
-    font-size: 30px;
-  }
-}
-
-
-/* --------------------- /
-Checklist
------------------------ */
+/*Checklist*/
 .modal_escolhas {
   display: none;
   position: fixed;
@@ -177,7 +152,7 @@ Checklist
   background-color: #16a085;
 }
 
-/*Página inicial - HOME*/
+/*Página inicial*/
 
 .Test_pagInicial {
   background: white;
@@ -772,12 +747,16 @@ main {
   display: flex;
 }
 
-/*---------------------
-PÁGINAS DE TODAS ONGS*/
+/*----------------
+PÁGINAS DAS ONGS*/
 
-#home{
-  background-image: url("https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926");
-  height: 30em;
+#fundo_infOngs {
+  background-image: url(https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926);
+  background-size: cover;
+  max-width: 100%;
+  padding: 20px;
+  /* height: 30em; */ /* Remova ou ajuste a altura fixa */
+  box-sizing: border-box;
 }
 
 #fundo_infOngs ul {
@@ -793,34 +772,16 @@ PÁGINAS DE TODAS ONGS*/
   margin-right: 10px;
 }
 
+#fundo_infOngs h1 {
+  color: rgb(255, 255, 255);
+  margin: 2% 5% 0 5%; /* Altere os valores para porcentagens */
+}
+
 #fundo_infOngs li {
   color: rgb(255, 255, 255);
-  margin: 3% 5% 0 5%;
+  margin: 2% 5% 0 5%; /* Altere os valores para porcentagens */
+  font-size: 1.2em;
   text-align: left;
-}
-
-/*---------------------
-CHECKLIST*/
-#ongList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-}
-
-.ong-card {
-  flex: 100%;
-  max-width: 300px;
-  border: 1px solid #ccc;
-}
-
-#ongList h6{
-  text-align: center;
-  margin: 0.5em 0 0 0;
-  font-size: 1.2rem;
-}
-
-#subTituloChecklist p{
-  font-size: 1.2rem;
 }
 
 /*---------------------
