@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var headerContainer = document.getElementById("headerContainer");
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "header.html", true);
+    xhr.open("GET", "HTML/header.html", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         headerContainer.innerHTML = xhr.responseText;
@@ -17,6 +17,12 @@ function openModal() {
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
 }
+
+/* Footer */
+$(function() {
+    $(".footerContainer").load("/HTML/footer.html");
+});
+
 
 /*Formulario de contato*/
 const form = document.querySelector('form');
