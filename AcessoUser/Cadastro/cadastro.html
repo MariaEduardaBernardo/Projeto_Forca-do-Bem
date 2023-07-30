@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="pt" lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="imagem/png"
+  href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
+  <title>Cadastro</title>
+</head>
+
+<body class="centralize">
+    <div class="container" id="container">
+        <div class="form-container sign-container">
+            <form id="clearFrom">
+                <div class="form-field">
+                    <div><label>Email</label></div>
+                    <input type="email" onchange="onChangeEmail()" id="email" />
+                    <div class="error" id="email-required-error">Email é obrigatório</div>
+                    <div class="error" id="email-invalid-error">Email é inválido</div>
+                </div>
+
+                <div class="form-field">
+                    <div><label>Eu sou:</label></div>
+                    <select name="tipoUser" id="tipoUser">
+                        <option value="SouONG">ONG</option>
+                        <option value="SouVol">Voluntário(a)</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <div><label>Senha</label></div>
+                    <input type="password" id="password" onchange="onChangePassword()" />
+                    <div class="error" id="password-required-error">Senha é obrigatório</div>
+                    <div class="error" id="password-min-length-error">Sua senha deve ter no minímo 6 caracteres</div>
+                </div>
+
+                <div class="form-field">
+                    <div><label>Confirmar senha</label></div>
+                    <input type="password" id="confirmPassword"
+                        onchange="onChangeConfirmPassword()" />
+                    <div class="error" id="password-doesnt-match-error">Senha e Confirmar senha devem ser iguais</div>
+
+                    <div>
+                        <button type="button" class="soliBd" disabled="true" onclick="register()" id="register-button">
+                            Cadastrar
+                        </button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Bem-vindo(a)</h1>
+                <p>Já tem uma conta aqui no <br> Força do bem?</p>
+                <div>
+                    <button type="button" class="outline" onclick="history.back()">Entrar na Conta</button>
+                </div>
+                <br>
+                <span><a href="/index.html">Voltar para página inicial</a></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<link rel="stylesheet" href="../../global.css">
+<link rel="stylesheet" href="../../cadastro.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="../../firebase-init.js"></script>
+
+<script src="register.js"></script>
+<script src="../../validations.js"></script>
+<script src="../../loading.js"></script>
+
+</html>

@@ -30,33 +30,6 @@ body h1,h2,h3,h4,h5,p,span{
     border-radius: 360px;
 }
 
-@media screen and (max-width: 768px) {
-  footer {
-    padding: 10px;
-    }
-}
-
-footer {
-  background-color: #d6e6fa;
-  padding: 20px;
-  text-align: center;
-}
-
-footer p{
-  color: rgb(44, 47, 89);
-}
-
-.rodape {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 768px) {
-  footer {
-    padding: 10px;
-    }
-}
-
 /*Menu lateral*/
 .jquery-accordion-menu ul{
   margin:0;

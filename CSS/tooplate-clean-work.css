@@ -1256,35 +1256,30 @@ strong {
   SITE FOOTER
 -----------------------------------------*/
 .site-footer {
-  background-color: var(--primary-color);
-  padding-top: 50px;
+  background-color: rgba(233, 233, 233, 0.386);
+  padding-top: 1em;
 }
 
 .site-footer-bottom {
-  border-top: 1px solid #7fbcf0;
+  border-top: 1px solid #3d3865;
   position: relative;
   z-index: 2;
-  margin-top: 50px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.site-footer .logo {
-  background-color: var(--white-color);
-  border-radius: var(--border-radius-large);
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  padding: 15px;
+.logo_footer{
+  height: 5em;
 }
 
 .site-footer-title,
 .site-footer-link {
-  color: var(--white-color);
+  color:#3d3865;
 }
 
 .copyright-text {
-  color: var(--section-bg-color);
+  color: #3d3865;;
   font-size: var(--copyright-font-size);
   margin-right: 30px;
 }
@@ -1322,7 +1317,7 @@ strong {
 
 .footer-menu-link {
   font-size: var(--p-font-size);
-  color: var(--white-color);
+  color: #3d3865;
   display: inline-block;
   vertical-align: middle;
   margin-right: 20px;
@@ -1336,6 +1331,11 @@ strong {
 .social-icon {
   margin: 0;
   padding: 0;
+}
+
+.social-icon img{
+  max-height: 2em;
+  margin: 0 0 0 0.1em;
 }
 
 .social-icon-item {
