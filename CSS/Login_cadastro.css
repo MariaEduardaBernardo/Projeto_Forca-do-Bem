@@ -275,15 +275,23 @@ form .row {
     position: relative;
 }
 
-form .row .senha-toggle {
-    position: absolute;
-    top: 40%;
-    right: 0.5em;
-    transform: translateY(-50%);
-}
-
 form .row .btn {
     width: 2em;
     height: 2em;
     cursor: pointer;
 }
+
+.senha-toggle {
+    position: absolute;
+    top: 52%;
+    right: 4.8em;
+    transform: translateY(-50%);
+}
+
+.IconOlho {
+    width: 1.6em;
+    height: 1.6em;
+    cursor: pointer;
+}
+
+

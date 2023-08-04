@@ -1,4 +1,4 @@
-const ongs = [
+const ongs = JSON.parse(relatedONGs) [
     {
       nome: "A gente ajuda",
       itens: ["Financeira", "Roupa","Alimento","Voluntario","Campanha"]
@@ -57,3 +57,34 @@ const ongs = [
     window.location.href = url.href;
   }
 
+
+// Obtém as ONGs relacionadas da URL de consulta
+const urlParams = new URLSearchParams(window.location.search);
+const relatedONGs = urlParams.get('ongs');
+
+const ongContainer = document.getElementById("ong-container");
+
+// Exibe as ONGs nos cards
+const ongList = document.getElementById('ongList');
+ongs.forEach(ong => {
+    const card = document.createElement('div');
+    card.classList.add('ong-card');
+
+    const title = document.createElement('h6');
+    const link = document.createElement('a');
+    link.href = getONGURL(ong.nome);
+    link.textContent = ong.nome;
+    title.appendChild(link);
+
+    const description = document.createElement('p');
+    description.textContent = ong.descricao;
+
+    card.appendChild(title);
+    card.appendChild(description);
+
+    ongList.appendChild(card);
+});
+
+function getONGURL(nome) {
+    return ongURLs[nome];
+}
