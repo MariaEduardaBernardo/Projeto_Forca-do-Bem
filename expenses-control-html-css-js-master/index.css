@@ -1,0 +1,38 @@
+body {
+    height: 100vh;
+}
+
+button {
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 1em 0 0 0;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+form {
+    position: relative;
+}
+
+.senha-toggle {
+    position: absolute;
+    top: 49%;
+    right: 3.5em;
+    transform: translateY(-50%);
+}
+
+.IconOlho {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+}
