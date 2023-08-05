@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="pt" lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="imagem/png"
+  href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
+  <title>Entrar na Conta</title>
+</head>
+
+<body class="centralize">
+    <div class="container" id="container">
+        <div class="form-container sign-container">
+            <form>
+                <div class="form-field">
+                    <div><label>Email</label></div>
+                    <input type="email" name="email" id="email" onchange="onChangeEmail()" />
+                    <div class="error" id="email-required-error">Email é obrigatório</div>
+                    <div class="error" id="email-invalid-error">Email é inválido</div>
+                </div>
+
+                <div class="form-field">
+                    <div><label>Senha</label></div>
+                    <input type="password" name="password" id="password" class="password"
+                        onchange="onChangePassword()" />
+                    <div class="error" id="password-required-error">Senha é obrigatória</div>
+                    <span class="senha-toggle">
+                        <img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" class="IconOlho"
+                            onclick="toggleSenhaVisivel()">
+                    </span>
+                    <div>
+                        <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()"
+                            disabled="true">Esqueci a senha</button>
+                    </div>
+                    <div>
+                        <button type="button" class="solid" id="login-button" disabled="true"
+                            onclick="login()">Entrar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Bem-vindo(a)</h1>
+                <p>Ainda não possui uma conta aqui no <br> Força do bem?</p>
+                <div>
+                    <button type="button" class="outline" onclick="register()">Criar Conta</button>
+                </div>
+                <br>
+                <span><a href="/index.html">Voltar para página inicial</a></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="global.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="firebase-init.js"></script>
+
+<script src="index.js"></script>
+<script src="validations.js"></script>
+<script src="loading.js"></script>
+
+</html>
+

@@ -1,0 +1,27 @@
+<h1>Bem-vindo à página do perfil!</h1>
+<button id="logoutButton">Sair</button>
+
+<script>
+  const logoutButton = document.getElementById("logoutButton");
+
+  // Função para verificar a autenticação
+  function checkAuthentication() {
+    const isAuthenticated = localStorage.getItem("userAuthenticated");
+    if (!isAuthenticated) {
+      // Se o usuário não estiver autenticado, redirecionar para a página de login
+      window.location.href = "AcessoUser.html";
+    }
+  }
+
+  logoutButton.addEventListener("click", () => {
+    // Ao clicar no botão de logout, remova a variável de autenticação do localStorage
+    localStorage.removeItem("userAuthenticated");
+    // Redirecione o usuário para a página de login
+    window.location.href = "AcessoUser.html";
+  });
+
+  // Verificar a autenticação ao carregar a página
+  window.addEventListener("DOMContentLoaded", () => {
+    checkAuthentication();
+  });
+</script>
