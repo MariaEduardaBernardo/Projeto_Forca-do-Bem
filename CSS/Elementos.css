@@ -411,6 +411,8 @@
 CARD DAS ONG
 ********************/
 
+/* Estilos gerais */
+
 :root {
   --surface-color: #cde6fb;
   --curve: 8;
@@ -510,6 +512,29 @@ CARD DAS ONG
   -webkit-line-clamp: 8;
   overflow: hidden;
 }
+
+/* Estilos para telas de celular */
+
+@media (max-width: 767px) {
+  .bloco_ong {
+    grid-template-columns: 1fr; /* Um único bloco por linha em telas de celular */
+    margin: 2rem 5vw; /* Reduz a margem para ficar mais adequado em telas menores */
+  }
+
+  .bloco {
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-top: 1em; /* Espaçamento menor entre os blocos */
+  }
+
+  .bloco__image {
+    height: 200px; /* Altura fixa para a imagem em telas de celular */
+  }
+
+  .bloco_header {
+    padding: 1em; /* Espaçamento menor no cabeçalho */
+  }
+}
+
 
 /*Passar a página caso houver preenchido toda a página*/
 
