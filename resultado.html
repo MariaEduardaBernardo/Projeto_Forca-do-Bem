@@ -77,56 +77,7 @@
 
     <script src="/JS/script.js"></script>
     <script src="/JS/CadUser.js"></script>
-
-    <script>
-
-        const ongURLs = {
-            "A gente ajuda": "ong_2.html",
-            "Ação da cidadania": "ong_1.html",
-            "Caminha Down": "ong_3.html",
-            "Escoteiros do Brasil": "ong_4.html",
-            "Hamburgada do bem": "ong_5.html",
-            "Instituto Mara Gabrilli": "ong_6.html",
-            "Themis Furigo": "ong_7.html"
-        };
-
-        // Obtém as ONGs relacionadas da URL de consulta
-        const urlParams = new URLSearchParams(window.location.search);
-        const relatedONGs = urlParams.get('ongs');
-
-        const ongContainer = document.getElementById("ong-container");
-
-        const ongs = JSON.parse(relatedONGs);
-
-        // Exibe as ONGs nos cards
-        const ongList = document.getElementById('ongList');
-        ongs.forEach(ong => {
-            const card = document.createElement('div');
-            card.classList.add('ong-card');
-
-            const title = document.createElement('h6');
-            const link = document.createElement('a');
-            link.href = getONGURL(ong.nome);
-            link.textContent = ong.nome;
-            title.appendChild(link);
-
-            const description = document.createElement('p');
-            description.textContent = ong.descricao;
-
-            card.appendChild(title);
-            card.appendChild(description);
-
-            ongList.appendChild(card);
-        });
-
-        function getONGURL(nome) {
-            return ongURLs[nome];
-        }
-
-    </script>
-
-<script src="/JS/script.js"></script>
-<script src="/JS/CadUser.js"></script>
+    <script src="/JS/checklist.js"></script>
 </body>
 
 </html>
