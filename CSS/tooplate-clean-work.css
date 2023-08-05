@@ -177,7 +177,7 @@ strong {
 }
 
 .cd-words-wrapper b {
-  color: #1d0fe5;
+  color: var(--primary-color);
   display: inline-block;
   position: absolute;
   white-space: nowrap;
@@ -1105,7 +1105,6 @@ strong {
 .contact-info h5 a:hover {
   color: var(--link-hover-color);
 }
-
 
 /*---------------------------------------
   CONTATO - FORMULARIO

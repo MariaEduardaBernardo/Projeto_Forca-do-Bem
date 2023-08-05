@@ -34,7 +34,6 @@
   right: 10px;
 }
 
-
 /*Checklist*/
 .modal_escolhas {
   display: none;
@@ -225,61 +224,7 @@
 }
 
 
-/*Formulario de contato*/
-.contact-form {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 2em;
-}
 
-.contact-form h2 {
-  text-align: center;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.contact-form button[type="submit"] {
-  background-color: #1abc9c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 30%;
-  margin-left: auto;
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #16a085;
-}
-
-#image1,
-#image2 {
-  width: 25%;
-  border-radius: 360px;
-  display: flex;
-}
-
-.button-container {
-  display: flex;
-}
 
 /*Página do usuario/ong*/
 
