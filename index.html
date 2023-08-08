@@ -133,10 +133,7 @@
       <img src="https://uploaddeimagens.com.br/images/004/544/842/full/imagem_2023-07-14_115108453.png?1689346280"
         alt="Icone ONG Mara Gabrilli">
       <h4>Instituto Mara Gabrilli</h4>
-      <p>Instituto Mara Gabrilli Fundado em 1997, pela publicitária e psicóloga Mara Gabrilli. Seus objetivos são
-        promover às pesquisas para a cura de paralisias e apoio ao esporte paradesporto. O instituto trabalha com
-        projetos que ajudam pessoas a resgatarem a autonomia e a dignidade, além de oferecer suporte para que elas
-        conheçam os seus direitos e tenham acesso a eles.</p>
+      <p id="Ong_MG"></p>
     </div>
 
 
@@ -145,10 +142,7 @@
       <img src="https://uploaddeimagens.com.br/images/004/456/692/thumb/imagem_2023-05-07_131637551.png?1683476201"
         alt="Icone ONG Themis Furigo">
       <h4>Themis Furigo</h4>
-      <p>O Instituto Themis Furigo foi fundado em 05 de novembro de 2018 pela Themis Furigo dos Santos. A ONG tem como
-        objetivo dar suporte a pessoas, promover a prosperidade e o bem-estar para todos, proteger o meio ambiente e
-        contribuir com o desenvolvimento sustentável, apoiar iniciativas de transformar o lixo em energia elétrica,
-        eliminando aterros sanitários das cidades.</p>
+      <p id="Ong_TH"></p>
 
     </div>
 
@@ -156,19 +150,14 @@
       <img src="https://uploaddeimagens.com.br/images/004/544/840/full/imagem_2023-07-14_114824488.png?1689346147"
         alt="Icone ONG Caminha Down">
       <h4>Caminha Down</h4>
-      <p>Surgiu em 2015, e foi idealizado por Rosna Bignami. É um evento na cidade de São Paulo em comemoração ao Dia
-        Internacional da Síndrome de Down. Esse evento foi inspirado em diversas caminhadas que ocorrem ao redor do
-        mundo em defesa dos direitos das pessoas com síndrome de Down e demais deficiências. </p>
-
+      <p id="Ong_CD"></p>
     </div>
 
     <div class="Ex_ONGs-item">
       <img src="https://uploaddeimagens.com.br/images/004/464/576/full/imagem_2023-05-12_231228956.png?1683943994"
         alt="Icone ONG a gente ajuda" height="30%">
       <h4>A gente ajuda</h4>
-      <p>A ONG A Gente Ajuda é uma organização sem fins lucrativos que tem como missão contribuir para o desenvolvimento
-        social de comunidades carentes. A organização foi fundada em 2014 por um grupo de amigos que buscavam formas de
-        ajudar pessoas em situação de vulnerabilidade.</p>
+      <p id="Ong_AGJ"></p>
 
     </div>
 
@@ -176,8 +165,7 @@
       <img src="https://uploaddeimagens.com.br/images/004/456/690/full/imagem_2023-05-07_131347971.png?1683476032"
         alt="Icone ONG Hamburgada" height="30%">
       <h4>Hamburgada do bem</h4>
-      <p>É uma organização não governamental brasileira que tem como objetivo combater a fome e promover a solidariedade por meio da distribuição de alimentos e ações sociais. A organização foi fundada em 2014 por um grupo de amigos em São Paulo e desde então tem crescido e se expandido para outras regiões do país.</p>
-
+      <p id="Ong_HB"></p>
     </div>
 
   </div>
@@ -188,18 +176,13 @@
 
       <div class="services-info mt-4 mt-lg-0 mt-md-0">
 
-        <p>Se você ainda está indeciso sobre qual ONG doar, não se preocupe, nós podemos te ajudar! Você apenas
-          precisa responder um breve questionário de opções (checklist) que nos ajudadrá a entender suas
-          preferências e valores.
+        <p id="textoDescricao"></p>
 
-          Com base nas suas respostas, recomendaremos algumas ONGs que se encaixam no seu perfil e que fazem
-          um trabalho significativo na área em que você está interessado em ajudar.
+          <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Fazer teste
+          </button>
 
-          Então, não perca mais tempo e responda ao questionário agora mesmo para fazer a diferença na vida de
-          quem precisa!</p>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Fazer teste
-        </button>
+          <p id="message" style="display: none;">Para realizar o teste, é necessário fazer login</p>
 
             <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -361,8 +344,7 @@
   <script src="/JS/script.js"></script>
   <script src="/JS/CadUser.js"></script>
   <script src="/JS/carrossel.js"></script>
-
-
+  <script src="/JS/text-database.js"></script>
 </body>
 </html>
 
