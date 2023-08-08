@@ -645,6 +645,63 @@ background-color: #57b7c0;
   color: white;
 }
 
+@media (max-width: 767px){
+  .user-info img {
+    max-width: 25%;
+    max-height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .user-info {
+    margin: 0 0 0 1em;
+  }
+
+  #usuario button {
+    margin: 1em 0 0;
+  }
+
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    white-space: normal;
+  }
+
+  .list-group-item label {
+    flex-grow: 1;
+  }
+
+  .additional-info-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .additional-info-item .remove-button {
+    position: absolute;
+    top: 5px;
+    left: 40%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+  }
+  .op_ajuda button {
+    background-color: #67dce7;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.2em;
+    margin-bottom: 1rem; /* Adicione esta linha para criar uma margem inferior */
+  }
+
+  .op_ajuda button:hover {
+    background-color: #57b7c0;
+  }
+
+}
+
 /*----------------
 PÁGINAS DAS ONGS*/
 
