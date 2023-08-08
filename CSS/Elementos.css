@@ -807,3 +807,75 @@ TERMOS DE USO
   margin-left: 10%;
   margin-right: 10%;
 }
+
+/***********************
+PAGINA DOS VOLUNTARIOS
+***********************/
+/* Estilos de cores para os cartões */
+.volunteer-card:nth-child(odd) {
+  background-color: #8f98cb;
+}
+
+.volunteer-card:nth-child(3n+1) {
+  background-color: #6373cf;
+}
+
+.volunteer-card:nth-child(3n+2) {
+  background-color: #3c97bf;
+}
+
+.volunteer-card:nth-child(even) {
+  background-color: #7cb8eb;
+}
+
+.volunteer-card:last-child {
+  background-color: #cde6fb;
+}
+
+.volunteers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 5em 0 3em 0;
+  max-width: 50%;
+
+}
+
+.volunteer-card {
+  flex: 1;
+  border-radius: 5%;
+  padding: 2%;
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.volunteer-info ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.volunteer-info li {
+  margin-bottom: 5px;
+}
+
+.volunteer-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .volunteers-list {
+    flex-direction: column;
+    width: 60em;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+}
