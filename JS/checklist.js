@@ -86,3 +86,15 @@ if (relatedONGs) {
 function getONGURL(nome) {
     return ongURLs[nome];
 }
+
+// Função para buscar as informações das ONGs no Firebase
+async function fetchONGsData() {
+  try {
+    const ongsCollection = await firestore.collection("ONGs").get();
+    const ongsData = ongsCollection.docs.map(doc => doc.data());
+    return ongsData;
+  } catch (error) {
+    console.error("Erro ao buscar informações das ONGs:", error);
+    return [];
+  }
+}

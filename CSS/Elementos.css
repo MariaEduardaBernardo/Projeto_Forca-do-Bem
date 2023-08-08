@@ -790,3 +790,20 @@ color: red;
 font-size: 14px;
 margin-top: 5px;
 }
+
+
+/***************
+TERMOS DE USO
+***************/
+#termos-uso p{
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  color: #2f2f2f;
+  line-height: 1.5;
+}
+
+#termos-uso{
+  margin: 5em;
+  margin-left: 10%;
+  margin-right: 10%;
+}

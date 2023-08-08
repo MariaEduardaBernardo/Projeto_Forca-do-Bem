@@ -34,6 +34,12 @@
                 <input type="text" class="form-control" id="idName" name="userName" minlength="4" maxlength="50" required>
                 <div class="invalid-feedback">O nome deve ter entre 4 e 50 caracteres.</div>
 
+                <select id="userType" class="form-control" required>
+                  <option value="" disabled selected>Eu sou um(a)</option>
+                  <option value="ONG">ONG</option>
+                  <option value="Voluntário">Voluntário</option>
+                </select>
+
                 <label for="email">Email:</label>
                 <input type="email" id="idEmail" name="userEmail" class="form-control" required>
 
@@ -90,6 +96,10 @@
     </div>
 </div>
 
+<footer>
+  Ao realizar seu cadastro, você estará concordado com o <a href="termos.html">Termos de Uso.</a>
+</footer>
+
 <script>
   function recoverPassword() {
   const email = document.getElementById("email").value;
@@ -135,3 +145,4 @@ recoverPasswordButton.addEventListener("click", (e) => {
 
     </body>
 </html>
+

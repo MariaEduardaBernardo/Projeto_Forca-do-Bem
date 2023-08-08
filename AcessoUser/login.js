@@ -92,3 +92,4 @@ function recoverPassword() {
       alert(getErrorMessage(error));
   });
 }
+

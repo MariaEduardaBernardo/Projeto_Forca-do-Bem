@@ -8,6 +8,7 @@ signupForm.addEventListener("submit", (e) => {
   const userEmail = signupForm.userEmail.value;
   const password = signupForm.password.value;
   const confirmPassword = signupForm.confirmPassword.value;
+  const userType = signupForm.userType.value;
 
   // Crie o usuário usando o Firebase Authentication
   auth.createUserWithEmailAndPassword(userEmail, password)
@@ -24,6 +25,7 @@ signupForm.addEventListener("submit", (e) => {
       return db.doc(userCredential.user.uid).set({
         idName: userName,
         idEmail: userEmail,
+        userType: userType,
       });
     })
     .then(() => {
@@ -42,6 +44,16 @@ signupForm.addEventListener("submit", (e) => {
     console.error("Error registering user:", error);
     alert("Erro ao registrar usuário. Esse e-mail já está em uso.");
   });
+
+
+  const user = firebase.auth().currentUser;
+const userStorageRef = storage.ref().child('users/' + user.uid);
+
+userStorageRef.put(/* Seu arquivo ou dados aqui */).then(() => {
+  console.log('Arquivo salvo com sucesso');
+}).catch(error => {
+  console.error('Erro ao salvar arquivo:', error);
+});
 
 
 /**********************/
