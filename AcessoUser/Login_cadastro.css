@@ -304,7 +304,24 @@ form .row .btn {
 /* Ajuste a posição em telas menores */
 @media screen and (max-width: 768px) {
     .senha-toggle {
-        top: 47%;
+        top: 49%;
 		right: 5em;
     }
+
+    #IconOlho {
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 10px;
+        width: 768px;
+        max-width: 90%;
+        min-height: 80%;
+    }
+
 }
+
+

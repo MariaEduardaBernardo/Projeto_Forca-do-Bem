@@ -597,7 +597,8 @@ PÁGINA DE USUÁRIO
 
 #usuario{
   background-size: cover;
-  background: linear-gradient( #d5eaff, #9cc7f4e8, #205c9de8); /* Gradiente linear de branco para azul */
+  background-image: url(https://uploaddeimagens.com.br/images/004/550/065/full/imagem_2023-07-19_143547954.png?1689788149);
+  /*background: linear-gradient( #d5eaff, #9cc7f4e8, #205c9de8); /* Gradiente linear de branco para azul */
 }
 
 #usuario button{
@@ -648,17 +649,12 @@ background-color: #57b7c0;
 @media (max-width: 767px){
   .user-info img {
     max-width: 25%;
-    max-height: auto;
     margin-right: 10px;
-    border-radius: 50%;
+    margin: 1% 0 1em 0;
   }
 
   .user-info {
     margin: 0 0 0 1em;
-  }
-
-  #usuario button {
-    margin: 1em 0 0;
   }
 
   .list-group-item {
@@ -684,6 +680,7 @@ background-color: #57b7c0;
     background: none;
     border: none;
   }
+
   .op_ajuda button {
     background-color: #67dce7;
     color: #ffffff;
@@ -700,6 +697,28 @@ background-color: #57b7c0;
     background-color: #57b7c0;
   }
 
+  #introText {
+    font-size: 14px; /* Reduza o tamanho da fonte */
+    line-height: 1.4; /* Ajuste o espaçamento entre linhas */
+    margin-bottom: 15px;
+  }
+
+  #usuario button{
+    background-color: #67dce7;
+    color: #ffffff;
+    padding: 0 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: -1% 0 0 6%;
+    height: 1.5em;
+    font-size: 0.8rem;
+    }
+
+    .user-info h5 {
+      font-size: 15px;
+      color: white;
+    }
 }
 
 /*----------------
