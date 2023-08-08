@@ -684,6 +684,7 @@ background-color: #57b7c0;
     background: none;
     border: none;
   }
+
   .op_ajuda button {
     background-color: #67dce7;
     color: #ffffff;
@@ -700,6 +701,22 @@ background-color: #57b7c0;
     background-color: #57b7c0;
   }
 
+  #introText {
+    font-size: 14px; /* Reduza o tamanho da fonte */
+    line-height: 1.4; /* Ajuste o espaçamento entre linhas */
+    margin-bottom: 15px; /* Adicione um espaçamento na parte inferior */
+  }
+
+
+#usuario button{
+  background-color: #67dce7;
+  color: #ffffff;
+  padding: 0.1rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 0 0 0.9em;
+  }
 }
 
 /*----------------
