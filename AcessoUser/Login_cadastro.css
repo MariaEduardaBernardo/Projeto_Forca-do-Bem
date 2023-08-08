@@ -32,7 +32,6 @@ select {
 }
 .overlay span :hover{
     color: #000000;
-
 }
 
 h1 {
@@ -63,6 +62,13 @@ a {
     margin: 15px 0;
 }
 
+#recover-password-button{
+    color: grey;
+    opacity: 80%;
+    background-color: white;
+    border: none;
+}
+
 button {
     border-radius: 20px;
     border: 1px solid #3646a0;
@@ -74,7 +80,7 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
-    margin: 1em 0 0 0;
+
 }
 
 button:active {
@@ -283,15 +289,22 @@ form .row .btn {
 
 .senha-toggle {
     position: absolute;
-    top: 42%;
-    right: 1em;
+    top: 49%;
+    right: 5em;
     transform: translateY(-50%);
+	opacity: 80%;
 }
 
-.IconOlho {
-    width: 1.6em;
-    height: 1.6em;
+#IconOlho {
+    width: 2em;
+    height: 2em;
     cursor: pointer;
 }
 
-
+/* Ajuste a posição em telas menores */
+@media screen and (max-width: 768px) {
+    .senha-toggle {
+        top: 47%;
+		right: 5em;
+    }
+}

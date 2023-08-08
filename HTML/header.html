@@ -20,7 +20,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/ONGs.html">ONG</a></li>
-            <li><a class="dropdown-item" href="#">Voluntário</a></li>
+            <!--<li><a class="dropdown-item" href="#">Voluntário</a></li>-->
           </ul>
         </li>
         <li class="nav-item dropdown" id="accountDropdown">
@@ -29,64 +29,14 @@
           </a>
           <ul class="dropdown-menu">
             <li id="registerOption"><a class="dropdown-item" href="AcessoUser.html">Cadastrar</a></li>
-            <li><a class="dropdown-item" href="AcessoUser.html">Login</a></li>
+            <li id="loginOption"><a class="dropdown-item" href="AcessoUser.html">Login</a></li>
+
+            <li id="profileOption"><a class="dropdown-item" href="/User.html">Perfil</a></li>
           </ul>
         </li>
-
-
-
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-
-<script>
-  // Verificar o estado de autenticação ao carregar a página
-  window.addEventListener('DOMContentLoaded', () => {
-    // Adicionar listener para o evento onAuthStateChanged
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // O usuário está autenticado
-        console.log('Usuário autenticado:', user.email);
-
-        // Exibir o email do usuário
-        let userEmailElement = document.getElementById("userEmail");
-        userEmailElement.textContent = user.email;
-
-        // Obter o nome do usuário do banco de dados
-        db.where("idEmail", "==", user.email.toLowerCase())
-          .get()
-          .then((snapshot) => {
-            if (!snapshot.empty) {
-              const userData = snapshot.docs[0].data();
-              const userNameElement = document.getElementById("userName");
-              userNameElement.textContent = "" + userData.idName;
-
-              // Atualizar o link no menu para exibir o nome do usuário
-              var accountLink = document.getElementById("accountLink");
-              accountLink.textContent = userData.idName;
-            }
-          })
-          .catch((error) => {
-            console.log("Erro ao obter o nome do usuário:", error);
-          });
-
-        // Exibir o contêiner com as informações do usuário
-        document.getElementById("dadosUser").style.display = "block";
-
-        // Exibir o botão "Fazer teste"
-        var fazerTesteButton = document.getElementById("escolha_help");
-        if (fazerTesteButton) {
-          fazerTesteButton.style.display = "block";
-        }
-
-        // Ocultar a mensagem
-        var mensagemConta = document.getElementById("mensagemConta");
-        if (mensagemConta) {
-          mensagemConta.style.display = "none";
-        }
-      }
-    });
-  });
-</script>

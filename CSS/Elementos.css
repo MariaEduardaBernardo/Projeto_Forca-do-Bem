@@ -20,7 +20,7 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
-  color: #fff;
+  color: #ff0909;
   background-color: #333;
   text-decoration: none;
   z-index: 2;
@@ -33,7 +33,6 @@
 .carousel-next {
   right: 10px;
 }
-
 
 /*Checklist*/
 .modal_escolhas {
@@ -224,137 +223,9 @@
   padding: 10px;
 }
 
-/*Página do usuario/ong*/
-
-#user {
-  background-color: #243851;
-  color: #fff;
-  height: 20em;
-  padding: 2em 0;
-  text-align: center;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7em;
-}
-
-#user img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-#user h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-#user h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-#user ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#user ul li {
-  font-size: 18px;
-  margin: 0 10px;
-}
-
-#user ul li i {
-  margin-right: 5px;
-}
-
-.inf_user {
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  margin-top: 2em;
-}
-
-.sidebar {
-
-  width: 25%;
-  float: left;
-  margin-right: 1em;
-}
-
-.main {
-  width: 75%;
-  float: left;
-}
-
-.inf_user {
-  background-color: #f2f2f2;
-  padding: 1rem;
-}
-
-.inf_user h2 {
-  margin-top: 0;
-}
-
-#data-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.data-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.remove-data {
-  margin-left: 1em;
-}
-
-.op_ajuda input[type="text"] {
-  font-size: 18px;
-  border: none;
-  border-bottom: 0.1rem solid #555;
-  margin-right: 10px;
-  background: none;
-}
-
-.op_ajuda button {
-  background-color: #1abc9c;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 0.2rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 0.2em;
-}
-
-.op_ajuda button:hover {
-  background-color: #16a085;
-}
-
-#dadosLista li {
-  font-size: 1.2rem;
-  color: #000000;
-  margin-bottom: 0.1rem;
-  margin-top: 0.1rem;
-  list-style: circle;
-  padding: 0;
-}
-
-
 /********************
 CARD DAS ONG
 ********************/
-
-/* Estilos gerais */
 
 :root {
   --surface-color: #cde6fb;
@@ -632,56 +503,56 @@ CARD DAS ONG
   background-color: #16a085;
 }
 
-/*Pagina usuario*/
-main {
-  padding: 1rem 0 3rem 0;
-}
+/*******************
+PÁGINA DE USUÁRIO
+*******************/
 
-.inf_user {
+#data-container {
   display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
-  margin-top: 2em;
+  flex-direction: column;
 }
 
-.sidebar {
-  width: 50%;
-  margin-right: 1em;
+.data-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.inf_user section {
-  margin-bottom: 1rem;
-  background-color: #f2f2f2;
-  padding: 2rem;
+.remove-data {
+  margin-left: 1em;
 }
 
-#imagem {
-  max-height: 20em;
-  min-height: 12em;
-  border-radius: 1rem;
-  margin-bottom: 1.5em;
-}
-
-#usuario {
+.op_ajuda input[type="text"] {
+  font-size: 18px;
+  border: none;
+  border-bottom: 0.1rem solid #6a6a6a;
+  margin-right: 10px;
+  margin: 0 1rem 1rem 0;
   background: none;
 }
 
-#usuario button {
-  background-color: #1abc9c;
+.op_ajuda button {
+  background-color: #67dce7;
   color: #ffffff;
-  padding: 0.2rem 2rem;
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 0.2em;
-  width: 90%;
 }
 
-#usuario button:hover {
-  cursor: pointer;
-  background-color: #16a085;
+.op_ajuda button:hover{
+  background-color: #57b7c0;
+}
+
+#dadosLista li {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 0.1rem;
+  margin-top: 0.1rem;
+  list-style:circle;
+  padding: 0;
 }
 
 .additional-info-container {
@@ -710,6 +581,41 @@ main {
   border: none;
 }
 
+.inf_user {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  margin-top: 2em;
+}
+
+.inf_user section {
+  margin-bottom: 1rem;
+  padding: 3rem;
+}
+
+#usuario{
+  background-size: cover;
+  background: linear-gradient( #d5eaff, #9cc7f4e8, #205c9de8); /* Gradiente linear de branco para azul */
+}
+
+#usuario button{
+background-color: #67dce7;
+color: #ffffff;
+padding: 0.2rem 2rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 1em;
+margin: 1em 0 0 1em;
+}
+
+#usuario button:hover{
+cursor: pointer;
+background-color: #57b7c0;
+}
+
 #dadosUser p {
   white-space: nowrap;
 }
@@ -719,60 +625,87 @@ main {
   display: flex;
 }
 
+.user-info {
+  margin: 0 0 0 5em;
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  max-width: 15%;
+  max-height: 15%;
+  margin-right: 20px;
+  border-radius: 3%;
+  float: left;
+  margin: 3em 0 1em 0;
+}
+
+.user-info h5 {
+  margin: 1rem;
+  color: white;
+}
+
 /*----------------
 PÁGINAS DAS ONGS*/
 
 #fundo_infOngs ul {
-  list-style: none;
-  padding: 0;
+list-style: none;
+padding: 0;
 }
 
 #fundo_infOngs ul li:before {
-  content: "✓";
-  color: rgb(140, 243, 131);
-  display: inline-block;
-  width: 10px;
-  margin-right: 10px;
+content: "✓";
+color: rgb(140, 243, 131);
+display: inline-block;
+width: 10px;
+margin-right: 10px;
 }
 
 #fundo_infOngs h1 {
-  color: rgb(255, 255, 255);
-  margin: 2% 5% 0 5%;
+color: rgb(255, 255, 255);
+margin: 2% 5% 0 5%;
 }
 
 #fundo_infOngs li {
-  color: rgb(255, 255, 255);
-  margin: 3% 5% 0 5%;
-  font-size: 1.3em;
-  text-align: justify;
+color: rgb(255, 255, 255);
+margin: 3% 5% 0 5%;
+font-size: 1.3em;
+text-align: justify;
 }
 
 /*---------------------
 CHECKLIST
 **********************/
 #ongList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
+display: flex;
+flex-wrap: wrap;
+gap: 0.5em;
 }
 
 .ong-card {
-  flex: 100%;
-  max-width: 300px;
-  border: 1px solid #ccc;
+flex: 100%;
+max-width: 300px;
+border: 1px solid #ccc;
 }
 
 #ongList h6{
-  text-align: center;
-  margin: 0.5em 0 0 0;
-  font-size: 1.2rem;
+text-align: center;
+margin: 0.5em 0 0 0;
+font-size: 1.2rem;
 }
 
 #subTituloChecklist p{
-  font-size: 1.2rem;
+font-size: 1.2rem;
 }
 
 #imagem_ONG img{
-  height: 100%;
-  width: 100%;
+height: 100%;
+width: 100%;
+}
+
+#password-message {
+display: none;
+color: red;
+font-size: 14px;
+margin-top: 5px;
 }

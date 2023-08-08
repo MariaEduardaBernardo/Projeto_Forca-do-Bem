@@ -73,37 +73,65 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(14, 13, 14, 0.5);
+    background: rgba(83, 115, 156, 0.549);
 }
 
 .main-post__content {
     position: relative;
-    top: 40%;
     transform: translateY(-50%);
     color: rgb(255, 255, 255);
     text-align: left;
-    max-width: 78%;
     font-size: 15px;
     position: absolute;
-    top: 50%;
-    margin-right: auto;
+    top: 40%;
     margin-left: 4%;
     transform: translateY(-50%);
-    color: #ffffff;
     width: 50%;
 }
 
 .main-post__tag-wrapper {
     margin: 0;
-    display: inline-flex;
-    overflow: hidden;
+    background: rgba(175, 176, 175, 0.75);
+    padding: 0.5rem 0.8rem;
+    width: 100%; /* Ocupa todo o espaço horizontal */
+    box-sizing: border-box;
 }
 
 .main-post__tag {
     font-size: 0.95em;
-    background: #a9bcd5;
-    padding: 0.5rem 0.8rem;
-    margin: 0 0 0.1em 0;
+    color: white;
+    margin: 0;
+    display: inline;
+    white-space: nowrap;
+}
+
+/* Estilo para telas menores */
+@media (max-width: 768px) {
+    .main-post__tag-wrapper {
+        margin: 0 5% 1% 0;
+        background-color: transparent;
+    }
+
+    .slides {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .main-post__content {
+        transform: translateY(-50%);
+        margin: 0;
+        text-align: justify;
+        margin-left: 4%;
+        overflow-wrap: break-word; /* Adicione esta linha para ajustar o texto */
+      }
+
+    .carousel {
+        min-height: 50vh; /* Ajuste a altura conforme necessário */
+        grid-template-rows: 1fr 3fr 1.5fr;
+        grid-template-columns: 10px 1fr 1fr 1fr 1fr 10px;
+        row-gap: 1vh; /* Ajuste o espaçamento entre as linhas */
+      }
 }
 
 .main-post__title {
@@ -172,8 +200,7 @@
 }
 
 .post {
-    background: rgba(26, 1, 26, 0.6);
-    opacity: 0.3;
+    opacity: 0;
     color: #fff;
     position: relative;
     padding: 0.1rem;
@@ -187,8 +214,8 @@
     line-height: 1.5;
 }
 .post--active {
-    opacity: 1;
-    background: rgba(14, 13, 14, 0.75);
+    opacity: 0;
+    background: rgba(176, 175, 176, 0.75);
 }
 .post:not(.post--active) {
     pointer-events: none;
