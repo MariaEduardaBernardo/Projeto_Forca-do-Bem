@@ -2,114 +2,136 @@
 <html class="pt" lang="pt">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acessar conta</title>
+<link rel="icon" type="imagem/png"
+  href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
 
-    <title>Acessar conta</title>
-    <link rel="icon" type="imagem/png"
-    href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
+<!-- Menu lateral -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/CSS/Login_cadastro.css">
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<link rel="stylesheet" href="/CSS/Elementos.css">
+<link rel="stylesheet" href="/AcessoUser/Login_cadastro.css">
+
 </head>
+    <body>
 
-<body>
-
-    <div class="container" id="container">
+      <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Crie sua conta</h1>
-                <br>
+            <form id="signupForm" class="was-validated needs-validation">
+                <h3>Cadastro</h3>
 
-                <span>Nome</span>
-                <input type="text" placeholder="Nome"/>
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="idName" name="userName" minlength="4" maxlength="50" required>
+                <div class="invalid-feedback">O nome deve ter entre 4 e 50 caracteres.</div>
 
-                <span>E-mail</span>
-                <input type="email" placeholder="Email" />
-                <span>Senha</span>
-                <input type="password" placeholder="Senha" />
-                <input type="password" placeholder="Repita sua senha" />
+                <label for="email">Email:</label>
+                <input type="email" id="idEmail" name="userEmail" class="form-control" required>
 
-                <button>Cadastrar</button>
-            </form>
+                <label for="idPw">Senha:</label>
+                <input type="password" class="form-control" id="idPw" name="password" required minlength="8" maxlength="20">
+
+                <label for="idPw">Confirme sua senha:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required minlength="8" maxlength="20">
+
+                <p id="password-message"></p>
+
+                <button type="submit" class="btn btn-primary" id="submit">
+                  Registrar
+              </button>
+                  </form>
         </div>
+
+        <!--Login do usuário-->
         <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Entrar na conta</h1>
-                <br>
-                <input type="email" placeholder="Email">
+          <form action="" id="FormCadastro">
+            <h3>Acessar conta</h3>
 
-                <div class="row">
-                    <input type="password" class="senha" placeholder="Senha">
-                    <span class="senha-toggle">
-                        <img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" class="btn"
-                            onclick="toggleSenhaVisivel()">
-                    </span>
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-                <button>Entrar</button>
-            </form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="senha form-control" required>
+            <span class="senha-toggle"><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" class="btnIcon" id="IconOlho" onclick="toggleSenhaVisivel()"></span>
+            <br>
+            <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()">Recuperar senha</button>
+            <p id="error-message" style="color: red;"></p>
+            <button type="submit" id="login" class="btn btn-primary">Entrar</button>
+          </form>
         </div>
 
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Bem-vindo(a)!</h1>
-                    <p>Já possui uma conta aqui no <br> Força do bem?</p>
-                    <button class="ghost" id="signIn">Entrar na conta</button>
-                    <span><a href="/index.html">Voltar para página inicial</a></span>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Bem-vindo(a)</h1>
-                    <p>Ainda não possui uma conta aqui no <br> Força do bem?</p>
-                    <button class="ghost" id="signUp">Fazer cadastro</button>
-                    <span><a href="/index.html">Voltar para página inicial</a></span>
-                </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h3>Bem-vindo(a)! <br> Já possui conta?</h3><br>
+                <button class="ghost" id="signIn">Fazer Login</button>
+                <a id="VoltarInicio" href="/index.html">Voltar para a tela inicial <img
+                        src="https://cdn-icons-png.flaticon.com/128/7718/7718405.png" alt="Icon seta"
+                        height="12em"></a>
+            </div>
+
+            <div class="overlay-panel overlay-right">
+                <h3>Bem-vindo(a)! <br> Ainda não tem uma conta?</h3><br>
+                <button class="ghost" id="signUp">Fazer cadastro</button>
+                <a id="VoltarInicio" href="/index.html">Voltar para a tela inicial <img
+                        src="https://cdn-icons-png.flaticon.com/128/7718/7718405.png" alt="Icon seta"
+                        height="12em"></a>
             </div>
         </div>
     </div>
+</div>
 
-    <link rel="stylesheet" href="/style.css">
-    <script src="/scipt.js"></script>
-    <script src="/JS/Cadastro.js"></script>
-</body>
+<script>
+  function recoverPassword() {
+  const email = document.getElementById("email").value;
 
-</html>
+  firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+
+      alert('Um email de recuperação de senha foi enviado para o endereço fornecido.');
+    })
+    .catch((error) => {
+
+      alert(getErrorMessage(error));
+    });
+}
+const recoverPasswordButton = document.getElementById("recover-password-button");
+recoverPasswordButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  recoverPassword();
+});
+
+</script>
 
 <script>
 
-function atualizarOpcaoSelecionada() {
-    var select = document.getElementById("selecao");
-    var opcaoSelecionada = select.options[select.selectedIndex].text;
-    var opcaoSelecionadaElement = document.getElementById("opcao-selecionada");
-    opcaoSelecionadaElement.textContent = opcaoSelecionada;
-}
+  function toggleSenhaVisivel() {
+      var senhaInput = document.querySelector(".senha");
+      var btnIcon = document.querySelector(".btnIcon");
 
-function toggleSenhaVisivel() {
-    var senhaInput = document.querySelector(".senha");
-    var btnIcon = document.querySelector(".btn");
+      if (senhaInput.type === "password") {
+          senhaInput.type = "text";
+          btnIcon.src = "https://cdn-icons-png.flaticon.com/128/2767/2767146.png";
+      } else {
+          senhaInput.type = "password";
+          btnIcon.src = "https://cdn-icons-png.flaticon.com/128/709/709612.png";
+      }
+  }
+      </script>
 
-    if (senhaInput.type === "password") {
-        senhaInput.type = "text";
-        btnIcon.src = "https://cdn-icons-png.flaticon.com/128/2767/2767146.png";
-    } else {
-        senhaInput.type = "password";
-        btnIcon.src = "https://cdn-icons-png.flaticon.com/128/709/709612.png";
-    }
-}
+    <script src="/AcessoUser/firebase-init.js"></script>
+    <script src="/AcessoUser/Cadastro.js"></script>
+    <script src="/AcessoUser/login.js"></script>
+    <script src="/AcessoUser/Cad_log.js"></script>
 
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-
-    signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-    });
-
-    signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-    });
-</script>
+    </body>
+</html>
