@@ -526,6 +526,7 @@ PÁGINA DE USUÁRIO
   font-size: 18px;
   border: none;
   border-bottom: 0.1rem solid #6a6a6a;
+  width: 90%;
   margin-right: 10px;
   margin: 0 1rem 1rem 0;
   background: none;
@@ -650,7 +651,7 @@ background-color: #57b7c0;
   .user-info img {
     max-width: 25%;
     margin-right: 10px;
-    margin: 1% 0 1em 0;
+    margin: 5% 0 1em 0;
   }
 
   .user-info {
@@ -719,6 +720,10 @@ background-color: #57b7c0;
       font-size: 15px;
       color: white;
     }
+}
+
+.title-user{
+  text-align: left;
 }
 
 /*----------------
