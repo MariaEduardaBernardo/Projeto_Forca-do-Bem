@@ -873,9 +873,15 @@ PAGINA DOS VOLUNTARIOS
 @media screen and (max-width: 768px) {
   .volunteers-list {
     flex-direction: column;
-    width: 60em;
     font-size: 12px;
     justify-content: center;
     align-items: center;
+    width: 100%;
+  }
+
+  .volunteer-card {
+    margin: 10px;
+    width: 150%;
+    margin-left: 25%;
   }
 }
