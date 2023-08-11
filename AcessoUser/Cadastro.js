@@ -56,8 +56,6 @@ userStorageRef.put(/* Seu arquivo ou dados aqui */).then(() => {
 });
 
 
-/**********************/
-
 function isPasswordStrong(password) {
   // Pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um número
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
