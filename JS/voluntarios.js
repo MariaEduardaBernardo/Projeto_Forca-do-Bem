@@ -29,7 +29,6 @@ function displayVolunteers() {
           </ul>
         `;
 
-        // Adicionar elementos ao cartão do voluntário e à lista de voluntários
         volunteerCard.appendChild(volunteerPhoto);
         volunteerCard.appendChild(volunteerInfo);
         volunteersList.appendChild(volunteerCard);
@@ -39,10 +38,4 @@ function displayVolunteers() {
       console.error("Error getting volunteers:", error);
     });
 }
-
-// Chame a função para exibir os voluntários quando a página for carregada
-window.onload = displayVolunteers;
-
-
-// Chame a função para exibir os voluntários quando a página for carregada
 window.onload = displayVolunteers;

@@ -837,10 +837,12 @@ PAGINA DOS VOLUNTARIOS
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  margin: 5em 0 3em 0;
-  max-width: 50%;
-
+  margin: 5em auto 3em auto;
+  max-width: 80%;
+  align-items: stretch;
+  gap: 1em;
 }
+
 
 .volunteer-card {
   flex: 1;
@@ -872,16 +874,14 @@ PAGINA DOS VOLUNTARIOS
 
 @media screen and (max-width: 768px) {
   .volunteers-list {
-    flex-direction: column;
-    font-size: 12px;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin: 5em 0 3em 0%;
+    max-width: 100%;
   }
 
   .volunteer-card {
-    margin: 10px;
-    width: 150%;
-    margin-left: 25%;
+    width: 100%;
+    margin: 0 5% 0 5%;
   }
 }
