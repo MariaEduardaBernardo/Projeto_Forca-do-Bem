@@ -28,11 +28,15 @@ signupForm.addEventListener("submit", (e) => {
         userType: userType,
       });
     })
-    .then(() => {
-      console.log("Additional data saved in Firestore.");
-      alert("Registro bem-sucedido! Você pode fazer login agora.");
-      signupForm.reset();
-    })
+// Após o cadastro bem-sucedido
+.then(() => {
+  console.log("Additional data saved in Firestore.");
+  alert("Registro bem-sucedido! Você pode fazer login agora.");
+
+
+
+  signupForm.reset();
+  })
     .catch((error) => {
       // Ocorreu um erro durante o registro
       console.error("Error saving additional data:", error);

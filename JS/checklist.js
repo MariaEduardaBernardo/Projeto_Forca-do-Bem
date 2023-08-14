@@ -30,30 +30,39 @@ const ongs = [
 ];
 
   const ongURLs = {
-    "A gente ajuda": "ong_1.html",
-    "Ação da cidadania": "ong_2.html",
+    "A gente ajuda": "ong_2.html",
+    "Ação da cidadania": "ong_1.html",
     "Caminha Down": "ong_3.html",
     "Escoteiros do Brasil": "ong_4.html",
     "Hamburgada do bem": "ong_5.html",
     "Instituto Mara Gabrilli": "ong_6.html",
     "Themis Furigo": "ong_7.html"
   };
-
   function showRelatedONGs() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    const selectedOptions = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    const relatedONGs = ongs.filter(ong => {
-      return selectedOptions.every(option => ong.itens.includes(option));
-    });
+    if (checkboxes.length === 0) {
+      const toast = new bootstrap.Toast(document.getElementById('toastNoOptions'));
+      toast.show();
+    } else {
+      const selectedOptions = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    // Constrói a URL de redirecionamento com os parâmetros de consulta
-    const url = new URL('resultado.html', window.location.href);
-    url.searchParams.append('ongs', JSON.stringify(relatedONGs));
+      const relatedONGs = ongs.filter(ong => {
+        return selectedOptions.every(option => ong.itens.includes(option));
+      });
 
-    // Redireciona o usuário para a nova página
-    window.location.href = url.href;
+      // Constrói a URL de redirecionamento com os parâmetros de consulta
+      const url = new URL('resultado.html', window.location.href);
+      url.searchParams.append('ongs', JSON.stringify(relatedONGs));
+
+      // Redireciona o usuário para a nova página
+      window.location.href = url.href;
+    }
   }
+
+
+
+
 
 // Obtém as ONGs relacionadas da URL de consulta
 const urlParams = new URLSearchParams(window.location.search);
@@ -76,6 +85,8 @@ if (relatedONGs) {
         const description = document.createElement('p');
         description.textContent = ong.descricao;
 
+        link.style.color = 'white';
+
         card.appendChild(title);
         card.appendChild(description);
 
@@ -90,7 +101,7 @@ function getONGURL(nome) {
 // Função para buscar as informações das ONGs no Firebase
 async function fetchONGsData() {
   try {
-    const ongsCollection = await firestore.collection("ONGs").get();
+    const ongsCollection = await firestore.collection("ongs").get();
     const ongsData = ongsCollection.docs.map(doc => doc.data());
     return ongsData;
   } catch (error) {
