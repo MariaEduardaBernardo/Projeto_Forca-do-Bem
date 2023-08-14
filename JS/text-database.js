@@ -1,5 +1,45 @@
 const textDocRef = firestore.collection("Textos").doc("PagInicial");
 
+// SLIDE Página Inicial
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Slide1;
+
+    const paragraphElement = document.getElementById("Slide1");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Slide2;
+
+    const paragraphElement = document.getElementById("Slide2");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Slide3;
+
+    const paragraphElement = document.getElementById("Slide3");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
 // Descricao sobre o checklist
 textDocRef.get().then((doc) => {
   if (doc.exists) {

@@ -766,7 +766,10 @@ gap: 0.5em;
 .ong-card {
 flex: 100%;
 max-width: 300px;
-border: 1px solid #ccc;
+border: none;
+height: 7em;
+border-radius: 2%;
+background: linear-gradient(#a7cff2, #7cb8eb, #6595bf);
 }
 
 #ongList h6{
@@ -790,7 +793,6 @@ color: red;
 font-size: 14px;
 margin-top: 5px;
 }
-
 
 /***************
 TERMOS DE USO
@@ -885,3 +887,8 @@ PAGINA DOS VOLUNTARIOS
     margin: 0 5% 0 5%;
   }
 }
+
+/*****************************
+CADASTRO DAS INFORMACOES ONGS
+*****************************/
+

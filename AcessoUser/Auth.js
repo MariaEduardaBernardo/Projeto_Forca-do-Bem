@@ -23,3 +23,5 @@ firebase.auth().onAuthStateChanged((user) => {
         logoutButton.style.display = "none";
     }
 });
+
+const userType = signupForm.userType.value;
