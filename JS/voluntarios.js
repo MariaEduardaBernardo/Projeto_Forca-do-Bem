@@ -6,18 +6,28 @@ function displayVolunteers() {
   const volunteersList = document.getElementById("volunteersList");
 
   usersCollection.where("userType", "==", "Voluntário").get()
-    .then((querySnapshot) => {
+    .then(async (querySnapshot) => {
       const volunteersData = [];
 
-      querySnapshot.forEach((doc) => {
+      for (const doc of querySnapshot.docs) {
         const volunteerData = doc.data();
         const volunteerName = volunteerData.idName; // Obtém o nome do voluntário
-        volunteersData.push({ name: volunteerName, data: volunteerData }); // Passo 1 e 2
-      });
 
-      volunteersData.sort((a, b) => a.name.localeCompare(b.name)); // Passo 3
+        // Buscar os dados da subcoleção 'additionalInfo' para cada voluntário
+        const additionalInfoSnapshot = await doc.ref.collection('additionalInfo').get();
+        let volunteerTypeHelp = "";
 
-      volunteersData.forEach((volunteer) => { // Passo 4
+        additionalInfoSnapshot.forEach((additionalDoc) => {
+          const additionalData = additionalDoc.data();
+          volunteerTypeHelp += additionalData.value + ", "; // Captura os valores de como ajudar
+        });
+
+        volunteersData.push({ name: volunteerName, data: volunteerData, typeHelp: volunteerTypeHelp });
+      }
+
+      volunteersData.sort((a, b) => a.name.localeCompare(b.name));
+
+      volunteersData.forEach((volunteer) => {
         const volunteerCard = document.createElement("div");
         volunteerCard.className = "volunteer-card";
 
@@ -32,7 +42,7 @@ function displayVolunteers() {
           <h4>${volunteer.name}</h4>
           <ul>
             <li>Email: ${volunteer.data.idEmail}</li>
-            <!-- Outras informações do voluntário -->
+            <li>Formas de ajudar <br> ${volunteer.typeHelp}</li>
           </ul>
         `;
 

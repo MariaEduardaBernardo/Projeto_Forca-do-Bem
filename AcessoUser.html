@@ -97,7 +97,7 @@
 </div>
 
 <footer>
-  Ao realizar o seu cadastro, você estará concordado com os <a href="termos.html">Termos de Uso.</a>
+  Ao realizar o seu cadastro, você estará concordando com os <a href="termos.html">Termos de Uso.</a>
 </footer>
 
 <script>
@@ -142,7 +142,31 @@ recoverPasswordButton.addEventListener("click", (e) => {
     <script src="/AcessoUser/Cadastro.js"></script>
     <script src="/AcessoUser/login.js"></script>
     <script src="/AcessoUser/Cad_log.js"></script>
+    <script src="/AcessoUser/loading.js"></script>
 
     </body>
 </html>
 
+
+<style>
+  /* Estilos para o contêiner de sobreposição */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garante que esteja na frente de outros elementos */
+}
+
+/* Estilos para o indicador de carregamento */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+}
+
+</style>
