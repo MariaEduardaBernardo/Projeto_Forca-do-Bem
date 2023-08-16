@@ -12,75 +12,75 @@ signupForm.addEventListener("submit", (e) => {
 
   // Crie o usuário usando o Firebase Authentication
   auth.createUserWithEmailAndPassword(userEmail, password)
-  .then((userCredential) => {
-    // Usuário criado com sucesso
-    console.log("User registered:", userCredential.user.uid);
+    .then((userCredential) => {
+      // Usuário criado com sucesso
+      console.log("User registered:", userCredential.user.uid);
 
-    // Atualize o nome de usuário no Firebase Authentication
-    return userCredential.user.updateProfile({
-      displayName: userName
+      // Atualize o nome de usuário no Firebase Authentication
+      return userCredential.user.updateProfile({
+        displayName: userName
+      })
+        .then(() => {
+          // Salve os dados adicionais no Firestore
+          return db.doc(userCredential.user.uid).set({
+            idName: userName,
+            idEmail: userEmail,
+            userType: userType,
+          });
+        })
+        // Após o cadastro bem-sucedido
+        .then(() => {
+          console.log("Additional data saved in Firestore.");
+          alert("Registro bem-sucedido! Você pode fazer login agora.");
+
+
+
+          signupForm.reset();
+        })
+        .catch((error) => {
+          // Ocorreu um erro durante o registro
+          console.error("Error saving additional data:", error);
+          alert("Erro ao registrar usuário.");
+        });
     })
-    .then(() => {
-      // Salve os dados adicionais no Firestore
-      return db.doc(userCredential.user.uid).set({
-        idName: userName,
-        idEmail: userEmail,
-        userType: userType,
-      });
-    })
-// Após o cadastro bem-sucedido
-.then(() => {
-  console.log("Additional data saved in Firestore.");
-  alert("Registro bem-sucedido! Você pode fazer login agora.");
-
-
-
-  signupForm.reset();
-  })
     .catch((error) => {
       // Ocorreu um erro durante o registro
-      console.error("Error saving additional data:", error);
-      alert("Erro ao registrar usuário.");
+      console.error("Error registering user:", error);
+      alert("Erro ao registrar usuário. Esse e-mail já está em uso.");
     });
-  })
-  .catch((error) => {
-    // Ocorreu um erro durante o registro
-    console.error("Error registering user:", error);
-    alert("Erro ao registrar usuário. Esse e-mail já está em uso.");
-  });
 
 
   const user = firebase.auth().currentUser;
-const userStorageRef = storage.ref().child('users/' + user.uid);
+  const userStorageRef = storage.ref().child('users/' + user.uid);
 
-userStorageRef.put(/* Seu arquivo ou dados aqui */).then(() => {
-  console.log('Arquivo salvo com sucesso');
-}).catch(error => {
-  console.error('Erro ao salvar arquivo:', error);
-});
+  userStorageRef.put(/* Seu arquivo ou dados aqui */).then(() => {
+    console.log('Arquivo salvo com sucesso');
+  }).catch(error => {
+    console.error('Erro ao salvar arquivo:', error);
+  });
 
 
-function isPasswordStrong(password) {
-  // Pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um número
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-  return passwordRegex.test(password);
-}
-
-const passwordInput = document.getElementById("idPw");
-const passwordMessage = document.getElementById("password-message");
-
-passwordInput.addEventListener("input", () => {
-  const password = passwordInput.value;
-  if (isPasswordStrong(password)) {
-    passwordInput.classList.remove("is-invalid");
-    passwordInput.classList.add("is-valid");
-    passwordMessage.style.display = "none";
-  } else {
-    passwordInput.classList.remove("is-valid");
-    passwordInput.classList.add("is-invalid");
-    passwordMessage.style.display = "block";
+  function isPasswordStrong(password) {
+    // Pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um número
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
   }
-});
+
+  const passwordInput = document.getElementById("idPw");
+  const passwordMessage = document.getElementById("password-message");
+
+  passwordInput.addEventListener("input", () => {
+    const password = passwordInput.value;
+    if (isPasswordStrong(password)) {
+      passwordInput.classList.remove("is-invalid");
+      passwordInput.classList.add("is-valid");
+      passwordMessage.style.display = "none";
+    } else {
+      passwordInput.classList.remove("is-valid");
+      passwordInput.classList.add("is-invalid");
+      passwordMessage.style.display = "block";
+    }
+  });
 
   // Verificar se as senhas informadas e a confirmação são iguais
   if (password !== confirmPassword) {

@@ -230,3 +230,17 @@ textTermos.get().then((doc) => {
   console.error("Erro ao recuperar o texto:", error);
 });
 
+
+/*Página de usuário*/
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().TextoUser;
+
+    const paragraphElement = document.getElementById("TextoUser");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});

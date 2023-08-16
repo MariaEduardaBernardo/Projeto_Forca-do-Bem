@@ -1,3 +1,4 @@
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
 
@@ -40,7 +41,6 @@ firebase.auth().onAuthStateChanged((user) => {
 document.getElementById("infoForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Evita o comportamento padrão de recarregar a página ao enviar o formulário
 
-    var additionalInfo = document.getElementById("additionalInput").value;
     var additionalParagraph = document.createElement("div");
     additionalParagraph.classList.add("additional-info-item");
 
@@ -74,3 +74,119 @@ document.getElementById("infoForm").addEventListener("submit", function (event) 
 
     updateIntroText();
   });
+
+
+  const db = firestore.collection("CadastroUser");
+const infoForm = document.getElementById("infoForm");
+const additionalInfoList = document.getElementById("additionalInfoList");
+
+// Função para renderizar os dados na tela
+async function renderDataOnPage(userId) {
+  try {
+    // Limpar a lista antes de renderizar novamente
+    additionalInfoList.innerHTML = "";
+
+    // Buscar os dados salvos no Firestore
+    const additionalInfoSnapshot = await db.doc(userId).collection('additionalInfo').get();
+    additionalInfoSnapshot.forEach((doc) => {
+      const data = doc.data();
+      const listItem = document.createElement("li");
+      listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+
+      listItem.textContent = data.value;
+
+      // Criar um botão de exclusão
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Excluir";
+      deleteButton.classList.add("btn", "btn-danger", "btn-sm");
+      deleteButton.addEventListener("click", () => {
+        deleteData(userId, doc.id);
+      });
+
+      // Adicionar o botão à lista de itens
+      listItem.appendChild(deleteButton);
+
+      // Adicionar o item à lista na tela
+      additionalInfoList.appendChild(listItem);
+    });
+
+    console.log("Dados adicionais renderizados na tela.");
+  } catch (error) {
+    console.error("Erro ao buscar informações adicionais:", error);
+  }
+}
+
+// Função para excluir dados
+async function deleteData(userId, docId) {
+  try {
+    // Deletar o documento da subcoleção 'additionalInfo'
+    await db.doc(userId).collection('additionalInfo').doc(docId).delete();
+
+    // Limpar a lista antes de renderizar novamente
+    additionalInfoList.innerHTML = "";
+
+    // Renderizar os dados salvos na tela novamente
+    await renderDataOnPage(userId);
+
+    // Exibir o Toast de sucesso ou mensagem de exclusão
+    const toastExclusao = new bootstrap.Toast(document.getElementById('toastExclusao'));
+    toastExclusao.show();
+
+    console.log("Informações adicionais excluídas do Firestore.");
+  } catch (error) {
+    console.error("Erro ao excluir informações adicionais:", error);
+    // Exibir um Toast de erro se necessário
+  }
+}
+
+// Evento de envio do formulário
+infoForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const typeHelpInput = document.getElementById('typeHelp');
+  const typeHelp = typeHelpInput.value;
+
+  if (!typeHelpInput.checkValidity()) {
+    alert("Por favor, insira um texto com pelo menos 10 caracteres e no máximo 100 caracteres.");
+    return;
+  }
+
+  const user = firebase.auth().currentUser;
+  if (user) {
+    const userId = user.uid;
+
+    try {
+      await db.doc(userId).collection('additionalInfo').add({
+        value: typeHelp,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      // Limpar a lista antes de renderizar novamente
+      additionalInfoList.innerHTML = "";
+
+      // Renderizar os dados salvos na tela
+      await renderDataOnPage(userId);
+
+      console.log("Informações adicionais salvas no Firestore.");
+
+      // Exibir o Toast de sucesso
+      const toastAddSuccess = new bootstrap.Toast(document.getElementById('toastAddSuccess'));
+      toastAddSuccess.show();
+
+      infoForm.reset();
+    } catch (error) {
+      console.error("Erro ao salvar informações adicionais:", error);
+
+    }
+  } else {
+    console.log('Usuário não autenticado. Não é possível salvar as informações.');
+  }
+});
+
+// Carregar os dados ao carregar a página
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    const userId = user.uid;
+    renderDataOnPage(userId);
+  }
+});

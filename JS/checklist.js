@@ -38,6 +38,7 @@ const ongs = [
     "Instituto Mara Gabrilli": "ong_6.html",
     "Themis Furigo": "ong_7.html"
   };
+  
   function showRelatedONGs() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
@@ -59,10 +60,6 @@ const ongs = [
       window.location.href = url.href;
     }
   }
-
-
-
-
 
 // Obtém as ONGs relacionadas da URL de consulta
 const urlParams = new URLSearchParams(window.location.search);
