@@ -90,5 +90,3 @@ ongDocRef.get().then((doc) => {
 }).catch((error) => {
   console.error("Erro ao recuperar informações da ONG:", error);
 });
-
-
