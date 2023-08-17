@@ -35,11 +35,11 @@ signupForm.addEventListener("submit", (e) => {
 
           // Redirecionar o usuário com base no tipo escolhido
           if (userType === "ONG") {
-            window.location.href = "userOng.html"; // Substitua pelo nome da página da ONG
+            window.location.href = "userOng.html";
           } else if (userType === "Voluntário") {
-            window.location.href = "user.html"; // Substitua pelo nome da página do voluntário
+            window.location.href = "user.html";
           } else {
-            window.location.href = "index.html"; // Substitua pelo nome da página padrão
+            window.location.href = "index.html";
           }
 
           signupForm.reset();
@@ -56,16 +56,6 @@ signupForm.addEventListener("submit", (e) => {
       console.error("Error registering user:", error);
       alert("Erro ao registrar usuário. Esse e-mail já está em uso.");
     });
-
-
-  const user = firebase.auth().currentUser;
-  const userStorageRef = storage.ref().child('users/' + user.uid);
-
-  userStorageRef.put(/* Seu arquivo ou dados aqui */).then(() => {
-    console.log('Arquivo salvo com sucesso');
-  }).catch(error => {
-    console.error('Erro ao salvar arquivo:', error);
-  });
 
 
   function isPasswordStrong(password) {

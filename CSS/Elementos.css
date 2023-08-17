@@ -691,7 +691,7 @@ background-color: #57b7c0;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 0.2em;
-    margin-bottom: 1rem; /* Adicione esta linha para criar uma margem inferior */
+    margin-bottom: 1rem;
   }
 
   .op_ajuda button:hover {
@@ -726,8 +726,13 @@ background-color: #57b7c0;
   text-align: left;
 }
 
-/*----------------
-PÁGINAS DAS ONGS*/
+.btn-typeHelp {
+  margin: 0 0 3% 0;
+}
+
+/********************
+PÁGINAS DAS ONGS
+********************/
 
 #fundo_infOngs ul {
 list-style: none;
@@ -813,7 +818,6 @@ TERMOS DE USO
 /***********************
 PAGINA DOS VOLUNTARIOS
 ***********************/
-/* Estilos de cores para os cartões */
 .volunteer-card:nth-child(odd) {
   background-color: #8f98cb;
 }
@@ -904,9 +908,11 @@ CADASTRO DAS INFORMACOES ONGS
   margin: 0 auto 0 auto;
   margin: 5% 0 5% 0;
 }
-.btn{
+
+#logoutButton{
   margin: 3% 0 5% 0;
 }
+
 #form_ong{
   width: 90%;
   margin-left: auto;
@@ -927,15 +933,18 @@ CADASTRO DAS INFORMACOES ONGS
 }
 
 @media screen and (max-width: 768px) {
-
-.form_ong {
-  width: 768px;
-  max-width: 100%;
-  min-height: 100%;
-}
+  .form_ong {
+    width: 768px;
+    max-width: 100%;
+    min-height: 100%;
+  }
 }
 
 .RespDepois{
 float: right;
-margin: 5% 0 0 0;
+margin: 3% 0 1% 0;
+}
+
+#btn-RespDepois{
+  margin: 1% 0 0 0;
 }
