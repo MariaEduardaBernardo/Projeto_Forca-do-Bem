@@ -823,7 +823,7 @@ PAGINA DOS VOLUNTARIOS
 }
 
 .volunteer-card:nth-child(3n+2) {
-  background-color: #3c97bf;
+  background-color: #53bae6;
 }
 
 .volunteer-card:nth-child(even) {
@@ -845,9 +845,8 @@ PAGINA DOS VOLUNTARIOS
   gap: 1em;
 }
 
-
 .volunteer-card {
-  flex: 1;
+  flex: 0 1 calc(30.30% ); /* Distribui em 3 colunas e considera a margem */
   border-radius: 5%;
   padding: 2%;
   margin: 10px;
@@ -892,3 +891,51 @@ PAGINA DOS VOLUNTARIOS
 CADASTRO DAS INFORMACOES ONGS
 *****************************/
 
+.fundo_formOng{
+  background-image: url(https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form_ong{
+  background:white;
+  width: 50%;
+  margin: 0 auto 0 auto;
+  margin: 5% 0 5% 0;
+}
+.btn{
+  margin: 3% 0 5% 0;
+}
+#form_ong{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form_ong p{
+  font-size: 1.2em;
+}
+
+.space{
+  border-top: 0.1rem solid black;
+  margin: 5% 0 5% 0;
+}
+
+.form_ong label{
+  margin: 3% 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+
+.form_ong {
+  width: 768px;
+  max-width: 100%;
+  min-height: 100%;
+}
+}
+
+.RespDepois{
+float: right;
+margin: 5% 0 0 0;
+}

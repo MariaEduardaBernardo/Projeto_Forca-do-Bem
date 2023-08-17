@@ -33,10 +33,18 @@ signupForm.addEventListener("submit", (e) => {
           console.log("Additional data saved in Firestore.");
           alert("Registro bem-sucedido! Você pode fazer login agora.");
 
-
+          // Redirecionar o usuário com base no tipo escolhido
+          if (userType === "ONG") {
+            window.location.href = "userOng.html"; // Substitua pelo nome da página da ONG
+          } else if (userType === "Voluntário") {
+            window.location.href = "user.html"; // Substitua pelo nome da página do voluntário
+          } else {
+            window.location.href = "index.html"; // Substitua pelo nome da página padrão
+          }
 
           signupForm.reset();
         })
+
         .catch((error) => {
           // Ocorreu um erro durante o registro
           console.error("Error saving additional data:", error);
@@ -99,11 +107,10 @@ loginButton.addEventListener("click", async (e) => {
   let loginPassword = document.getElementById("password").value;
 
   try {
-    // Fazer login usando o Firebase Authentication
     await auth.signInWithEmailAndPassword(loginEmail, loginPassword);
 
-    // Login bem-sucedido, redirecionar o usuário para a página desejada
     console.log("Login successful");
+
     window.location.href = "User.html";
   } catch (error) {
     console.error("Error logging in:", error);

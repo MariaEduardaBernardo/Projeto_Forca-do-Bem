@@ -5,11 +5,9 @@ const loginForm = document.getElementById("FormCadastro");
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  //Get Form Values
   let loginEmail = document.getElementById("email").value;
   let loginPassword = document.getElementById("password").value;
 
-  // Query the database to check if the user exists
   db.where("idEmail", "==", loginEmail)
     .where("idPw", "==", loginPassword)
     .get()
@@ -42,18 +40,13 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById("hello-world").style.display = "block";
 
   } else {
-    // O usuário não está autenticado, redirecionar para a página "teste.html"
     window.location.href = "index.html";
   }
 });
   window.addEventListener('DOMContentLoaded', () => {
-    // ...
-
-    // Adicionar ouvinte de eventos para o botão de sair
     const logoutButton = document.getElementById("logoutButton");
     logoutButton.addEventListener("click", () => {
       firebase.auth().signOut().then(() => {
-        // Logout bem-sucedido, redirecionar para a página "teste.html"
         window.location.href = "HTML/AcessoUser.html";
       }).catch((error) => {
         // Ocorreu um erro ao fazer logout

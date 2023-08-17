@@ -12,9 +12,10 @@ function displayVolunteers() {
       for (const doc of querySnapshot.docs) {
         const volunteerData = doc.data();
         const volunteerName = volunteerData.idName; // Obtém o nome do voluntário
+        const volunteerId = doc.id;
 
-        // Buscar os dados da subcoleção 'additionalInfo' para cada voluntário
-        const additionalInfoSnapshot = await doc.ref.collection('additionalInfo').get();
+        // Buscar os dados da subcoleção 'additionalInfo'
+        const additionalInfoSnapshot = await usersCollection.doc(volunteerId).collection('additionalInfo').get();
         let volunteerTypeHelp = "";
 
         additionalInfoSnapshot.forEach((additionalDoc) => {
@@ -22,7 +23,12 @@ function displayVolunteers() {
           volunteerTypeHelp += additionalData.value + ", "; // Captura os valores de como ajudar
         });
 
-        volunteersData.push({ name: volunteerName, data: volunteerData, typeHelp: volunteerTypeHelp });
+        volunteersData.push({
+          id: volunteerId,
+          name: volunteerName,
+          typeHelp: volunteerTypeHelp,
+          data: volunteerData
+        });
       }
 
       volunteersData.sort((a, b) => a.name.localeCompare(b.name));
@@ -38,13 +44,24 @@ function displayVolunteers() {
 
         const volunteerInfo = document.createElement("div");
         volunteerInfo.className = "volunteer-info";
-        volunteerInfo.innerHTML = `
-          <h4>${volunteer.name}</h4>
-          <ul>
-            <li>Email: ${volunteer.data.idEmail}</li>
-            <li>Formas de ajudar <br> ${volunteer.typeHelp}</li>
-          </ul>
-        `;
+
+        // Verificar se o usuário é do tipo ONG antes de exibir o e-mail
+        if (volunteer.data.userType === "ONG") {
+          volunteerInfo.innerHTML = `
+            <h4>${volunteer.name}</h4>
+            <ul>
+              <li>Email: ${volunteer.data.idEmail}</li>
+              <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
+            </ul>
+          `;
+        } else {
+          volunteerInfo.innerHTML = `
+            <h4>${volunteer.name}</h4>
+            <ul>
+              <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
+            </ul>
+          `;
+        }
 
         volunteerCard.appendChild(volunteerPhoto);
         volunteerCard.appendChild(volunteerInfo);
