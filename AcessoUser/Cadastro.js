@@ -37,7 +37,7 @@ signupForm.addEventListener("submit", (e) => {
           if (userType === "ONG") {
             window.location.href = "userOng.html";
           } else if (userType === "Voluntário") {
-            window.location.href = "user.html";
+            window.location.href = "User.html";
           } else {
             window.location.href = "index.html";
           }
