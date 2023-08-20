@@ -14,6 +14,8 @@ firebase.auth().onAuthStateChanged((user) => {
         loginOption.style.display = "none";
         profileOption.style.display = "block";
         logoutButton.style.display = "block";
+
+        
     } else {
         // Usuário não autenticado
         accountLink.textContent = "Entrar na conta";
@@ -23,5 +25,3 @@ firebase.auth().onAuthStateChanged((user) => {
         logoutButton.style.display = "none";
     }
 });
-
-const userType = signupForm.userType.value;
