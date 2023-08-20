@@ -36,7 +36,7 @@ if (user) {
         if (userType === "ONG") {
           window.location.href = "userOng.html"; // Substitua pelo nome da página da ONG
         } else if (userType === "Voluntário") {
-          window.location.href = "user.html"; // Substitua pelo nome da página do voluntário
+          window.location.href = "User.html"; // Substitua pelo nome da página do voluntário
         } else {
           window.location.href = "index.html"; // Substitua pelo nome da página padrão
         }
