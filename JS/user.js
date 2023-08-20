@@ -270,3 +270,13 @@ firebase.auth().onAuthStateChanged((user) => {
     renderDataOnPage(userId);
   }
 });
+
+const photoOptions = document.querySelectorAll('.profile-photo-option');
+
+photoOptions.forEach(photo => {
+  photo.addEventListener('click', () => {
+    photoOptions.forEach(p => p.classList.remove('selected'));
+
+    photo.classList.add('selected');
+  });
+});
