@@ -76,140 +76,149 @@
         </div>
       </div>
 
+        <div class="inf_user">
+          <div id="dadosUser"></div>
 
-    <div class="inf_user">
-      <div id="dadosUser"></div>
+          <div class="op_ajuda col-md-10 col-12 mb-4 mb-lg-0 mb-md-0">
+            <section>
+              <h2 class="title-user">Formas que posso ajudar</h2>
 
-      <div class="op_ajuda col-md-10 col-12 mb-4 mb-lg-0 mb-md-0">
-        <section>
-          <h2 class="title-user">Formas que posso ajudar</h2>
+              <p id="TextoUser"></p>
 
-          <p id="TextoUser"></p>
+              <form id="infoForm">
+                <label for="typeHelp">Posso ajudar com:</label>
+                <input type="text" id="typeHelp" name="typeHelp">
+                <button type="submit" class="btn-typeHelp">Adicionar</button>
+              </form>
 
-          <form id="infoForm">
-            <label for="typeHelp">Posso ajudar com:</label>
-            <input type="text" id="typeHelp" name="typeHelp">
-            <button type="submit" class="btn-typeHelp">Adicionar</button>
-          </form>
+              <div id="additionalInfoList"></div>
 
-          <div id="additionalInfoList"></div>
-
-        </section>
+            </section>
 
 
-        <section>
-          <h2 class="title-user">ONG que mais combina comigo</h2>
+            <section>
+              <h2 class="title-user">ONG que mais combina comigo</h2>
 
-              <p id="textoDescricao"></p>
+                  <p id="textoDescricao"></p>
 
-              <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modalUser"
-                data-bs-target="#staticBackdrop">
-                Fazer teste
-              </button>
+                  <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Fazer teste
+                  </button>
 
-              <p id="message" style="display: none;">Para realizar o teste, é necessário fazer login</p>
+                  <p id="message" style="display: none;">Para realizar o teste, é necessário fazer login</p>
 
-              <!-- Modal -->
-              <div class="modalUser fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modalUser-dialog">
-                  <div class="modalUser-content">
-                    <div class="modalUser-header">
-                      <h1 class="modalUser-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modalUser" aria-label="Close"></button>
-                    </div>
-                    <div class="modalUser-body">
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
 
-                      <ul class="list-group list-group">
-                        <ul class="list-group">
-                          <li class="list-group-item ">
-                            <input class="form-check-input me-1" type="checkbox" value="Financeira" id="forma1">
-                            <label class="form-check-label" for="forma1">Ajuda Financeira</label>
-                          </li>
+                          <ul class="list-group list-group">
+                            <ul class="list-group">
+                              <li class="list-group-item ">
+                                <input class="form-check-input me-1" type="checkbox" value="Financeira" id="forma1">
+                                <label class="form-check-label" for="forma1">Ajuda Financeira</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Roupa" id="forma2">
-                            <label class="form-check-label" for="forma2">Doação de Roupa</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Roupa" id="forma2">
+                                <label class="form-check-label" for="forma2">Doação de Roupa</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Alimento" id="forma3">
-                            <label class="form-check-label" for="forma3">Doação de Alimento não perecível</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Alimento" id="forma3">
+                                <label class="form-check-label" for="forma3">Doação de Alimento não perecível</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Brinquedo" id="forma4">
-                            <label class="form-check-label" for="forma4">Doação de Brinquedo</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Brinquedo" id="forma4">
+                                <label class="form-check-label" for="forma4">Doação de Brinquedo</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Cobertor" id="forma5">
-                            <label class="form-check-label" for="forma5">Doação de Cobertor</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Cobertor" id="forma5">
+                                <label class="form-check-label" for="forma5">Doação de Cobertor</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Higiene" id="forma6">
-                            <label class="form-check-label" for="forma6">Doação de Itens de Higiene Pessoal</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Higiene" id="forma6">
+                                <label class="form-check-label" for="forma6">Doação de Itens de Higiene Pessoal</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Animais" id="forma7">
-                            <label class="form-check-label" for="forma7">Doação de Ração para Animais</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Animais" id="forma7">
+                                <label class="form-check-label" for="forma7">Doação de Ração para Animais</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Voluntario" id="forma8">
-                            <label class="form-check-label" for="forma8">Ser Voluntário(a)</label>
-                          </li>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Voluntario" id="forma8">
+                                <label class="form-check-label" for="forma8">Ser Voluntário(a)</label>
+                              </li>
 
-                          <li class="list-group-item">
-                            <input class="form-check-input me-1" type="checkbox" value="Campanha" id="forma9">
-                            <label class="form-check-label" for="forma9">Apoiar Campanhas</label>
-                          </li>
-                        </ul>
-                    </div>
-                    <div class="modalUser-footer">
-                      <button onclick="showRelatedONGs()">Descobrir</button>
+                              <li class="list-group-item">
+                                <input class="form-check-input me-1" type="checkbox" value="Campanha" id="forma9">
+                                <label class="form-check-label" for="forma9">Apoiar Campanhas</label>
+                              </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button onclick="showRelatedONGs()">Descobrir</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
+            </section>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+              <div id="toastNoOptions" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" alt="Icone do sistema" height="20em">
+                  <strong class="me-auto">Força do Bem</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  Por favor, selecione pelo menos uma opção para descobrir o resultado!
                 </div>
               </div>
-        </section>
+            </div>
+
+          </div>
+        </div>
 
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
-          <div id="toastNoOptions" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div id="toastAddSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-              <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" alt="Icone do sistema" height="20em">
+              <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624"
+                alt="Icone do sistema" height="20em">
               <strong class="me-auto">Força do Bem</strong>
               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-              Por favor, selecione pelo menos uma opção para descobrir o resultado!
+              Os dados foram adicionados com sucesso!
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
 
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div id="toastAddSuccess" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624"
-            alt="Icone do sistema" height="20em">
-          <strong class="me-auto">Força do Bem</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          Os dados foram adicionados com sucesso!
-        </div>
-      </div>
-    </div>
+      </main>
+
+      <footer class="footerContainer"></footer>
+
+      <script src="/AcessoUser/firebase-init.js"></script>
+      <script src="/AcessoUser/Auth.js"></script>
+      <script src="/JS/script.js"></script>
+      <script src="/JS/user.js"></script>
+      <script src="/JS/checklist.js"></script>
+      <script src="/JS/text-database.js"></script>
 
 
-  </main>
 
-  <footer class="footerContainer"></footer>
 
   <script src="/AcessoUser/firebase-init.js"></script>
   <script src="/AcessoUser/Auth.js"></script>
@@ -222,3 +231,5 @@
 </body>
 
 </html>
+
+
