@@ -8,20 +8,96 @@ firebase.auth().onAuthStateChanged((user) => {
     // Exibir o nome de usuário e email do usuário
     let userNameElement = document.getElementById("userName");
     let userEmailElement = document.getElementById("userEmail");
+    let userPhotoElement = document.getElementById("userPhoto"); // Adicione um elemento para exibir a foto de perfil
 
     userNameElement.textContent = user.displayName;
     userEmailElement.textContent = user.email;
 
-    // Exibir o contêiner com as informações do usuário
-    document.getElementById("hello-world").style.display = "block";
+    // Recupere a escolha da foto de perfil do Firestore e exiba-a na página
+    var userDocRef = firebase.firestore().collection("CadastroUser").doc(userId);
 
-    // Renderizar os dados adicionais do usuário
-    renderDataOnPage(userId);
+    userDocRef.get()
+      .then(function(doc) {
+        if (doc.exists) {
+          var selectedPhotoUrl = doc.data().fotoPerfil;
+          // Exiba a foto de perfil na página
+          userPhotoElement.src = selectedPhotoUrl;
+        } else {
+          console.log("Documento de usuário não encontrado.");
+        }
+      })
+      .catch(function(error) {
+        console.error("Erro ao recuperar a escolha da foto de perfil: ", error);
+      });
+
+    // Resto do código para capturar a escolha da foto e salvar (como mencionado anteriormente)...
   } else {
-    // O usuário não está autenticado, redirecionar para a página "AcessoUser.html"
     window.location.href = "AcessoUser.html";
   }
 });
+
+// Capturar o clique nas opções de fotos
+var profilePhotoOptions = document.querySelectorAll(".profile-photo-option");
+profilePhotoOptions.forEach(function(option) {
+  option.addEventListener("click", function() {
+    // Remova a classe 'selected' de todas as opções de fotos
+    profilePhotoOptions.forEach(function(photo) {
+      photo.classList.remove("selected");
+    });
+
+    // Adicione a classe 'selected' à opção de foto clicada
+    option.classList.add("selected");
+  });
+});
+
+document.getElementById("profile-photo-option").addEventListener("click", function() {
+  console.log("Botão 'Salvar' clicado.");
+
+  // Encontre a opção de foto selecionada
+  var selectedOption = document.querySelector(".profile-photo-option.selected");
+
+  if (selectedOption) {
+    console.log("Foto selecionada:", selectedOption.src);
+
+    var selectedPhotoUrl = selectedOption.src;
+    var userId = firebase.auth().currentUser.uid; // Obtenha o ID do usuário autenticado
+
+    // Salvar a escolha da foto de perfil no Firestore
+    firebase.firestore().collection("CadastroUser").doc(userId).update({
+      fotoPerfil: selectedPhotoUrl
+    })
+    .then(function() {
+      console.log("Escolha da foto de perfil salva com sucesso!");
+
+      // Atualize a foto de perfil exibida na página
+      document.getElementById("userPhoto").src = selectedPhotoUrl;
+
+      // Feche o modal (opcional)
+      document.getElementById("photoModal").style.display = "none";
+    })
+    .catch(function(error) {
+      console.error("Erro ao salvar a escolha da foto de perfil: ", error);
+    });
+  } else {
+    // Exiba uma mensagem de erro ao usuário, solicitando que ele selecione uma foto
+    alert("Por favor, selecione uma foto de perfil.");
+  }
+});
+
+  // Abra o modalUser quando o botão for clicado
+  document.getElementById("editProfileButton").addEventListener("click", function() {
+    document.getElementById("photoModal").style.display = "block";
+    });
+
+    // Feche o modalUser quando o usuário clicar fora da área do modalUser
+    window.addEventListener("click", function(event) {
+    var modalUser = document.getElementById("photoModal");
+    if (event.target === modalUser) {
+      modalUser.style.display = "none";
+    }
+  });
+
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     const userId = user.uid;

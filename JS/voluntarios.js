@@ -14,6 +14,9 @@ function displayVolunteers() {
         const volunteerName = volunteerData.idName; // Obtém o nome do voluntário
         const volunteerId = doc.id;
 
+        // Buscar a URL da foto de perfil da coleção "CadastroUser"
+        const selectedPhotoUrl = volunteerData.fotoPerfil || "https://uploaddeimagens.com.br/images/004/569/516/full/imagem_2023-08-07_223109213.png?1691458279"; // URL padrão
+
         // Buscar os dados da subcoleção 'additionalInfo'
         const additionalInfoSnapshot = await usersCollection.doc(volunteerId).collection('additionalInfo').get();
         let volunteerTypeHelp = "";
@@ -27,7 +30,8 @@ function displayVolunteers() {
           id: volunteerId,
           name: volunteerName,
           typeHelp: volunteerTypeHelp,
-          data: volunteerData
+          data: volunteerData,
+          photoUrl: selectedPhotoUrl // Adicione a URL da foto de perfil
         });
       }
 
@@ -39,7 +43,7 @@ function displayVolunteers() {
 
         const volunteerPhoto = document.createElement("img");
         volunteerPhoto.className = "volunteer-photo";
-        volunteerPhoto.src = "https://uploaddeimagens.com.br/images/004/569/516/full/imagem_2023-08-07_223109213.png?1691458279";
+        volunteerPhoto.src = volunteer.photoUrl; // Use a URL da foto de perfil
         volunteerPhoto.alt = "Foto de Perfil";
 
         const volunteerInfo = document.createElement("div");
