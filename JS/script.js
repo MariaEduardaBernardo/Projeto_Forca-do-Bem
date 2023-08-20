@@ -79,7 +79,7 @@ firebase.auth().onAuthStateChanged((user) => {
                       message.innerText = "Você está autenticado, mas precisa ser um Voluntário para fazer o teste.";
                       message.style.display = "block";
                   }
-              } 
+              }
           })
   } else {
       // Usuário não autenticado

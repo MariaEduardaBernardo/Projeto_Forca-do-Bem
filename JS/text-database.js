@@ -244,3 +244,56 @@ textDocRef.get().then((doc) => {
 }).catch((error) => {
   console.error("Erro ao recuperar o texto:", error);
 });
+
+/*Dicas para doar */
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Dica1;
+
+    const paragraphElement = document.getElementById("Dica1");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Dica2;
+
+    const paragraphElement = document.getElementById("Dica2");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Dica3;
+
+    const paragraphElement = document.getElementById("Dica3");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
+
+textDocRef.get().then((doc) => {
+  if (doc.exists) {
+    const text = doc.data().Dica4;
+
+    const paragraphElement = document.getElementById("Dica4");
+    paragraphElement.textContent = text;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto:", error);
+});
