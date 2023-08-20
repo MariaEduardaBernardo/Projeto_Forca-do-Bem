@@ -288,15 +288,15 @@ form .row .btn {
 
 .senha-toggle {
     position: absolute;
-    top: 47%;
+    top: 49%;
     right: 5em;
     transform: translateY(-50%);
 	opacity: 80%;
 }
 
 #IconOlho {
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
     cursor: pointer;
 }
 

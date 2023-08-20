@@ -1,4 +1,3 @@
-
 /*Menu*/
 document.addEventListener("DOMContentLoaded", function() {
   var headerContainer = document.getElementById("headerContainer");
@@ -18,46 +17,74 @@ function openModal() {
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
-const db = firebase.firestore().collection("CadastroUser"); // Defina db aqui
+
+const db = firebase.firestore().collection("CadastroUser");
 
 function redirectToProfile() {
 const user = firebase.auth().currentUser;
 
 if (user) {
-  // O usuário está autenticado
   const userId = user.uid;
 
-  // Obtenha os dados do usuário a partir do Firestore
   db.doc(userId).get()
     .then((doc) => {
       if (doc.exists) {
         const userType = doc.data().userType;
 
         if (userType === "ONG") {
-          window.location.href = "userOng.html"; // Substitua pelo nome da página da ONG
+          window.location.href = "userOng.html";
         } else if (userType === "Voluntário") {
-          window.location.href = "User.html"; // Substitua pelo nome da página do voluntário
+          window.location.href = "User.html";
         } else {
-          window.location.href = "index.html"; // Substitua pelo nome da página padrão
+          window.location.href = "index.html";
         }
       } else {
         console.error("User data not found");
-        // Redirecionar para a página de login ou página inicial
-        window.location.href = "AcessoUser.html"; // Substitua pelo nome da página de login ou inicial
+        window.location.href = "AcessoUser.html";
       }
     })
     .catch((error) => {
       console.error("Error fetching user data:", error);
-      // Redirecionar para a página de login ou página inicial
-      window.location.href = "AcessoUser.html"; // Substitua pelo nome da página de login ou inicial
+      window.location.href = "AcessoUser.html";
     });
 } else {
-  // Redirecionar para a página de login ou página inicial
-  window.location.href = "AcessoUser.html"; // Substitua pelo nome da página de login ou inicial
+  window.location.href = "AcessoUser.html";
 }
 }
+
 
 /* Footer */
 $(function() {
     $(".footerContainer").load("/HTML/footer.html");
+});
+
+// Verifique se o usuário está autenticado
+firebase.auth().onAuthStateChanged((user) => {
+  const testButton = document.getElementById("testButton");
+  const message = document.getElementById("message");
+
+  if (user) {
+      // Usuário autenticado
+      const userId = user.uid;
+      db.doc(userId)
+          .get()
+          .then((doc) => {
+              if (doc.exists) {
+                  const userType = doc.data().userType;
+                  if (userType === "Voluntário") {
+                      testButton.style.display = "block";
+                      message.style.display = "none";
+                  } else {
+                      testButton.style.display = "none";
+                      message.innerText = "Você está autenticado, mas precisa ser um Voluntário para fazer o teste.";
+                      message.style.display = "block";
+                  }
+              } 
+          })
+  } else {
+      // Usuário não autenticado
+      testButton.style.display = "none";
+      message.style.display = "block";
+      message.innerText = "Para descobrir a ONG que combina com você, é necessário fazer login como Voluntário.";
+  }
 });
