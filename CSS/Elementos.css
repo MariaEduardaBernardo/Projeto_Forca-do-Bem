@@ -720,6 +720,10 @@ background-color: #57b7c0;
       font-size: 15px;
       color: white;
     }
+
+    #additionalInfoList, .modal-title{
+      text-align: left;
+    }
 }
 
 .btn-typeHelp {
@@ -808,6 +812,19 @@ background-color: #57b7c0;
     width: 50%;
     cursor: pointer;
   }
+
+  #profile-photo-option{
+      margin: 5% 0 0 0;
+      width: 100%;
+  }
+}
+
+.profile-photo-option:hover {
+  border: 2px solid blue;
+}
+
+.selected {
+  border: 2px solid blue;
 }
 
 /********************
