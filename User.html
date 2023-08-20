@@ -47,15 +47,35 @@
     <section id="usuario" class="mb-4">
       <div class="user-info">
         <img src="https://uploaddeimagens.com.br/images/004/569/516/full/imagem_2023-08-07_223109213.png?1691458279"
-          alt="">
+          alt="" id="userPhoto">
         <div>
           <h5>Nome: <span id="userName"></span></h5>
           <h5>Email: <span id="userEmail"></span></h5>
           <button id="logoutButton">Sair</button>
-          <!--<button id="editProfileButton">Editar Perfil</button>-->
+          <button id="editProfileButton">Editar foto</button>
         </div>
       </div>
     </section>
+
+<div id="photoModal" class="modalUser">
+  <div class="modalUser-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Escolha seu avatar</h5>
+          </div>
+          <div class="photo-options">
+            <img src="https://uploaddeimagens.com.br/images/004/569/516/full/imagem_2023-08-07_223109213.png?1691458279" alt="Foto 1" class="profile-photo-option">
+            <img src="https://uploaddeimagens.com.br/images/004/581/618/full/imagem_2023-08-19_114148550.png?1692456123" alt="Foto 2" class="profile-photo-option">
+            <img src="https://uploaddeimagens.com.br/images/004/581/626/full/imagem_2023-08-19_114320886.png?1692456203" alt="Foto 3" class="profile-photo-option">
+            <img src="https://uploaddeimagens.com.br/images/004/581/623/full/imagem_2023-08-19_114246732.png?1692456168" alt="Foto 4" class="profile-photo-option">
+            <img src="https://uploaddeimagens.com.br/images/004/581/621/full/imagem_2023-08-19_114226841.png?1692456149" alt="Foto 5" class="profile-photo-option">
+            <img src="https://uploaddeimagens.com.br/images/004/581/619/full/imagem_2023-08-19_114210251.png?1692456132" alt="Foto 6" class="profile-photo-option">
+        </div>
+          <div class="modal-footer">
+            <button type="submit" id="profile-photo-option" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+
 
     <div class="inf_user">
       <div id="dadosUser"></div>
@@ -82,7 +102,7 @@
 
               <p id="textoDescricao"></p>
 
-              <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+              <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modalUser"
                 data-bs-target="#staticBackdrop">
                 Fazer teste
               </button>
@@ -90,15 +110,15 @@
               <p id="message" style="display: none;">Para realizar o teste, é necessário fazer login</p>
 
               <!-- Modal -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+              <div class="modalUser fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                 tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modalUser-dialog">
+                  <div class="modalUser-content">
+                    <div class="modalUser-header">
+                      <h1 class="modalUser-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modalUser" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modalUser-body">
 
                       <ul class="list-group list-group">
                         <ul class="list-group">
@@ -148,7 +168,7 @@
                           </li>
                         </ul>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modalUser-footer">
                       <button onclick="showRelatedONGs()">Descobrir</button>
                     </div>
                   </div>
@@ -198,16 +218,7 @@
   <script src="/JS/checklist.js"></script>
   <script src="/JS/text-database.js"></script>
 
-
   </main>
 </body>
 
 </html>
-
-
-<style>
-  .btn-typeHelp {
-    margin: 0 0 3% 0;
-  }
-
-</style>
