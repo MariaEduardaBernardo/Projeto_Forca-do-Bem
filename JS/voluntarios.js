@@ -1,7 +1,6 @@
 // Recuperar a coleção de usuários do Firestore
 const usersCollection = firestore.collection("CadastroUser");
 
-// Filtrar e exibir usuários voluntários
 function displayVolunteers() {
   const volunteersList = document.getElementById("volunteersList");
 
@@ -71,9 +70,12 @@ function displayVolunteers() {
         volunteerCard.appendChild(volunteerInfo);
         volunteersList.appendChild(volunteerCard);
       });
+        document.querySelector('.overlay').style.display = 'none';
     })
     .catch((error) => {
       console.error("Error getting volunteers:", error);
+        document.querySelector('.overlay').style.display = 'none';
+
     });
 }
 
