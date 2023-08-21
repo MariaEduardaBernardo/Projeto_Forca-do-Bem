@@ -88,3 +88,11 @@ firebase.auth().onAuthStateChanged((user) => {
       message.innerText = "Para descobrir a ONG que combina com você, é necessário fazer login como Voluntário.";
   }
 });
+
+function showLoader() {
+  document.querySelector('.overlay').style.display = 'flex';
+}
+
+function hideLoader() {
+  document.querySelector('.overlay').style.display = 'none';
+}
