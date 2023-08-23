@@ -112,14 +112,14 @@ body h1,h2,h3,h4,h5,p,span{
 
 
 .overlay {
-  display: none; /* Inicialmente oculto */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para sobreposição */
-  z-index: 9999; /* Garanta que a sobreposição esteja na parte superior de tudo */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
   display: flex;
