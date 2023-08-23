@@ -30,15 +30,15 @@ const ongs = [
 ];
 
   const ongURLs = {
-    "A gente ajuda": "ong_2.html",
-    "Ação da cidadania": "ong_1.html",
-    "Caminha Down": "ong_3.html",
-    "Escoteiros do Brasil": "ong_4.html",
-    "Hamburgada do bem": "ong_5.html",
-    "Instituto Mara Gabrilli": "ong_6.html",
-    "Themis Furigo": "ong_7.html"
+    "A gente ajuda": "perfil_ong.html?id=NwxaqTvI5rlHLGJ7FPyj",
+    "Ação da cidadania": "perfil_ong.html?id=ALdOwy6LJ8hu80kCkn8Z",
+    "Caminha Down": "perfil_ong.html?id=EizWuxuwI6wYsTpcxlqD",
+    "Escoteiros do Brasil": "perfil_ong.html?id=1Vc5Klv7FuvphY5JFBNt",
+    "Hamburgada do bem": "perfil_ong.html?id=g9kJs7FSv5mXrObW3S3h",
+    "Instituto Mara Gabrilli": "perfil_ong.html?id=KfgQWJEsgLQcXwAyqB6d",
+    "Themis Furigo": "perfil_ong.html?id=DPQ15shMkYWRn3QHURx3"
   };
-  
+
   function showRelatedONGs() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 

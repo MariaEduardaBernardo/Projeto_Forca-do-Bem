@@ -1,3 +1,8 @@
+/* Footer */
+$(function() {
+  $(".footerContainer").load("/HTML/footer.html");
+});
+
 /*Menu*/
 document.addEventListener("DOMContentLoaded", function() {
   var headerContainer = document.getElementById("headerContainer");
@@ -52,12 +57,6 @@ if (user) {
 }
 }
 
-
-/* Footer */
-$(function() {
-    $(".footerContainer").load("/HTML/footer.html");
-});
-
 // Verifique se o usuário está autenticado
 firebase.auth().onAuthStateChanged((user) => {
   const testButton = document.getElementById("testButton");
@@ -96,3 +95,4 @@ function showLoader() {
 function hideLoader() {
   document.querySelector('.overlay').style.display = 'none';
 }
+
