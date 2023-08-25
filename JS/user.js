@@ -166,7 +166,7 @@ const additionalInfoList = document.getElementById("additionalInfoList");
 async function renderDataOnPage(userId) {
   try {
     // Limpar a lista antes de renderizar novamente
-    additionalInfoList.innerHTML = "";
+
 
     // Buscar os dados salvos no Firestore
     const additionalInfoSnapshot = await db.doc(userId).collection('additionalInfo').get();
