@@ -756,10 +756,9 @@ background-color: #57b7c0;
 
 .modalUser-content {
   background-color: white;
-  padding: 20px;
-  width: 80%;
+  padding: 1%;
   max-width: 50%;
-  margin: 2% auto;
+  margin: 0.5% auto;
   border-radius: 2%;
 }
 
@@ -792,8 +791,8 @@ background-color: #57b7c0;
   .modalUser-content {
     background-color: white;
     padding: 20px;
-    width: 80%;
-    max-width: 50%;
+    width: 100%;
+    max-width: 95%;
     margin: 2% auto;
     border-radius: 2%;
   }
@@ -808,8 +807,8 @@ background-color: #57b7c0;
   .profile-photo-option {
     width: calc(33.33% - 10px);
     margin: 0 0 3% 0;
-    height: 50%;
-    width: 50%;
+    height: 25%;
+    width: 25%;
     cursor: pointer;
   }
 
