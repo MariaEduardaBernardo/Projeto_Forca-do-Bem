@@ -773,8 +773,8 @@ background-color: #57b7c0;
 .profile-photo-option {
   width: calc(33.33% - 10px);
   margin: 0 0 3% 0;
-  height: 10em;
-  width: 10em;
+  height: 8em;
+  width: 8em;
   cursor: pointer;
 }
 
@@ -825,6 +825,15 @@ background-color: #57b7c0;
 
 .selected {
   border: 2px solid blue;
+}
+
+
+#photoModal {
+  z-index: 1000;
+}
+
+#additionalInfoList {
+  z-index: 900;
 }
 
 /********************
