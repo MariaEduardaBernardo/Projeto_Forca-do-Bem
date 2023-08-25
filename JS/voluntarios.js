@@ -22,7 +22,7 @@ function displayVolunteers() {
 
         additionalInfoSnapshot.forEach((additionalDoc) => {
           const additionalData = additionalDoc.data();
-          volunteerTypeHelp += additionalData.value + ", "; // Captura os valores de como ajudar
+          volunteerTypeHelp += additionalData.value + ", ";
         });
 
         volunteersData.push({
@@ -30,7 +30,7 @@ function displayVolunteers() {
           name: volunteerName,
           typeHelp: volunteerTypeHelp,
           data: volunteerData,
-          photoUrl: selectedPhotoUrl // Adicione a URL da foto de perfil
+          photoUrl: selectedPhotoUrl 
         });
       }
 
@@ -42,17 +42,16 @@ function displayVolunteers() {
 
         const volunteerPhoto = document.createElement("img");
         volunteerPhoto.className = "volunteer-photo";
-        volunteerPhoto.src = volunteer.photoUrl; // Use a URL da foto de perfil
+        volunteerPhoto.src = volunteer.photoUrl;
         volunteerPhoto.alt = "Foto de Perfil";
 
         const volunteerInfo = document.createElement("div");
         volunteerInfo.className = "volunteer-info";
 
         const user = firebase.auth().currentUser;
-        const userType = user.userType;
         
         if (userType == "ONG") {
-
+          const userType = user.userType;
           volunteerInfo.innerHTML = `
             <h4>${volunteer.name}</h4>
             <ul>
