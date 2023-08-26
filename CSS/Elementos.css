@@ -774,6 +774,10 @@ background-color: #57b7c0;
   margin: 0 0 3% 0;
   height: 8em;
   width: 8em;
+  max-height: 12em;
+  min-height: 8em;
+  max-width: 12em;
+  min-width: 8em;
   cursor: pointer;
 }
 
@@ -902,8 +906,6 @@ CHECKLIST
     grid-template-columns: 1fr;
     margin: 2rem 5vw;
     height: auto;
-    margin-top: 1em;
-    display: flex;
   }
 }
 
