@@ -770,15 +770,14 @@ background-color: #57b7c0;
 }
 
 .profile-photo-option {
-  width: calc(33.33% - 10px);
   margin: 0 0 3% 0;
   height: 8em;
   width: 8em;
-  max-height: 12em;
-  min-height: 8em;
-  max-width: 12em;
-  min-width: 8em;
   cursor: pointer;
+  max-width: 12em;
+  max-height: 12em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 767px){
@@ -822,6 +821,7 @@ background-color: #57b7c0;
   }
 }
 
+
 .profile-photo-option:hover {
   border: 2px solid blue;
 }
@@ -838,6 +838,7 @@ background-color: #57b7c0;
 #additionalInfoList {
   z-index: 900;
 }
+
 
 /********************
 PÁGINAS DAS ONGS
