@@ -286,12 +286,12 @@ form .row .btn {
     cursor: pointer;
 }
 
+
 .senha-toggle {
     position: absolute;
+    right: 15%;
     top: 49%;
-    right: 5em;
     transform: translateY(-50%);
-	opacity: 80%;
 }
 
 #IconOlho {

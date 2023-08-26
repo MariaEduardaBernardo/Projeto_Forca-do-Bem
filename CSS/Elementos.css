@@ -331,21 +331,21 @@ CARD DAS ONG
 
 @media (max-width: 767px) {
   .bloco_ong {
-    grid-template-columns: 1fr; /* Um único bloco por linha em telas de celular */
-    margin: 2rem 5vw; /* Reduz a margem para ficar mais adequado em telas menores */
+    grid-template-columns: 1fr;
+    margin: 2rem 5vw;
   }
 
   .bloco {
-    height: auto; /* Altura automática para se ajustar ao conteúdo */
-    margin-top: 1em; /* Espaçamento menor entre os blocos */
+    height: auto;
+    margin-top: 1em;
   }
 
   .bloco__image {
-    height: 200px; /* Altura fixa para a imagem em telas de celular */
+    height: 200px;
   }
 
   .bloco_header {
-    padding: 1em; /* Espaçamento menor no cabeçalho */
+    padding: 1em;
   }
 }
 
@@ -864,45 +864,49 @@ font-size: 1.3em;
 text-align: justify;
 }
 
+#ongInfo h2{
+  margin: 1em 0 0 0;
+}
+
 /*---------------------
 CHECKLIST
 **********************/
-#ongList {
-display: flex;
-flex-wrap: wrap;
-gap: 0.5em;
-}
-
-.ong-card {
-flex: 100%;
-max-width: 300px;
-border: none;
-height: 7em;
-border-radius: 2%;
-background: linear-gradient(#a7cff2, #7cb8eb, #6595bf);
-}
-
-#ongList h6{
-text-align: center;
-margin: 0.5em 0 0 0;
-font-size: 1.2rem;
-}
 
 #subTituloChecklist p{
-font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-#imagem_ONG img{
-height: 100%;
-width: 100%;
+#ongList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(15em, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 0;
+  list-style-type: none;
 }
 
 #password-message {
-display: none;
-color: red;
-font-size: 14px;
-margin-top: 5px;
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
+
+#imagem_ONG img{
+  height: 100%;
+  width: 100%;
+  }
+
+@media (max-width: 767px) {
+  #ongList {
+    grid-template-columns: 1fr;
+    margin: 2rem 5vw;
+    height: auto;
+    margin-top: 1em;
+    display: flex;
+  }
+}
+
 
 /***************
 TERMOS DE USO

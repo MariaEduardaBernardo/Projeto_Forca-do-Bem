@@ -48,17 +48,13 @@ function displayVolunteers() {
         const volunteerInfo = document.createElement("div");
         volunteerInfo.className = "volunteer-info";
 
-        const user = firebase.auth().currentUser;
-        const userType = user.userType;
-        
-        if (userType == "ONG") {
-
+        // Verificar se o usuário é do tipo ONG antes de exibir o e-mail
+        if (volunteer.data.userType === "ONG") {
           volunteerInfo.innerHTML = `
             <h4>${volunteer.name}</h4>
             <ul>
-              <p>Email: ${volunteer.data.idEmail}</p>
-              <p>Idade: ${volunteer.data.userAge}</p>
-              <li>Formas de Ajudar: ${volunteer.typeHelp}</li>
+              <li>Email: ${volunteer.data.idEmail}</li>
+              <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
             </ul>
           `;
         } else {
