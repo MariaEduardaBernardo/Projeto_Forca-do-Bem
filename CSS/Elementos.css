@@ -331,21 +331,21 @@ CARD DAS ONG
 
 @media (max-width: 767px) {
   .bloco_ong {
-    grid-template-columns: 1fr; /* Um único bloco por linha em telas de celular */
-    margin: 2rem 5vw; /* Reduz a margem para ficar mais adequado em telas menores */
+    grid-template-columns: 1fr;
+    margin: 2rem 5vw;
   }
 
   .bloco {
-    height: auto; /* Altura automática para se ajustar ao conteúdo */
-    margin-top: 1em; /* Espaçamento menor entre os blocos */
+    height: auto;
+    margin-top: 1em;
   }
 
   .bloco__image {
-    height: 200px; /* Altura fixa para a imagem em telas de celular */
+    height: 200px;
   }
 
   .bloco_header {
-    padding: 1em; /* Espaçamento menor no cabeçalho */
+    padding: 1em;
   }
 }
 
@@ -756,10 +756,9 @@ background-color: #57b7c0;
 
 .modalUser-content {
   background-color: white;
-  padding: 20px;
-  width: 80%;
+  padding: 1%;
   max-width: 50%;
-  margin: 2% auto;
+  margin: 0.5% auto;
   border-radius: 2%;
 }
 
@@ -771,11 +770,12 @@ background-color: #57b7c0;
 }
 
 .profile-photo-option {
-  width: calc(33.33% - 10px);
   margin: 0 0 3% 0;
-  height: 8em;
-  width: 8em;
+  height: 9em;
+  width: 9em;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 767px){
@@ -792,8 +792,8 @@ background-color: #57b7c0;
   .modalUser-content {
     background-color: white;
     padding: 20px;
-    width: 80%;
-    max-width: 50%;
+    width: 100%;
+    max-width: 95%;
     margin: 2% auto;
     border-radius: 2%;
   }
@@ -808,8 +808,8 @@ background-color: #57b7c0;
   .profile-photo-option {
     width: calc(33.33% - 10px);
     margin: 0 0 3% 0;
-    height: 50%;
-    width: 50%;
+    height: 25%;
+    width: 25%;
     cursor: pointer;
   }
 
@@ -818,6 +818,7 @@ background-color: #57b7c0;
       width: 100%;
   }
 }
+
 
 .profile-photo-option:hover {
   border: 2px solid blue;
@@ -835,6 +836,7 @@ background-color: #57b7c0;
 #additionalInfoList {
   z-index: 900;
 }
+
 
 /********************
 PÁGINAS DAS ONGS
@@ -865,45 +867,47 @@ font-size: 1.3em;
 text-align: justify;
 }
 
+#ongInfo h2{
+  margin: 1em 0 0 0;
+}
+
 /*---------------------
 CHECKLIST
 **********************/
-#ongList {
-display: flex;
-flex-wrap: wrap;
-gap: 0.5em;
-}
-
-.ong-card {
-flex: 100%;
-max-width: 300px;
-border: none;
-height: 7em;
-border-radius: 2%;
-background: linear-gradient(#a7cff2, #7cb8eb, #6595bf);
-}
-
-#ongList h6{
-text-align: center;
-margin: 0.5em 0 0 0;
-font-size: 1.2rem;
-}
 
 #subTituloChecklist p{
-font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
-#imagem_ONG img{
-height: 100%;
-width: 100%;
+#ongList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(15em, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 0;
+  list-style-type: none;
 }
 
 #password-message {
-display: none;
-color: red;
-font-size: 14px;
-margin-top: 5px;
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
+
+#imagem_ONG img{
+  height: 100%;
+  width: 100%;
+  }
+
+@media (max-width: 767px) {
+  #ongList {
+    grid-template-columns: 1fr;
+    margin: 2rem 5vw;
+    height: auto;
+  }
+}
+
 
 /***************
 TERMOS DE USO
@@ -921,6 +925,18 @@ TERMOS DE USO
   margin-right: 10%;
 }
 
+#TermosOng{
+  text-align: justify;
+  margin: 2% 15% 2% 15%;
+}
+
+#TermosOng ul{
+  margin: 0 0 5% 0;
+}
+
+.titleOng{
+  margin: 2% 0 5% 0;
+}
 /***********************
 PAGINA DOS VOLUNTARIOS
 ***********************/
@@ -1009,11 +1025,30 @@ CADASTRO DAS INFORMACOES ONGS
   align-items: center;
   flex-direction: column;
 }
+.introCadastro {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+  width: 100%;
+}
+
 .form_ong{
   background:white;
   width: 50%;
   margin: 0 auto 0 auto;
-  margin: 5% 0 5% 0;
+  margin: 2% 0 5% 0;
+  border-radius: 1%;
+}
+
+.form-container{
+   margin: 2% 0 2% 0;
+}
+
+#btn-next{
+  margin: 2% 0 0 0;
 }
 
 #logoutButton{
@@ -1039,6 +1074,10 @@ CADASTRO DAS INFORMACOES ONGS
   margin: 3% 0 0 0;
 }
 
+#Intro p{
+  font-size: 1.1rem;
+}
+
 @media screen and (max-width: 768px) {
   .form_ong {
     width: 768px;
@@ -1054,4 +1093,25 @@ margin: 3% 0 1% 0;
 
 #btn-RespDepois{
   margin: 1% 0 0 0;
+}
+
+
+#agradecimento {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1%;
+  background-color: #ffffff;
+  padding: 1em 2em 0 1em;
+  box-shadow: 0 10em 0 30em rgba(0, 0, 0, 0.657);
+}
+
+#agradecimento p{
+  font-size: 1.2rem;
+}
+
+#agradecimento img{
+  margin: -6em 5% 0 5%;
 }

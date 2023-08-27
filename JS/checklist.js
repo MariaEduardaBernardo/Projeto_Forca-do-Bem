@@ -52,50 +52,50 @@ const ongs = [
         return selectedOptions.every(option => ong.itens.includes(option));
       });
 
-      // Constrói a URL de redirecionamento com os parâmetros de consulta
       const url = new URL('resultado.html', window.location.href);
       url.searchParams.append('ongs', JSON.stringify(relatedONGs));
 
-      // Redireciona o usuário para a nova página
       window.location.href = url.href;
     }
   }
 
-// Obtém as ONGs relacionadas da URL de consulta
 const urlParams = new URLSearchParams(window.location.search);
 const relatedONGs = urlParams.get('ongs');
 
 const ongList = document.getElementById('ongList');
+
 if (relatedONGs) {
     const ongsToShow = JSON.parse(relatedONGs);
 
     ongsToShow.forEach(ong => {
-        const card = document.createElement('div');
-        card.classList.add('ong-card');
+        const ongItem = document.createElement('li');
+        ongItem.classList.add('bloco');
+        ongItem.innerHTML = `
+            <a href="${getONGURL(ong.nome)}" class="ongContainer">
+                <img src="https://uploaddeimagens.com.br/images/004/541/947/full/imagem_2023-07-12_121512599.png?1689174926" class="bloco_image_result" alt="${ong.nome}" />
+                <div class="bloco_overlay">
+                    <div class="bloco_header">
+                        <svg class="bloco__arc" xmlns="http://www.w3.org/2000/svg">
+                            <path />
+                        </svg>
+                       <div class="bloco_title_header_ong">
+                            <h2 class="bloco_title">${ong.nome}</h2>
+                        </div>
+                    </div>
+                    <p class="bloco_description">Você pode nos ajudar de forma: ${ong.itens.join(', ')}</p>
+                </div>
+            </a>
+        `;
 
-        const title = document.createElement('h6');
-        const link = document.createElement('a');
-        link.href = getONGURL(ong.nome);
-        link.textContent = ong.nome;
-        title.appendChild(link);
-
-        const description = document.createElement('p');
-        description.textContent = ong.descricao;
-
-        link.style.color = 'white';
-
-        card.appendChild(title);
-        card.appendChild(description);
-
-        ongList.appendChild(card);
+        ongList.appendChild(ongItem);
     });
 }
+
 
 function getONGURL(nome) {
     return ongURLs[nome];
 }
 
-// Função para buscar as informações das ONGs no Firebase
 async function fetchONGsData() {
   try {
     const ongsCollection = await firestore.collection("ongs").get();

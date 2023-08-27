@@ -16,7 +16,7 @@ function displayOngs() {
 
       querySnapshot.forEach((doc) => {
         const ongData = doc.data();
-        ongsData.push({ id: doc.id, ...ongData }); // Inclui também o ID do documento
+        ongsData.push({ id: doc.id, ...ongData });
       });
 
       // Ordena os dados das ONGs pelo nome em ordem alfabética

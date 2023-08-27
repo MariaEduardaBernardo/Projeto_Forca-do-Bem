@@ -297,3 +297,114 @@ textDocRef.get().then((doc) => {
 }).catch((error) => {
   console.error("Erro ao recuperar o texto:", error);
 });
+
+/*Termos para ONGS*/
+const textDocRef2 = firestore.collection("Termos_de_uso").doc("DH9ko1cpzH2rskGBIuzF");
+
+const listElement1 = document.getElementById("TermoOng1");
+const listElement2 = document.getElementById("TermoOng2");
+const listElement3 = document.getElementById("TermoOng3");
+const listElement4 = document.getElementById("TermoOng4");
+const listElement5 = document.getElementById("TermoOng5");
+const listElement6 = document.getElementById("TermoOng6");
+const listElement7 = document.getElementById("TermoOng7");
+
+textDocRef2.get().then((doc) => {
+  if (doc.exists) {
+    const termoOng1 = doc.data().TermoOng1;
+    const termoOng2 = doc.data().TermoOng2;
+    const termoOng3 = doc.data().TermoOng3;
+    const termoOng4 = doc.data().TermoOng4;
+    const termoOng5 = doc.data().TermoOng5;
+    const termoOng6 = doc.data().TermoOng6;
+    const termoOng7 = doc.data().TermoOng7;
+
+    function createListElement(list, containerElement) {
+      if (Array.isArray(list)) {
+        const ulElement = document.createElement("ul");
+
+        list.forEach((term) => {
+          const liElement = document.createElement("li");
+          liElement.textContent = term;
+          ulElement.appendChild(liElement);
+        });
+
+        containerElement.appendChild(ulElement);
+      }
+    }
+
+    createListElement(termoOng1, listElement1);
+    createListElement(termoOng2, listElement2);
+    createListElement(termoOng3, listElement3);
+    createListElement(termoOng4, listElement4);
+    createListElement(termoOng5, listElement5);
+    createListElement(termoOng6, listElement6);
+    createListElement(termoOng7, listElement7);
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar os textos:", error);
+});
+
+
+const textDocRefInicio = firestore.collection("Termos_de_uso").doc("DH9ko1cpzH2rskGBIuzF");
+
+textDocRefInicio.get().then((doc) => {
+  if (doc.exists) {
+    const TermoOngOInicio = doc.data().TermoOngOInicio;
+
+    const paragraphElementInicio = document.getElementById("TermoOngOInicio");
+    paragraphElementInicio.textContent = TermoOngOInicio;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto de início:", error);
+});
+
+const textDocRefFim = firestore.collection("Termos_de_uso").doc("DH9ko1cpzH2rskGBIuzF");
+
+textDocRefFim.get().then((doc) => {
+  if (doc.exists) {
+    const termoOngFim = doc.data().TermoOngFim;
+
+    const paragraphElementFim = document.getElementById("TermoOngFim");
+    paragraphElementFim.textContent = termoOngFim;
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar o texto de fim:", error);
+});
+
+/*Página do segundo cadastro ONG */
+const textDocRef3 = firestore.collection("Textos").doc("PagCadastroOng");
+
+const introducao = document.getElementById("Intro");
+
+textDocRef3.get().then((doc) => {
+  if (doc.exists) {
+    const Intro = doc.data().Intro;
+
+    function createListElement(list, containerElement) {
+      if (Array.isArray(list)) {
+        const ulElement = document.createElement("p");
+
+        list.forEach((term) => {
+          const liElement = document.createElement("p");
+          liElement.textContent = term;
+          ulElement.appendChild(liElement);
+        });
+
+        containerElement.appendChild(ulElement);
+      }
+    }
+
+    createListElement(Intro, introducao);
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar os textos:", error);
+});

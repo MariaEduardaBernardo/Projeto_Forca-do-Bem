@@ -123,7 +123,7 @@ input {
     overflow: hidden;
     width: 768px;
     max-width: 100%;
-    min-height: 80%;
+    min-height: 90%;
 }
 
 .form-container {
@@ -286,12 +286,12 @@ form .row .btn {
     cursor: pointer;
 }
 
+
 .senha-toggle {
     position: absolute;
+    right: 15%;
     top: 49%;
-    right: 5em;
     transform: translateY(-50%);
-	opacity: 80%;
 }
 
 #IconOlho {
@@ -342,4 +342,10 @@ form .row .btn {
     }
 }
 
-
+/* Estilo para os toasts */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }

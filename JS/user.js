@@ -8,7 +8,8 @@ firebase.auth().onAuthStateChanged((user) => {
     // Exibir o nome de usuário e email do usuário
     let userNameElement = document.getElementById("userName");
     let userEmailElement = document.getElementById("userEmail");
-    let userPhotoElement = document.getElementById("userPhoto"); // Adicione um elemento para exibir a foto de perfil
+    let userPhotoElement = document.getElementById("userPhoto");
+    let userAgeElement = document.getElementById("userAge");
 
     userNameElement.textContent = user.displayName;
     userEmailElement.textContent = user.email;
@@ -50,39 +51,53 @@ profilePhotoOptions.forEach(function(option) {
   });
 });
 
+// Adicione um evento de clique ao botão "Salvar" no modal
 document.getElementById("profile-photo-option").addEventListener("click", function() {
-  console.log("Botão 'Salvar' clicado.");
+console.log("Botão 'Salvar' clicado.");
 
-  // Encontre a opção de foto selecionada
-  var selectedOption = document.querySelector(".profile-photo-option.selected");
+// Encontre a opção de foto selecionada
+var selectedOption = document.querySelector(".profile-photo-option.selected");
 
-  if (selectedOption) {
-    console.log("Foto selecionada:", selectedOption.src);
+if (selectedOption) {
+  console.log("Foto selecionada:", selectedOption.src);
 
-    var selectedPhotoUrl = selectedOption.src;
-    var userId = firebase.auth().currentUser.uid; // Obtenha o ID do usuário autenticado
+  var selectedPhotoUrl = selectedOption.src;
+  var userId = firebase.auth().currentUser.uid; // Obtenha o ID do usuário autenticado
 
-    // Salvar a escolha da foto de perfil no Firestore
+  // Salvar a escolha da foto de perfil no Firestore
+  firebase.firestore().collection("CadastroUser").doc(userId).update({
+    fotoPerfil: selectedPhotoUrl
+  })
+  .then(function() {
+    console.log("Escolha da foto de perfil salva com sucesso!");
+
+    // Atualize a foto de perfil exibida na página
+    document.getElementById("userPhoto").src = selectedPhotoUrl;
+
+    var newAge = document.getElementById("userAgeInput").value;
+
     firebase.firestore().collection("CadastroUser").doc(userId).update({
-      fotoPerfil: selectedPhotoUrl
+      userAge: newAge
     })
     .then(function() {
-      console.log("Escolha da foto de perfil salva com sucesso!");
-
-      // Atualize a foto de perfil exibida na página
-      document.getElementById("userPhoto").src = selectedPhotoUrl;
-
-      // Feche o modal (opcional)
-      document.getElementById("photoModal").style.display = "none";
+      console.log("A idade do usuário foi atualizada com sucesso!");
     })
     .catch(function(error) {
-      console.error("Erro ao salvar a escolha da foto de perfil: ", error);
+      console.error("Erro ao atualizar a idade: ", error);
     });
-  } else {
-    // Exiba uma mensagem de erro ao usuário, solicitando que ele selecione uma foto
-    alert("Por favor, selecione uma foto de perfil.");
-  }
+
+    // Feche o modal (opcional)
+    document.getElementById("photoModal").style.display = "none";
+  })
+  .catch(function(error) {
+    console.error("Erro ao salvar a escolha da foto de perfil: ", error);
+  });
+} else {
+  // Exiba uma mensagem de erro ao usuário, solicitando que ele selecione uma foto
+  alert("Por favor, selecione uma foto de perfil.");
+}
 });
+
 
   // Abra o modalUser quando o botão for clicado
   document.getElementById("editProfileButton").addEventListener("click", function() {
@@ -103,14 +118,16 @@ firebase.auth().onAuthStateChanged((user) => {
     const userId = user.uid;
 
     // O usuário está autenticado
-    console.log('Usuário autenticado:', user.displayName, user.email);
+    console.log('Usuário autenticado:', user.displayName, user.email, user.displayAge);
 
     // Exibir o nome de usuário e email do usuário
     let userNameElement = document.getElementById("userName");
     let userEmailElement = document.getElementById("userEmail");
+    let userAgeElement = document.getElementById("userAge");
 
     userNameElement.textContent = user.displayName;
     userEmailElement.textContent = user.email;
+    userAgeElement.textContent = user.displayAge;
 
     document.getElementById("hello-world").style.display = "block";
 
@@ -279,4 +296,8 @@ photoOptions.forEach(photo => {
 
     photo.classList.add('selected');
   });
+});
+
+document.getElementById("cancelButton").addEventListener("click", function() {
+  document.getElementById("photoModal").style.display = "none";
 });
