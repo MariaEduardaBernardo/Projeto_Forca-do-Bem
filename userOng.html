@@ -34,98 +34,153 @@
 </head>
 
 <body>
+    <div class="fundo_formOng">
+        <div class="form_ong">
+          <section id="form_ong">
+            <div class="form-container">
 
-  <header id="headerContainer"></header>
+                <div class="introCadastro" id="introCadastro">
+                    <h3>Olá ONG!</h3>
+                    <p id="Intro"></p>
+                    <div>
+                      <a href="/requisitos.html" target="_blank"><p>Clique aqui para acessar os requisitos.</p></a>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="startRegistration()">Iniciar</button>
+                    <a href="index.html" class="RespDepois">Responder formulário mais tarde.</a>
+                  </div>
 
-  <div class="fundo_formOng">
-    <div class="form_ong">
-      <section id="form_ong">
-        <div class="form-container">
-          <div class="col-lg-12 col-12">
-            <br>
-            <h3>Olá, ONG!</h3>
-            <p>Agradecemos imensamente o seu interesse em fazer parte do projeto Força do Bem. Estamos animados em tê-lo
-              a bordo e ansiosos para conhecer mais sobre a sua incrível iniciativa.</p>
-            <p>Antes de tornar a sua página visível para todos, precisamos coletar algumas informações essenciais que
-              nos permitirão avaliar se você atende aos requisitos do projeto. Não se preocupe se não souber quais são
-              esses requisitos; estamos aqui para ajudar!</p>
-            <p>Clique <a href="link_para_os_requisitos" target="_blank">aqui</a> para visualizar os requisitos. Caso
-              surjam dúvidas, não hesite em entrar em contato conosco por e-mail. Estaremos à disposição para fornecer
-              todo o suporte necessário.</p>
-            <p>Tudo certo? Então vamos-la!</p>
-          </div>
-          <form id="ong-form">
 
-            <div class="space"></div>
+                  <form id="ong-form" style="display: none;" onsubmit="onEnvioBemSucedido(); return false;">
 
-            <h3>1° passo</h3>
-            <p>Informe os dados abaixo. Esses aqui são para a parte de apresentação da ONG.</p>
+            <div class="step" id="step1">
+              <h3>1° passo</h3>
+              <p>Informe os dados abaixo. Esses aqui são para a parte de apresentação da ONG.</p>
 
-            <label for="name">Nome da ONG:</label>
-            <input type="text" id="name" name="name" class="form-control">
 
-            <label for="description">Breve descrição:</label>
-            <textarea id="description" name="description" class="form-control"></textarea>
-            <br>
-            <label for="">Escolha uma foto da ONG (trabalho, eventos...)</label>
-            <input type="file" id="imageUrl" class="form-control">
-            <br>
-            <label for="">Escolha uma foto do icone da ONG (logotipo)</label>
-            <input type="file" id="userImageUrl" class="form-control">
+              <label for="name">Nome da ONG:</label>
+              <input type="text" id="name" name="name" class="form-control">
 
-            <div class="space"></div>
+              <label for="cnpj">CNPJ da ONG:</label>
+              <input type="text" id="cnpj" name="cnpj" class="form-control" maxlength="18">
 
-            <h3>2° passo</h3>
-            <p>Os dados a baixo vão ser os que ficaram visíveis na sua página de perfil, assim, todos poderão conhecer e
-              saber como ajudar a ONG.</p>
+              <label for="description">Breve descrição:</label>
+              <textarea id="description" name="description" class="form-control"></textarea>
+              <br>
+              <label for="">Escolha uma foto da ONG (trabalho, eventos...)</label>
+              <input type="file" id="imageUrl" class="form-control">
+              <br>
+              <label for="">Escolha uma foto do icone da ONG (logotipo)</label>
+              <input type="file" id="userImageUrl" class="form-control">
 
-            <label for="ongName">Nome da ONG (sigla):</label>
-            <input type="text" id="ongName" name="ongName" class="form-control">
+              <button type="button" class="btn btn-primary" id="btn-next" onclick="nextStep(2)">Próximo</button>
+            </div>
 
-            <label for="ongEmail">E-mail:</label>
-            <input type="email" id="ongEmail" name="ongEmail" class="form-control">
+            <div class="step" id="step2" style="display: none;">
+              <h3>2° passo</h3>
+              <p>Os dados a baixo vão ser os que ficaram visíveis na sua página de perfil, assim, todos poderão conhecer e
+                saber como ajudar a ONG.</p>
+                <label for="ongName">Nome da ONG (sigla):</label>
+                <input type="text" id="ongName" name="ongName" class="form-control">
 
-            <label for="ongPhone">Telefone:</label>
-            <input type="tel" id="ongPhone" name="ongPhone" class="form-control">
+                <label for="ongEmail">E-mail:</label>
+                <input type="email" id="ongEmail" name="ongEmail" class="form-control">
 
-            <label for="ongAddress">Endereço:</label>
-            <input type="text" id="ongAddress" name="ongAddress" class="form-control">
+                <label for="ongPhone">Telefone:</label>
+                <input type="tel" id="ongPhone" name="ongPhone" class="form-control">
 
-            <label for="ongCity">Cidade:</label>
-            <input type="text" id="ongCity" name="ongCity" class="form-control">
+                <label for="ongAddress">Endereço:</label>
+                <input type="text" id="ongAddress" name="ongAddress" class="form-control">
 
-            <label for="ongStates">Estados que atende:</label>
-            <input type="text" id="ongStates" name="ongStates" class="form-control">
+                <label for="ongCity">Cidade:</label>
+                <input type="text" id="ongCity" name="ongCity" class="form-control">
 
-            <label for="ongHelp">Liste as formas que a ONG recebe ajudar:</label>
-            <textarea id="ongHelp" name="ongHelp" class="form-control"
-              placeholder="Ex: Doação de alimentos, doação de roupas..."></textarea>
+                <label for="ongStates">Estados que atende:</label>
+                <input type="text" id="ongStates" name="ongStates" class="form-control">
 
-            <label for="ongAbout">Sobre a ONG:</label>
-            <textarea id="ongAbout" name="ongAbout" class="form-control"></textarea>
-            <br>
-            <label for="">Escolha 3 (três) fotos da ong (trabalho, eventos...)</label>
-            <input type="file" id="foto1" class="form-control">
-            <br>
-            <input type="file" id="foto2" class="form-control">
-            <br>
-            <input type="file" id="foto3" class="form-control">
-            <div class="space"></div>
+                <label for="ongHelp">Liste as formas que a ONG recebe ajudar:</label>
+                <textarea id="ongHelp" name="ongHelp" class="form-control"
+                  placeholder="Ex: Doação de alimentos, doação de roupas..."></textarea>
 
-            <span>Após o envio dos dados, eles serão analisados pela equipe e você recebera um e-mail informando a
-              resposta da sua solicitação.</span><br>
-            <button type="submit" class="btn btn-primary" id="btn-RespDepois">Enviar dados</button>
-            <a href="index.html" class="RespDepois">Responder formulário mais tarde.</a>
+                <label for="ongAbout">Sobre a ONG:</label>
+                <textarea id="ongAbout" name="ongAbout" class="form-control"></textarea>
+                <br>
+                <label for="">Escolha 3 (três) fotos da ong (trabalho, eventos...)</label>
+                <input type="file" id="foto1" class="form-control">
+                <br>
+                <input type="file" id="foto2" class="form-control">
+                <br>
+                <input type="file" id="foto3" class="form-control">
+              <button type="button" class="btn btn-secondary" id="btn-next" onclick="prevStep(1)">Anterior</button>
+              <button type="submit" class="btn btn-primary" id="btn-next">Enviar dados</button>
+            </div>
           </form>
         </div>
       </section>
     </div>
   </div>
 
-  <script src="/AcessoUser/firebase-init.js"></script>
-  <script src="/AcessoUser/Auth.js"></script>
-  <script src="/JS/script.js"></script>
-  <script src="/JS/userOng.js"></script>
+  <div id="agradecimento" style="display: none;">
+    <h3>Obrigado por enviar suas informações!</h3>
+    <p>A Equipe Agility Tech agradece seu interesse em querer fazer parte do projeto Força do Bem. Seus dados foram enviados com sucesso e estão sendo analisados.</p>
+    <p>Atualmente, você não possui os privilégios de usuário ONG por motivos de segurança e privacidade dos voluntários. Nossa equipe está revisando suas informações e entrará em contato em breve para informar sobre o status da sua aprovação.</p>
+    <a href="index.html" class="RespDepois">Ir para a página inicial</a>
+    <img src="https://uploaddeimagens.com.br/images/004/589/797/full/imagem_2023-08-27_120828854.png?1693148920" alt="">
+</div>
+
+<style>
+
+
+</style>
+
+ <script>
+    function startRegistration() {
+      const introElement = document.getElementById('introCadastro');
+      if (introElement) {
+        introElement.style.display = 'none';
+      }
+      const ongFormElement = document.getElementById('ong-form');
+      if (ongFormElement) {
+        ongFormElement.style.display = 'block';
+      }
+    }
+
+    let currentStep = 1;
+
+    function nextStep(step) {
+      document.getElementById(`step${currentStep}`).style.display = "none";
+      currentStep = step;
+      document.getElementById(`step${currentStep}`).style.display = "block";
+
+      if (currentStep > 1) {
+        const introElement = document.getElementById('introCadastro');
+        if (introElement) {
+          introElement.style.display = 'none';
+        }
+      }
+    }
+
+    function prevStep(step) {
+      document.getElementById(`step${currentStep}`).style.display = "none";
+      currentStep = step;
+      document.getElementById(`step${currentStep}`).style.display = "block";
+    }
+
+    function onEnvioBemSucedido() {
+    const agradecimentoElement = document.getElementById('agradecimento');
+    if (agradecimentoElement) {
+        agradecimentoElement.style.display = 'block';
+    }
+}
+
+
+    </script>
+
+<script src="/AcessoUser/firebase-init.js"></script>
+<script src="/AcessoUser/Auth.js"></script>
+<script src="/JS/text-database.js"></script>
+<script src="/JS/script.js"></script>
+<script src="/JS/userOng.js"></script>
 </body>
 
 </html>
+

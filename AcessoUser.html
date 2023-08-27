@@ -43,6 +43,9 @@
                 <label for="email">Email:</label>
                 <input type="email" id="idEmail" name="userEmail" class="form-control" >
 
+                <label for="userAge" >Informe sua data de nascimento:</label>
+                <input type="date" class="form-control" id="userAge" required>
+
                 <label for="idPw">Senha:</label>
                 <input type="password" class="form-control" id="idPw" name="password"  minlength="8" maxlength="20">
 
@@ -140,6 +143,15 @@
   </div>
 </div>
 
+<div id="ageErrorToast" class="toast position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <img src="https://uploaddeimagens.com.br/images/004/457/464/thumb/imagem_2023-05-08_113702062.png?1683556624" alt="Ícone do projeto" height="20em">
+        <strong class="me-auto">Força do bem</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="ageErrorMessage">
+    </div>
+  </div>
 
 
 <footer>
@@ -187,4 +199,3 @@
 
     </body>
 </html>
-

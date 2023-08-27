@@ -98,7 +98,7 @@ console.error("Erro ao recuperar informações da ONG:", error);
 });
 
 
-// ...
+
 dadosOng.collection("ongs")
 .doc(ongId)
 .collection("FormasAjudar")
@@ -106,22 +106,19 @@ dadosOng.collection("ongs")
 .then(function (querySnapshot) {
   var dynamicItems = document.getElementById("dynamicItems");
 
-  // Limpe qualquer conteúdo anterior
   dynamicItems.innerHTML = "";
 
-// ...
 querySnapshot.forEach(function (doc) {
 const informacoesData = doc.data();
-const itensArray = informacoesData.itens; // Suponha que "itens" é o nome do seu array
+const itensArray = informacoesData.itens;
 
-// Verifique se o campo "itens" existe e é um array
 if (Array.isArray(itensArray)) {
   itensArray.forEach(function (item) {
-    // Crie elementos HTML com base nos dados do array
+
     var itemElement = document.createElement("div");
     itemElement.classList.add("services-thumb");
     itemElement.classList.add("services-image-wrap");
-    itemElement.classList.add("array-item"); // Adicione a classe CSS para estilizar o item
+    itemElement.classList.add("array-item");
     itemElement.innerHTML = `
       <img src="https://cdn-icons-png.flaticon.com/128/3724/3724846.png" class="item-icon" alt="Ícone">
       <h4 class="icon_help">${item}</h4>
@@ -131,11 +128,11 @@ if (Array.isArray(itensArray)) {
   });
 }
 });
-// ...
+
 
 })
 .catch(function (error) {
   console.error("Error getting documents from 'FormasAjudar': ", error);
 });
-// ...
+
 

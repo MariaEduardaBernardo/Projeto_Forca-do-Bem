@@ -34,6 +34,7 @@ signupForm.addEventListener("submit", async (e) => {
   const password = signupForm.password.value;
   const confirmPassword = signupForm.confirmPassword.value;
   const userType = signupForm.userType.value;
+  const userAge = signupForm.userAge.value;
 
   // Verificar se as senhas são iguais
   if (password !== confirmPassword) {
@@ -42,6 +43,20 @@ signupForm.addEventListener("submit", async (e) => {
     passwordErrorToast.show();
     return;
   }
+
+    // Adicione a verificação de idade aqui
+    const userBirthDate = new Date(userAge);
+    const currentDate = new Date();
+    const ageDifferenceInMilliseconds = currentDate - userBirthDate;
+    const ageInYears = ageDifferenceInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+
+    if (ageInYears < 15) {
+      // Exiba uma mensagem de erro e retorne para evitar o envio do formulário
+      const ageErrorToast = new bootstrap.Toast(document.getElementById('ageErrorToast'));
+      document.getElementById('ageErrorMessage').textContent = "Você deve ter pelo menos 15 anos para se cadastrar.";
+      ageErrorToast.show();
+      return;
+    }
 
   try {
     const userCredential = await auth.createUserWithEmailAndPassword(userEmail, password);
@@ -55,6 +70,7 @@ signupForm.addEventListener("submit", async (e) => {
       idName: userName,
       idEmail: userEmail,
       userType: userType,
+      userAge: userAge,
     });
 
     console.log("Additional data saved in Firestore.");

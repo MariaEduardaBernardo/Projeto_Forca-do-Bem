@@ -54,6 +54,7 @@ function displayVolunteers() {
             <h4>${volunteer.name}</h4>
             <ul>
               <li>Email: ${volunteer.data.idEmail}</li>
+              <li>Email: ${volunteer.data.userAge}</li>
               <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
             </ul>
           `;
