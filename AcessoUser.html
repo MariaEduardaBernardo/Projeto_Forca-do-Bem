@@ -27,27 +27,27 @@
 
       <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form id="signupForm" class="was-validated needs-validation">
+            <form id="signupForm">
                 <h3>Cadastro</h3>
 
                 <label for="name">Nome:</label>
-                <input type="text" class="form-control" id="idName" name="userName" minlength="4" maxlength="50" required>
+                <input type="text" class="form-control" id="idName" name="userName" minlength="4" maxlength="50" >
                 <div class="invalid-feedback">O nome deve ter entre 4 e 50 caracteres.</div>
 
-                <select id="userType" class="form-control" required>
+                <select id="userType" class="form-control" >
                   <option value="" disabled selected>Eu sou um(a)</option>
                   <option value="ONG">ONG</option>
                   <option value="Voluntário">Voluntário</option>
                 </select>
 
                 <label for="email">Email:</label>
-                <input type="email" id="idEmail" name="userEmail" class="form-control" required>
+                <input type="email" id="idEmail" name="userEmail" class="form-control" >
 
                 <label for="idPw">Senha:</label>
-                <input type="password" class="form-control" id="idPw" name="password" required minlength="8" maxlength="20">
+                <input type="password" class="form-control" id="idPw" name="password"  minlength="8" maxlength="20">
 
                 <label for="idPw">Confirme sua senha:</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required minlength="8" maxlength="20">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  minlength="8" maxlength="20">
 
                 <p id="password-message"></p>
 
@@ -96,77 +96,95 @@
     </div>
 </div>
 
+<!-- Toast para campos obrigatórios não preenchidos -->
+<div id="requiredFieldsErrorToast" class="toast position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+      <img src="https://uploaddeimagens.com.br/images/004/457/464/thumb/imagem_2023-05-08_113702062.png?1683556624" alt="Ícone do projeto" height="20em">
+      <strong class="me-auto">Força do bem</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body" id="requiredFieldsErrorMessage">
+  </div>
+</div>
+
+<!-- Toast para senhas não coincidentes -->
+<div id="passwordErrorToast" class="toast position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="https://uploaddeimagens.com.br/images/004/457/464/thumb/imagem_2023-05-08_113702062.png?1683556624" alt="Ícone de erro" height="20em">
+    <strong class="me-auto">Força do Bem</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body" id="passwordErrorMessage">
+  </div>
+</div>
+
+<!-- Toast e-mail em uso -->
+<div id="emailMessageToast" class="toast position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="https://uploaddeimagens.com.br/images/004/457/464/thumb/imagem_2023-05-08_113702062.png?1683556624" alt="Ícone de erro" height="20em">
+    <strong class="me-auto">Força do Bem</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body" id="emailMessage">
+  </div>
+</div>
+
+<!-- Toast do cadastro efetuado -->
+<div id="cadastroMessageToast" class="toast position-fixed bottom-0 end-0 p-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="https://uploaddeimagens.com.br/images/004/457/464/thumb/imagem_2023-05-08_113702062.png?1683556624" alt="Ícone de erro" height="20em">
+    <strong class="me-auto">Força do Bem</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body" id="cadastroMessage">
+  </div>
+</div>
+
+
+
 <footer>
   Ao realizar o seu cadastro, você estará concordando com os <a href="termos.html">Termos de Uso.</a>
 </footer>
 
-<script>
-  function recoverPassword() {
-  const email = document.getElementById("email").value;
+    <script>
+      function recoverPassword() {
+      const email = document.getElementById("email").value;
 
-  firebase.auth().sendPasswordResetEmail(email)
-    .then(() => {
+      firebase.auth().sendPasswordResetEmail(email)
+        .then(() => {
 
-      alert('Um email de recuperação de senha foi enviado para o endereço fornecido.');
-    })
-    .catch((error) => {
+          alert('Um email de recuperação de senha foi enviado para o endereço fornecido.');
+        })
+        .catch((error) => {
 
-      alert(getErrorMessage(error));
+          alert(getErrorMessage(error));
+        });
+    }
+    const recoverPasswordButton = document.getElementById("recover-password-button");
+    recoverPasswordButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      recoverPassword();
     });
-}
-const recoverPasswordButton = document.getElementById("recover-password-button");
-recoverPasswordButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  recoverPassword();
-});
 
-</script>
+      function toggleSenhaVisivel() {
+          var senhaInput = document.querySelector(".senha");
+          var btnIcon = document.querySelector(".btnIcon");
 
-<script>
-
-  function toggleSenhaVisivel() {
-      var senhaInput = document.querySelector(".senha");
-      var btnIcon = document.querySelector(".btnIcon");
-
-      if (senhaInput.type === "password") {
-          senhaInput.type = "text";
-          btnIcon.src = "https://cdn-icons-png.flaticon.com/128/2767/2767146.png";
-      } else {
-          senhaInput.type = "password";
-          btnIcon.src = "https://cdn-icons-png.flaticon.com/128/709/709612.png";
+          if (senhaInput.type === "password") {
+              senhaInput.type = "text";
+              btnIcon.src = "https://cdn-icons-png.flaticon.com/128/2767/2767146.png";
+          } else {
+              senhaInput.type = "password";
+              btnIcon.src = "https://cdn-icons-png.flaticon.com/128/709/709612.png";
+          }
       }
-  }
-      </script>
+    </script>
 
     <script src="/AcessoUser/firebase-init.js"></script>
     <script src="/AcessoUser/Cadastro.js"></script>
     <script src="/AcessoUser/login.js"></script>
     <script src="/AcessoUser/Cad_log.js"></script>
-    <script src="/AcessoUser/loading.js"></script>
 
     </body>
 </html>
 
-
-<style>
-  /* Estilos para o contêiner de sobreposição */
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Garante que esteja na frente de outros elementos */
-}
-
-/* Estilos para o indicador de carregamento */
-.loading-spinner {
-  display: flex;
-  align-items: center;
-}
-
-</style>

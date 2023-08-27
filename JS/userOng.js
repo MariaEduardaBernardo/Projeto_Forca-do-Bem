@@ -8,8 +8,7 @@ form.addEventListener('submit', function(event) {
         name: form.name.value,
         description: form.description.value,
         imageUrl: form.imageUrl.value,
-        userImageUrl: form.userImageUrl.value,
-        status: "pendente"
+        userImageUrl: form.userImageUrl.value
     };
 
     // Salvar dados na coleção 'ongs' no Firestore
@@ -43,3 +42,16 @@ form.addEventListener('submit', function(event) {
     });
 });
 
+// Consulta de dados aprovados
+db.collection('ongs')
+  .where('aprovado', '==', true)
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // Aqui, você pode acessar e exibir os dados aprovados
+      console.log(doc.id, ' => ', doc.data());
+    });
+  })
+  .catch((error) => {
+    console.error('Erro ao consultar dados aprovados: ', error);
+  });

@@ -1,6 +1,7 @@
 const db = firestore.collection("CadastroUser");
 const loginForm = document.getElementById("FormCadastro");
 
+
 // Função para realizar o login
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -61,28 +62,4 @@ firebase.auth().onAuthStateChanged((user) => {
   });
 
 
-
-function toggleSenhaVisivel() {
-  var senhaInput = document.querySelector(".senha");
-  var btnIcon = document.querySelector(".btnIcon");
-
-  if (senhaInput.type === "password") {
-      senhaInput.type = "text";
-      btnIcon.src = "https://cdn-icons-png.flaticon.com/128/2767/2767146.png";
-  } else {
-      senhaInput.type = "password";
-      btnIcon.src = "https://cdn-icons-png.flaticon.com/128/709/709612.png";
-  }
-}
-
-function recoverPassword() {
-  showLoading();
-  firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
-      hideLoading();
-      alert('Email enviado com sucesso');
-  }).catch(error => {
-      hideLoading();
-      alert(getErrorMessage(error));
-  });
-}
 
