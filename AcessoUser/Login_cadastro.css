@@ -342,4 +342,10 @@ form .row .btn {
     }
 }
 
-
+/* Estilo para os toasts */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
