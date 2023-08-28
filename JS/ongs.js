@@ -16,6 +16,7 @@ const dadosOng = firebase.firestore();
 
   // Obtém o ID da ONG da URL
   const ongId = getParameterByName('id');
+  document.querySelector('.overlay').style.display = 'flex';
 
   // Busca as informações da ONG no Firebase
   dadosOng.collection("ongs")
@@ -125,6 +126,7 @@ if (Array.isArray(itensArray)) {
     `;
 
     dynamicItems.appendChild(itemElement);
+    document.querySelector('.overlay').style.display = 'none';
   });
 }
 });
@@ -133,6 +135,7 @@ if (Array.isArray(itensArray)) {
 })
 .catch(function (error) {
   console.error("Error getting documents from 'FormasAjudar': ", error);
+  document.querySelector('.overlay').style.display = 'none';
 });
 
 

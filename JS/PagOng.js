@@ -5,6 +5,7 @@ const dadosOnginicio = firebase.firestore();
 
 function displayOngs() {
   const ongsList = document.querySelector(".bloco_ong");
+  document.querySelector('.overlay').style.display = 'flex';
 
   // Consulte apenas os documentos com status "aprovado"
   dadosOnginicio
@@ -45,10 +46,12 @@ function displayOngs() {
         `;
 
         ongsList.appendChild(ongItem);
+        document.querySelector('.overlay').style.display = 'none';
       });
     })
     .catch((error) => {
       console.error("Error getting ongs:", error);
+      document.querySelector('.overlay').style.display = 'none';
     });
 }
 

@@ -350,40 +350,6 @@ CARD DAS ONG
 }
 
 
-/*Passar a página caso houver preenchido toda a página*/
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pagination a {
-  display: inline-block;
-  margin: 5px;
-  padding: 0.1em 0.4em;
-  border-radius: 30px;
-  margin-bottom: 2em;
-  text-decoration: none;
-  color: #fff;
-  background-color: #666;
-  transition: background-color 0.2s ease;
-}
-
-.pagination a.current {
-  background-color: #243851;
-}
-
-.pagination a:hover {
-  background-color: #333;
-}
-
-.pagination a.prev,
-.pagination a.next {
-  font-weight: bold;
-}
-
-
 /* Pop-up do checklist */
 
 .modal {
