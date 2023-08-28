@@ -3,7 +3,7 @@ PÁGINA INICIAL
 ----------------*/
 @media screen and (min-width: 768px) {
   .mobile-only {
-    display: none; /* Oculta elementos com a classe 'mobile-only' em telas maiores que 768px */
+    display: none;
   }
 }
 
@@ -923,9 +923,13 @@ TERMOS DE USO
   margin-right: 10%;
 }
 
-#TermosOng{
+#TermosOng p{
   text-align: justify;
-  margin: 2% 15% 2% 15%;
+  margin: 2% 22% 2% 20%;
+}
+
+#TermosOng h3{
+  margin: 2% 0 2% 21.6%;
 }
 
 #TermosOng ul{
