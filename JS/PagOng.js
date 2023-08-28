@@ -28,6 +28,7 @@ function displayOngs() {
       ongsData.forEach((ongData) => {
         const ongItem = document.createElement("li");
         ongItem.innerHTML = `
+        <div class="apreOng">
           <a href="/perfil_ong.html?id=${ongData.id}" class="bloco">
             <img src="${ongData.imageUrl}" class="bloco__image" alt="" />
             <div class="bloco_overlay">
@@ -43,6 +44,7 @@ function displayOngs() {
               <p class="bloco_description">${ongData.description}</p>
             </div>
           </a>
+        </div>
         `;
 
         ongsList.appendChild(ongItem);

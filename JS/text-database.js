@@ -408,3 +408,53 @@ textDocRef3.get().then((doc) => {
 }).catch((error) => {
   console.error("Erro ao recuperar os textos:", error);
 });
+
+
+/*Politica de privacidade*/
+const textDocRef4 = firestore.collection("Termos_de_uso").doc("Politica");
+
+const listElement8 = document.getElementById("conteudo1");
+const listElement9 = document.getElementById("conteudo2");
+const listElement10 = document.getElementById("conteudo3");
+const listElement11 = document.getElementById("conteudo4");
+const listElement12 = document.getElementById("conteudo5");
+const listElement13 = document.getElementById("conteudo6");
+const listElement14 = document.getElementById("title");
+
+textDocRef4.get().then((doc) => {
+  if (doc.exists) {
+    const conteudo1 = doc.data().conteudo1;
+    const conteudo2 = doc.data().conteudo2;
+    const conteudo3 = doc.data().conteudo3;
+    const conteudo4 = doc.data().conteudo4;
+    const conteudo5 = doc.data().conteudo5;
+    const conteudo6 = doc.data().conteudo6;
+    const title = doc.data().title;
+
+    function createListElement(list, containerElement) {
+      if (Array.isArray(list)) {
+        const ulElement = document.createElement("ul");
+
+        list.forEach((term) => {
+          const liElement = document.createElement("p");
+          liElement.textContent = term;
+          ulElement.appendChild(liElement);
+        });
+
+        containerElement.appendChild(ulElement);
+      }
+    }
+
+    createListElement(conteudo1, listElement8);
+    createListElement(conteudo2, listElement9);
+    createListElement(conteudo3, listElement10);
+    createListElement(conteudo4, listElement11);
+    createListElement(conteudo5, listElement12);
+    createListElement(conteudo6, listElement13);
+    createListElement(title, listElement14);
+  } else {
+    console.log("Documento não encontrado");
+  }
+}).catch((error) => {
+  console.error("Erro ao recuperar os textos:", error);
+});
