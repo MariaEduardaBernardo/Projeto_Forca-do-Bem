@@ -61,6 +61,7 @@ if (user) {
 firebase.auth().onAuthStateChanged((user) => {
   const testButton = document.getElementById("testButton");
   const message = document.getElementById("message");
+  document.querySelector('.overlay').style.display = 'none';
 
   if (user) {
       // Usuário autenticado
@@ -77,6 +78,7 @@ firebase.auth().onAuthStateChanged((user) => {
                       testButton.style.display = "none";
                       message.innerText = "Você está autenticado, mas precisa ser um Voluntário para fazer o teste.";
                       message.style.display = "block";
+                      document.querySelector('.overlay').style.display = 'none';
                   }
               }
           })
@@ -85,6 +87,7 @@ firebase.auth().onAuthStateChanged((user) => {
       testButton.style.display = "none";
       message.style.display = "block";
       message.innerText = "Para descobrir a ONG que combina com você, é necessário fazer login como Voluntário.";
+      document.querySelector('.overlay').style.display = 'none';
   }
 });
 
