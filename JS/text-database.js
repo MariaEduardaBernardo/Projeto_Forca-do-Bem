@@ -324,7 +324,7 @@ textDocRef2.get().then((doc) => {
         const ulElement = document.createElement("ul");
 
         list.forEach((term) => {
-          const liElement = document.createElement("li");
+          const liElement = document.createElement("p");
           liElement.textContent = term;
           ulElement.appendChild(liElement);
         });

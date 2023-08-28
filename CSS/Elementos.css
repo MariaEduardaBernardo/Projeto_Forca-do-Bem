@@ -3,7 +3,7 @@ PÁGINA INICIAL
 ----------------*/
 @media screen and (min-width: 768px) {
   .mobile-only {
-    display: none; /* Oculta elementos com a classe 'mobile-only' em telas maiores que 768px */
+    display: none;
   }
 }
 
@@ -762,8 +762,8 @@ background-color: #57b7c0;
 
 .profile-photo-option {
   margin: 0 0 3% 0;
-  height: 9em;
-  width: 9em;
+  height: 10em;
+  width: 10em;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -923,9 +923,14 @@ TERMOS DE USO
   margin-right: 10%;
 }
 
-#TermosOng{
+
+#TermosOng p{
   text-align: justify;
-  margin: 2% 15% 2% 15%;
+  margin: 2% 22% 2% 20%;
+}
+
+#TermosOng h3{
+  margin: 2% 0 2% 21.6%;
 }
 
 #TermosOng ul{

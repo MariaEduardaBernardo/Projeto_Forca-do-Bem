@@ -26,7 +26,16 @@ const ongs = [
   {
       nome: "Themis Furigo",
       itens: ["Financeira"]
+  },
+  {
+    nome: "Mães da Sé",
+    itens: ["Financeira", "Alimento"]
+  },
+  {
+    nome: "Mulheres Solidárias",
+    itens: ["Financeira", "Voluntario"]
   }
+
 ];
 
   const ongURLs = {
@@ -36,7 +45,10 @@ const ongs = [
     "Escoteiros do Brasil": "perfil_ong.html?id=1Vc5Klv7FuvphY5JFBNt",
     "Hamburgada do bem": "perfil_ong.html?id=g9kJs7FSv5mXrObW3S3h",
     "Instituto Mara Gabrilli": "perfil_ong.html?id=KfgQWJEsgLQcXwAyqB6d",
-    "Themis Furigo": "perfil_ong.html?id=DPQ15shMkYWRn3QHURx3"
+    "Themis Furigo": "perfil_ong.html?id=DPQ15shMkYWRn3QHURx3",
+    "Mães da Sé": "perfil_ong.html?id=bp2HUaJkKbupsD1kCXcZ",
+    "Mulheres Solidárias": "perfil_ong.html?id=jgrYG7Fp2d9hLRBI63eM"
+
   };
 
   function showRelatedONGs() {

@@ -134,7 +134,7 @@ strong {
 }
 
 .section-bg {
-  background-color: var(--section-bg-color);
+  background: linear-gradient( rgba(146, 191, 251, 0.607), rgba(58, 122, 205, 0.427));
 }
 
 .section-overlay {
@@ -1249,7 +1249,13 @@ strong {
 }
 
 .copyright-text {
-  color: #3d3865;;
+  color: #6663d3;;
+  font-size: var(--copyright-font-size);
+  margin-right: 30px;
+}
+
+.copyright-text:hover {
+  color: #1a1877;;
   font-size: var(--copyright-font-size);
   margin-right: 30px;
 }
