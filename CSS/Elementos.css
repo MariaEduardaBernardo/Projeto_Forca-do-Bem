@@ -762,8 +762,8 @@ background-color: #57b7c0;
 
 .profile-photo-option {
   margin: 0 0 3% 0;
-  height: 9em;
-  width: 9em;
+  height: 10em;
+  width: 10em;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
