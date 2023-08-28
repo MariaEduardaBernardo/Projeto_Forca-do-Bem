@@ -134,7 +134,7 @@ strong {
 }
 
 .section-bg {
-  background: linear-gradient(rgb(150, 224, 243), rgb(119, 211, 235), rgba(84, 105, 212, 0.868));
+  background: linear-gradient( rgba(146, 191, 251, 0.607), rgba(58, 122, 205, 0.427));
 }
 
 .section-overlay {
