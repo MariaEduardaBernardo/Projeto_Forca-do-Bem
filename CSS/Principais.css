@@ -4,7 +4,7 @@ html,body{
   font-size: 1rem;
   text-align: justify;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+
 
   @media screen and (max-width: 600px) {
     text-align: left;
@@ -14,14 +14,17 @@ html,body{
   }
 
   @media screen and (min-width: 1025px) {
-    /* Estilos para telas maiores que 1024px */
   }
-
 }
 
-body h1,h2,h3,h4,h5,p,span{
-  font-family: cu;
+body h1,h2,h3,h4,h5,a{
+  font-family: 'Josefin Sans', sans-serif;
 }
+
+p, span{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 #img_user{
     float: right;

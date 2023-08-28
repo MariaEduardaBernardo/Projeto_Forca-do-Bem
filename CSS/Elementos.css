@@ -1,3 +1,24 @@
+/*--------------
+PÁGINA INICIAL
+----------------*/
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none; /* Oculta elementos com a classe 'mobile-only' em telas maiores que 768px */
+  }
+}
+
+  /* Estilos para dispositivos móveis (telas menores que 768px) */
+  @media screen and (max-width: 767px) {
+  /* Coloque seus estilos para dispositivos móveis aqui */
+  .desktop-only {
+    display: none; /* Oculta elementos com a classe 'desktop-only' em telas menores que 768px */
+  }
+}
+
+body h2{
+  text-align: left;
+}
+
 .carousel-container {
   position: relative;
   width: 100%;
@@ -349,6 +370,10 @@ CARD DAS ONG
   }
 }
 
+.apreOng p{
+  font-size: 1.1rem;
+  text-align: left;
+}
 
 /* Pop-up do checklist */
 
