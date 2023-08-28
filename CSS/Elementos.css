@@ -837,6 +837,13 @@ background-color: #57b7c0;
   z-index: 900;
 }
 
+#deactivateAccountButton{
+  background-color: red;
+}
+
+#danger{
+  margin: 5% 0 0 0;
+}
 
 /********************
 PÁGINAS DAS ONGS

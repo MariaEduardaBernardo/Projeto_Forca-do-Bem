@@ -301,3 +301,66 @@ photoOptions.forEach(photo => {
 document.getElementById("cancelButton").addEventListener("click", function() {
   document.getElementById("photoModal").style.display = "none";
 });
+
+
+document.getElementById("saveNameButton").addEventListener("click", function () {
+  // Obtém o novo nome do campo de entrada de texto
+  const newName = document.getElementById("newName").value;
+
+  // Verifica se o novo nome não está em branco
+  if (newName.trim() !== "") {
+      // Atualiza o nome do usuário no Firebase Authentication
+      const user = firebase.auth().currentUser;
+      if (user) {
+          user.updateProfile({
+              displayName: newName
+          }).then(function () {
+              // Nome atualizado com sucesso
+              console.log("Novo nome atualizado: " + newName);
+
+              // Atualiza o nome exibido na página
+              document.getElementById("userName").textContent = newName;
+
+              // Limpa o campo de entrada
+              document.getElementById("newName").value = "";
+
+              // Exibe uma mensagem de sucesso, se necessário
+          }).catch(function (error) {
+              console.error("Erro ao atualizar o nome: " + error.message);
+              // Exibe uma mensagem de erro, se necessário
+          });
+      }
+  } else {
+      console.log("Por favor, insira um novo nome.");
+  }
+});
+
+
+
+document.getElementById("deactivateAccountButton").addEventListener("click", function () {
+  const confirmation = window.confirm("Tem certeza de que deseja desativar sua conta? Esta ação é irreversível.");
+  if (confirmation) {
+      // Desative a conta do usuário
+      const user = firebase.auth().currentUser;
+      if (user) {
+          const userId = user.uid;
+
+          // Exclua os dados do usuário na coleção "CadastroUser"
+          const userDocRef = firebase.firestore().collection("CadastroUser").doc(userId);
+          userDocRef.delete().then(() => {
+              // Dados excluídos com sucesso
+
+              // Agora, você pode prosseguir com a desativação da conta no Firebase Authentication
+              user.delete().then(() => {
+                  // Conta desativada com sucesso
+
+                  // Redirecione o usuário para a página de login ou exiba uma mensagem de confirmação
+              }).catch((error) => {
+                  console.error("Erro ao desativar a conta no Firebase Authentication:", error);
+              });
+          }).catch((error) => {
+              console.error("Erro ao excluir os dados do usuário na coleção 'CadastroUser':", error);
+          });
+      }
+  }
+});
