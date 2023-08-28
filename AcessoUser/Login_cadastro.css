@@ -290,7 +290,6 @@ form .row .btn {
 .senha-toggle {
     position: absolute;
     right: 15%;
-    top: 49%;
     transform: translateY(-50%);
 }
 
