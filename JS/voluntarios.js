@@ -79,5 +79,5 @@ function displayVolunteers() {
 
     });
 }
-
+        
 window.onload = displayVolunteers;
