@@ -1,6 +1,6 @@
+
 const db = firestore.collection("CadastroUser");
 const signupForm = document.getElementById("signupForm");
-
 
 function checkRequiredFields() {
   const requiredFields = ['userName', 'userEmail', 'password', 'confirmPassword', 'userType'];
@@ -22,6 +22,36 @@ function checkRequiredFields() {
 
   return !hasEmptyFields;
 }
+
+function isPasswordStrong(password) {
+  // Verifique o comprimento mínimo
+  if (password.length < 8) {
+    return false;
+  }
+
+  // Verifique se contém pelo menos um caractere maiúsculo
+  if (!/[A-Z]/.test(password)) {
+    return false;
+  }
+
+  // Verifique se contém pelo menos um caractere minúsculo
+  if (!/[a-z]/.test(password)) {
+    return false;
+  }
+
+  // Verifique se contém pelo menos um número
+  if (!/[0-9]/.test(password)) {
+    return false;
+  }
+
+  // Verifique se contém pelo menos um caractere especial
+  if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+    return false;
+  }
+
+  return true;
+}
+
 signupForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -35,6 +65,14 @@ signupForm.addEventListener("submit", async (e) => {
   const confirmPassword = signupForm.confirmPassword.value;
   const userType = signupForm.userType.value;
   const userAge = signupForm.userAge.value;
+
+  // Verificar se a senha é forte
+  if (!isPasswordStrong(password)) {
+    const passwordErrorToast = new bootstrap.Toast(document.getElementById('passwordErrorToast'));
+    document.getElementById('passwordErrorMessage').textContent = "A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, letras minúsculas, números e caracteres especiais."
+    passwordErrorToast.show();
+    return;
+  }
 
   // Verificar se as senhas são iguais
   if (password !== confirmPassword) {
