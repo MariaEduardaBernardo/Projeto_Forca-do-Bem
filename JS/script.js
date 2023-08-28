@@ -61,7 +61,6 @@ if (user) {
 firebase.auth().onAuthStateChanged((user) => {
   const testButton = document.getElementById("testButton");
   const message = document.getElementById("message");
-  document.querySelector('.overlay').style.display = 'flex';
 
   if (user) {
       // Usuário autenticado
@@ -74,12 +73,10 @@ firebase.auth().onAuthStateChanged((user) => {
                   if (userType === "Voluntário") {
                       testButton.style.display = "block";
                       message.style.display = "none";
-                      document.querySelector('.overlay').style.display = 'none';
                   } else {
                       testButton.style.display = "none";
                       message.innerText = "Você está autenticado, mas precisa ser um Voluntário para fazer o teste.";
                       message.style.display = "block";
-                      document.querySelector('.overlay').style.display = 'none';
                   }
               }
           })
