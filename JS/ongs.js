@@ -85,6 +85,27 @@ if (doc.exists) {
       foto2Element.src = foto2;
       foto3Element.src = foto3;
 
+      const redeSocial1Element = document.getElementById("redeSocial1");
+      const redeSocial2Element = document.getElementById("redeSocial2");
+
+      redeSocial1Element.href = informacoesData.redeSocial1 || "#";
+      redeSocial2Element.href = informacoesData.redeSocial2 || "#";
+
+      const redeSocial1Link = informacoesData.redeSocial1;
+      const redeSocial2Link = informacoesData.redeSocial2;
+
+      if (isURLValid(redeSocial1Link)) {
+        redeSocial1Element.href = redeSocial1Link;
+      } else {
+        redeSocial1Element.style.display = "none";
+      }
+
+      if (isURLValid(redeSocial2Link)) {
+        redeSocial2Element.href = redeSocial2Link;
+      } else {
+        redeSocial2Element.style.display = "none";
+      }
+
     });
   }).catch((error) => {
     console.error("Erro ao recuperar informações da subcoleção Informacoes:", error);
