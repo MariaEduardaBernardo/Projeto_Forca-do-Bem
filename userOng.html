@@ -65,7 +65,22 @@
               <input type="text" id="name" name="name" class="form-control">
 
               <label for="cnpj">CNPJ da ONG:</label>
-              <input type="text" id="cnpj" name="cnpj" class="form-control" maxlength="18">
+              <input type="text" id="cnpj" name="cnpj" class="form-control">
+
+              <script>
+              document.getElementById('cnpj').oninput = function() {
+                  let cnpj = this.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+                  if (cnpj.length > 14) {
+                      cnpj = cnpj.slice(0, 14); // Limita o tamanho para 14 dígitos
+                  }
+                  if (cnpj.length > 12) {
+                      cnpj = cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5'); // Formata o CNPJ
+                  } else if (cnpj.length > 8) {
+                      cnpj = cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{1,})$/, '$1.$2.$3-$4'); // Formata o CPF
+                  }
+                  this.value = cnpj;
+              };
+              </script>
 
               <label for="description">Breve descrição:</label>
               <textarea id="description" name="description" class="form-control"></textarea>
@@ -131,12 +146,11 @@
     <img src="https://uploaddeimagens.com.br/images/004/589/797/full/imagem_2023-08-27_120828854.png?1693148920" alt="">
 </div>
 
-<style>
 
-
-</style>
 
  <script>
+
+
     function startRegistration() {
       const introElement = document.getElementById('introCadastro');
       if (introElement) {
@@ -175,7 +189,6 @@
         agradecimentoElement.style.display = 'block';
     }
 }
-
 
     </script>
 

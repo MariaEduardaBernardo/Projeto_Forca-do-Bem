@@ -38,7 +38,6 @@ const dadosOng = firebase.firestore();
     .catch((error) => {
       console.error("Error getting document:", error);
     });
-// ...
 
 const ongDocRef = firestore.collection("ongs").doc(ongId);
 
@@ -137,5 +136,3 @@ if (Array.isArray(itensArray)) {
   console.error("Error getting documents from 'FormasAjudar': ", error);
   document.querySelector('.overlay').style.display = 'none';
 });
-
-

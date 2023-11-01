@@ -291,6 +291,7 @@ form .row .btn {
     position: absolute;
     right: 15%;
     top: 49%;
+    margin-top: 1em;
     transform: translateY(-50%);
 }
 
