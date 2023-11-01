@@ -100,16 +100,15 @@ function hideLoader() {
 }
 
 const express = require('express');
-const app = express();
+const permissions = express();
 
-// Define o cabeçalho X-Frame-Options para evitar o embedding em frames.
-app.use((req, res, next) => {
+permissions.use((req, res, next) => {
     res.setHeader('X-Frame-Options', 'DENY');
     res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), fullscreen=(self)');
     res.setHeader('Referrer-Policy', 'no-referrer');
     next();
 });
 
-app.listen(3000, () => {
+permissions.listen(3000, () => {
     console.log('Servidor está ouvindo na porta 3000');
 });
