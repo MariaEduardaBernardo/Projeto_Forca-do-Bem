@@ -100,15 +100,28 @@ function hideLoader() {
 }
 
 const express = require('express');
-const permissions = express();
+const cookieParser = require('cookie-parser');
 
-permissions.use((req, res, next) => {
+const app = express();
+app.use(cookieParser());
+
+app.use((req, res, next) => {
     res.setHeader('X-Frame-Options', 'DENY');
     res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), fullscreen=(self)');
     res.setHeader('Referrer-Policy', 'no-referrer');
     next();
 });
 
-permissions.listen(3000, () => {
+app.get('/', (req, res) => {
+    res.cookie('nomeDoCookie', 'valorDoCookie', {
+        maxAge: 3600000,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None'
+    });
+    res.send('Cookie definido com sucesso!');
+});
+
+app.listen(3000, () => {
     console.log('Servidor está ouvindo na porta 3000');
 });
