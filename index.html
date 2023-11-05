@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Força do bem</title>
-  <link rel="icon" type="imagem/png" href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624"/>
+  <link rel="icon" type="imagem/png"
+    href="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -40,6 +41,7 @@
     crossorigin="anonymous"></script>
 
   <script src="/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -59,13 +61,12 @@
       <div class="slides">
         <article class="main-post main-post--active">
           <div class="main-post__image">
-            <img
-              src="https://uploaddeimagens.com.br/images/004/550/177/full/imagem_2023-07-19_150140670.png?1689789702"
-              alt="Imagem de pessoa com caixa de doação. Feita através do Canva"/>
+            <img src="https://uploaddeimagens.com.br/images/004/550/177/full/imagem_2023-07-19_150140670.png?1689789702"
+              alt="Imagem de pessoa com caixa de doação. Feita através do Canva" />
           </div>
           <div class="main-post__content">
             <div class="main-post__tag-wrapper">
-              <span class="main-post__tag">O que é uma ONG?</span>
+              <span class="main-post__tag" id="title1">O que é uma ONG?</span>
             </div>
             <h1 class="main-post__title" id="Slide1"></h1>
           </div>
@@ -73,13 +74,12 @@
 
         <article class="main-post main-post--not-active">
           <div class="main-post__image">
-            <img
-              src="https://uploaddeimagens.com.br/images/004/550/191/full/imagem_2023-07-19_150526456.png?1689789929"
-              alt="Imagem de pessoa servindo comida. Feita através do Canva"/>
+            <img src="https://uploaddeimagens.com.br/images/004/550/191/full/imagem_2023-07-19_150526456.png?1689789929"
+              alt="Imagem de pessoa servindo comida. Feita através do Canva" />
           </div>
           <div class="main-post__content">
             <div class="main-post__tag-wrapper">
-              <span class="main-post__tag">O que elas fazem?</span>
+              <span class="main-post__tag" id="title2">O que elas fazem?</span>
             </div>
             <h1 class="main-post__title" id="Slide2"></h1>
           </div>
@@ -87,13 +87,12 @@
 
         <article class="main-post main-post--not-active">
           <div class="main-post__image">
-            <img
-              src="https://uploaddeimagens.com.br/images/004/550/184/full/imagem_2023-07-19_150320618.png?1689789802"
-              alt="Imagem de pessoa com caixa de doação. Feita através do Canva"/>
+            <img src="https://uploaddeimagens.com.br/images/004/550/184/full/imagem_2023-07-19_150320618.png?1689789802"
+              alt="Imagem de pessoa com caixa de doação. Feita através do Canva" />
           </div>
           <div class="main-post__content">
             <div class="main-post__tag-wrapper">
-              <span class="main-post__tag">Formas de ajudar</span>
+              <span class="main-post__tag" id="title3">Formas de ajudar</span>
             </div>
             <h1 class="main-post__title" id="Slide3"></h1>
           </div>
@@ -126,7 +125,6 @@
 
   <br>
   <div class="container">
-    <h2 class="my-3">Conheça algumas ONGs</h2>
   </div><br>
 
   <div class="Ex_ONGs">
@@ -176,84 +174,90 @@
       <div class="services-info mt-4 mt-lg-0 mt-md-0">
 
         <div class="desktop-only">
-          <p id="textoDescricao" style="font-size: 1.1rem;"></p>
+          <p id="DescBotao" style="font-size: 1.1rem;"></p>
         </div>
 
         <div class="mobile-only">
-          <p style="font-size: 1.1rem;">Está com dúvidas sobre qual ONG apoiar? Não se preocupe, nós podemos te ajudar! Basta preencher um breve checklist de opções de atividades que nos ajudará a compreender suas preferências e princípios.</p>
+          <p style="font-size: 1.1rem;" id="DescBtn_mobile">Está com dúvidas sobre qual ONG apoiar? Não se
+            preocupe, nós podemos te ajudar! Basta preencher um breve checklist de opções de atividades que
+            nos ajudará a compreender suas preferências e princípios.</p>
         </div>
 
-          <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Fazer teste
-          </button>
-          <br>
-          <p id="message" style="display: none;"></p>
+        <button id="testButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop">
+          Fazer teste
+        </button>
+        <br>
+        <p id="message" style="display: none;"></p>
 
-            <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Eu posso ajudar:</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+              </div>
+              <div class="modal-body">
 
-              <ul class="list-group list-group">
-                <ul class="list-group">
+                <ul class="list-group list-group">
+                  <ul class="list-group">
                     <li class="list-group-item ">
-                        <input class="form-check-input me-1" type="checkbox" value="Financeira" id="forma1">
-                        <label class="form-check-label" for="forma1">Ajuda Financeira</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Financeira" id="forma1">
+                      <label class="form-check-label" for="forma1">Ajuda Financeira</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Roupa" id="forma2">
-                        <label class="form-check-label" for="forma2">Doação de Roupa</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Roupa" id="forma2">
+                      <label class="form-check-label" for="forma2">Doação de Roupa</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Alimento" id="forma3">
-                        <label class="form-check-label" for="forma3">Doação de Alimento não perecível</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Alimento" id="forma3">
+                      <label class="form-check-label" for="forma3">Doação de Alimento não
+                        perecível</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Brinquedo" id="forma4">
-                        <label class="form-check-label" for="forma4">Doação de Brinquedo</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Brinquedo" id="forma4">
+                      <label class="form-check-label" for="forma4">Doação de Brinquedo</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Cobertor" id="forma5">
-                        <label class="form-check-label" for="forma5">Doação de Cobertor</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Cobertor" id="forma5">
+                      <label class="form-check-label" for="forma5">Doação de Cobertor</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Higiene" id="forma6">
-                        <label class="form-check-label" for="forma6">Doação de Itens de Higiene Pessoal</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Higiene" id="forma6">
+                      <label class="form-check-label" for="forma6">Doação de Itens de Higiene
+                        Pessoal</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Animais" id="forma7">
-                        <label class="form-check-label" for="forma7">Doação de Ração para Animais</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Animais" id="forma7">
+                      <label class="form-check-label" for="forma7">Doação de Ração para
+                        Animais</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Voluntario" id="forma8">
-                        <label class="form-check-label" for="forma8">Ser Voluntário(a)</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Voluntario" id="forma8">
+                      <label class="form-check-label" for="forma8">Ser Voluntário(a)</label>
                     </li>
 
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="Campanha" id="forma9">
-                        <label class="form-check-label" for="forma9">Apoiar Campanhas</label>
+                      <input class="form-check-input me-1" type="checkbox" value="Campanha" id="forma9">
+                      <label class="form-check-label" for="forma9">Apoiar Campanhas</label>
                     </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
+                  </ul>
+              </div>
+              <div class="modal-footer">
                 <button onclick="showRelatedONGs()">Descobrir</button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
       </div>
     </div>
   </section>
@@ -261,7 +265,8 @@
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="toastNoOptions" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" alt="Icone do sistema" height="20em">
+        <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624"
+          alt="Icone do sistema" height="20em">
         <strong class="me-auto">Força do Bem</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
@@ -276,32 +281,34 @@
       <div class="row">
 
         <div class="col-lg-5 col-12 me-auto mb-lg-0 mb-5">
-          <h2 class="my-3">Ficou com alguma dúvida?</h2>
+          <h2 class="my-3" id="titleDuvida">Ficou com alguma dúvida?</h2>
 
-          <p style="font-size: 1.1rem;">Utilize os nossos meios de contato abaixo e permita-nos guiá-lo rumo a uma compreensão completa e satisfatória. Responderemos o mais breve possível! </p>
+          <p style="font-size: 1.1rem;" id="textoContato">Utilize os nossos meios de contato abaixo e
+            permita-nos guiá-lo rumo a uma compreensão completa e satisfatória. Responderemos o mais breve
+            possível! </p>
 
           <div class="contact-info bg-white shadow-lg">
-            <h3 class="mb-4">Nossos canais</h3>
+            <h3 class="mb-4" id="canaisTitulo">Nossos canais</h3>
 
-              <ul class="social-icon mt-4">
-                <li class="social-icon-item">
-                    <a href="https://www.instagram.com/forcadobem2023/" target="_blank" class="#">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670274.png" alt="">
-                    </a>
-                </li>
+            <ul class="social-icon mt-4">
+              <li class="social-icon-item">
+                <a href="https://www.instagram.com/forcadobem2023/" target="_blank" class="#">
+                  <img src="https://cdn-icons-png.flaticon.com/128/3670/3670274.png" alt="">
+                </a>
+              </li>
 
-                <li class="social-icon-item">
-                    <a href="https://agilitytech.blogspot.com" target="_blank" class="#">
-                        <img src="https://cdn-icons-png.flaticon.com/128/4494/4494512.png" alt="">
-                    </a>
-                </li>
+              <li class="social-icon-item">
+                <a href="https://agilitytech.blogspot.com" target="_blank" class="#">
+                  <img src="https://cdn-icons-png.flaticon.com/128/4494/4494512.png" alt="">
+                </a>
+              </li>
 
             </ul>
             <h5 class="d-flex mb-3"></h5>
 
             <p class="text-white d-flex">
               <a href="mailto:equipe5.agiltytech@gmail.com" target="_blank" class="site-footer-link">
-                 Email: equipe5.agiltytech@gmail.com
+                Email: equipe5.agiltytech@gmail.com
               </a>
 
             </p>
@@ -325,11 +332,11 @@
             <div class="consulting-form-body">
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
-                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfmbksZLtONv4HuJEEINPEs6zZm0yhQ4nvzIdYr7_07B7J3RQ/viewform?embedded=true" width="500" height="900" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfmbksZLtONv4HuJEEINPEs6zZm0yhQ4nvzIdYr7_07B7J3RQ/viewform?embedded=true"
+                    width="500" height="900" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
                 </div>
-
-
-            </div>
+              </div>
           </form>
         </div>
       </div>
@@ -337,15 +344,24 @@
   </section>
 
 
-    <footer class="footerContainer"></footer>
+  <footer class="footerContainer"></footer>
+
+
+  <select id="language-select">
+    <option value="portugues">Pt</option>
+    <option value="ingles">En</option>
+  </select>
+
 
   <script src="/AcessoUser/firebase-init.js"></script>
   <script src="/AcessoUser/Auth.js"></script>
-  <script src="/JS/checklist.js"></script>
   <script src="/JS/script.js"></script>
+  <script src="/JS/text-database.js"></script>
+  <script src="/Idiomas/geral.js"></script>
+  <script src="/JS/checklist.js"></script>
   <script src="/JS/CadUser.js"></script>
   <script src="/JS/carrossel.js"></script>
-  <script src="/JS/text-database.js"></script>
 
 </body>
+
 </html>

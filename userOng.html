@@ -67,20 +67,7 @@
               <label for="cnpj">CNPJ da ONG:</label>
               <input type="text" id="cnpj" name="cnpj" class="form-control">
 
-              <script>
-              document.getElementById('cnpj').oninput = function() {
-                  let cnpj = this.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-                  if (cnpj.length > 14) {
-                      cnpj = cnpj.slice(0, 14); // Limita o tamanho para 14 dígitos
-                  }
-                  if (cnpj.length > 12) {
-                      cnpj = cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5'); // Formata o CNPJ
-                  } else if (cnpj.length > 8) {
-                      cnpj = cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{1,})$/, '$1.$2.$3-$4'); // Formata o CPF
-                  }
-                  this.value = cnpj;
-              };
-              </script>
+
 
               <label for="description">Breve descrição:</label>
               <textarea id="description" name="description" class="form-control"></textarea>
@@ -146,51 +133,6 @@
     <img src="https://uploaddeimagens.com.br/images/004/589/797/full/imagem_2023-08-27_120828854.png?1693148920" alt="">
 </div>
 
-
-
- <script>
-
-
-    function startRegistration() {
-      const introElement = document.getElementById('introCadastro');
-      if (introElement) {
-        introElement.style.display = 'none';
-      }
-      const ongFormElement = document.getElementById('ong-form');
-      if (ongFormElement) {
-        ongFormElement.style.display = 'block';
-      }
-    }
-
-    let currentStep = 1;
-
-    function nextStep(step) {
-      document.getElementById(`step${currentStep}`).style.display = "none";
-      currentStep = step;
-      document.getElementById(`step${currentStep}`).style.display = "block";
-
-      if (currentStep > 1) {
-        const introElement = document.getElementById('introCadastro');
-        if (introElement) {
-          introElement.style.display = 'none';
-        }
-      }
-    }
-
-    function prevStep(step) {
-      document.getElementById(`step${currentStep}`).style.display = "none";
-      currentStep = step;
-      document.getElementById(`step${currentStep}`).style.display = "block";
-    }
-
-    function onEnvioBemSucedido() {
-    const agradecimentoElement = document.getElementById('agradecimento');
-    if (agradecimentoElement) {
-        agradecimentoElement.style.display = 'block';
-    }
-}
-
-    </script>
 
 <script src="/AcessoUser/firebase-init.js"></script>
 <script src="/AcessoUser/Auth.js"></script>
