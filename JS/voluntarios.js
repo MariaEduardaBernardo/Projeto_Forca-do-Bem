@@ -1,8 +1,8 @@
 // Recuperar a coleção de usuários do Firestore
 const usersCollection = firestore.collection("CadastroUser");
-
 function displayVolunteers() {
   const volunteersList = document.getElementById("volunteersList");
+  document.querySelector('.overlay').style.display = 'flex';
 
   usersCollection.where("userType", "==", "Voluntário").get()
     .then(async (querySnapshot) => {
@@ -22,7 +22,7 @@ function displayVolunteers() {
 
         additionalInfoSnapshot.forEach((additionalDoc) => {
           const additionalData = additionalDoc.data();
-          volunteerTypeHelp += additionalData.value + ", "; // Captura os valores de como ajudar
+          volunteerTypeHelp += additionalData.value + ""; // Captura os valores de como ajudar
         });
 
         volunteersData.push({
@@ -30,7 +30,7 @@ function displayVolunteers() {
           name: volunteerName,
           typeHelp: volunteerTypeHelp,
           data: volunteerData,
-          photoUrl: selectedPhotoUrl // Adicione a URL da foto de perfil
+          photoUrl: selectedPhotoUrl
         });
       }
 
@@ -42,42 +42,40 @@ function displayVolunteers() {
 
         const volunteerPhoto = document.createElement("img");
         volunteerPhoto.className = "volunteer-photo";
-        volunteerPhoto.src = volunteer.photoUrl; // Use a URL da foto de perfil
+        volunteerPhoto.src = volunteer.photoUrl;
         volunteerPhoto.alt = "Foto de Perfil";
 
         const volunteerInfo = document.createElement("div");
         volunteerInfo.className = "volunteer-info";
 
-        // Verificar se o usuário é do tipo ONG antes de exibir o e-mail
         if (volunteer.data.userType === "ONG") {
           volunteerInfo.innerHTML = `
             <h4>${volunteer.name}</h4>
             <ul>
               <li>Email: ${volunteer.data.idEmail}</li>
               <li>Email: ${volunteer.data.userAge}</li>
-              <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
+              <li>Formas de Ajudar: ${volunteer.typeHelp}</li>
             </ul>
           `;
         } else {
           volunteerInfo.innerHTML = `
             <h4>${volunteer.name}</h4>
             <ul>
-              <li>Formas de Ajudar: ${volunteer.typeHelp || 'Nenhuma forma de ajuda especificada'}</li>
+              <li>Formas de Ajudar: ${volunteer.typeHelp}</li>
             </ul>
           `;
         }
-
+        
         volunteerCard.appendChild(volunteerPhoto);
         volunteerCard.appendChild(volunteerInfo);
         volunteersList.appendChild(volunteerCard);
-      });
+
         document.querySelector('.overlay').style.display = 'none';
+      });
     })
     .catch((error) => {
       console.error("Error getting volunteers:", error);
-        document.querySelector('.overlay').style.display = 'none';
-
     });
 }
-        
+
 window.onload = displayVolunteers;

@@ -45,7 +45,7 @@ textDocRef.get().then((doc) => {
   if (doc.exists) {
     const text = doc.data().DescBotao;
 
-    const paragraphElement = document.getElementById("textoDescricao");
+    const paragraphElement = document.getElementById("DescBotao");
     paragraphElement.textContent = text;
   } else {
     console.log("Documento não encontrado");
@@ -59,7 +59,7 @@ textDocRef.get().then((doc) => {
   if (doc.exists) {
     const text = doc.data().Rodape;
 
-    const paragraphElement = document.getElementById("textoRodape");
+    const paragraphElement = document.getElementById("Rodape");
     paragraphElement.textContent = text;
   } else {
     console.log("Documento não encontrado");
@@ -348,14 +348,14 @@ textDocRef2.get().then((doc) => {
 });
 
 
-const textDocRefInicio = firestore.collection("Termos_de_uso").doc("DH9ko1cpzH2rskGBIuzF");
+const textDocRefinicio = firestore.collection("Termos_de_uso").doc("DH9ko1cpzH2rskGBIuzF");
 
-textDocRefInicio.get().then((doc) => {
+textDocRefinicio.get().then((doc) => {
   if (doc.exists) {
-    const TermoOngOInicio = doc.data().TermoOngOInicio;
+    const TermoOngOinicio = doc.data().TermoOngOinicio;
 
-    const paragraphElementInicio = document.getElementById("TermoOngOInicio");
-    paragraphElementInicio.textContent = TermoOngOInicio;
+    const paragraphElementinicio = document.getElementById("TermoOngOinicio");
+    paragraphElementinicio.textContent = TermoOngOinicio;
   } else {
     console.log("Documento não encontrado");
   }
@@ -458,3 +458,5 @@ textDocRef4.get().then((doc) => {
 }).catch((error) => {
   console.error("Erro ao recuperar os textos:", error);
 });
+
+

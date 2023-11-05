@@ -1118,3 +1118,87 @@ margin: 3% 0 1% 0;
 #agradecimento img{
   margin: -6em 5% 0 5%;
 }
+
+
+/********
+IDIOMA
+********/
+
+
+#language-select {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #5649e0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0.5; /* Opacidade inicial quando não estiver em foco */
+  transition: opacity 0.3s ease; /* Adiciona uma transição suave para a propriedade de opacidade */
+}
+
+#language-select:hover {
+  opacity: 1; /* Opacidade total quando o seletor de idiomas está em foco (mouse em cima) */
+}
+
+.language-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.language-button img {
+  width: 30px;
+  height: 30px;
+}
+
+#inf_ong p{
+  margin: 0 0 -0.1em 0;
+  font-weight: 700;
+}
+
+.ong-info-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-item p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.social-icon {
+margin: 0 0 2em 0;
+}
+
+/*#language-select {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #5649e0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#language-select .options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #5649e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}*/

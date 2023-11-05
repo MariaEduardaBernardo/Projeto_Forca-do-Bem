@@ -52,8 +52,8 @@
         <img src="https://uploaddeimagens.com.br/images/004/569/516/full/imagem_2023-08-07_223109213.png?1691458279"
           alt="" id="userPhoto">
         <div>
-          <h5>Nome: <span id="userName"></span></h5>
-          <h5>Email: <span id="userEmail"></span></h5>
+          <h5><span id="userName"></span></h5>
+          <h5><span id="userEmail"></span></h5>
           <button id="logoutButton">Sair</button>
           <button id="editProfileButton">Editar avatar</button>
         </div>
@@ -63,7 +63,7 @@
 <div id="photoModal" class="modalUser">
   <div class="modalUser-content">
       <div class="modal-header">
-          <h5>Escolha seu avatar</h5>
+          <h5 id="avatarEsc">Escolha seu avatar</h5>
           <button type="submit" class="btn btn-secudary" id="cancelButton">Fechar</button>
         </div>
 
@@ -78,6 +78,7 @@
             <img src="https://uploaddeimagens.com.br/images/004/585/010/full/imagem_2023-08-22_170324373.png?1692734612" alt="Foto 8" class="profile-photo-option">
 </div>
 
+
         <div class="modal-footer">
           <button type="submit" id="profile-photo-option" class="btn btn-primary">Salvar</button>
 
@@ -91,14 +92,14 @@
 
     <div class="op_ajuda col-md-10 col-12 mb-4 mb-lg-0 mb-md-0">
       <section>
-        <h2 class="title-user">Formas em que posso Ajudar</h2>
+        <h2 class="title-user" id="titleUser">Formas em que posso Ajudar</h2>
 
         <p id="TextoUser"></p>
 
         <form id="infoForm">
-          <label for="typeHelp">Posso ajudar com:</label>
+          <label for="typeHelp" id="ajudarCom">Posso ajudar com:</label>
           <input type="text" id="typeHelp" name="typeHelp">
-          <button type="submit" class="btn-typeHelp">Adicionar</button>
+          <button type="submit" class="btn-typeHelp" id="add">Adicionar</button>
         </form>
 
         <div id="additionalInfoList"></div>
@@ -107,7 +108,7 @@
 
 
       <section>
-        <h2 class="title-user">ONG que mais combina comigo</h2>
+        <h2 class="title-user" id="titleMeet">ONG que mais combina comigo</h2>
 
         <p id="textoDescricao"></p>
 
@@ -186,20 +187,17 @@
       </section>
 
       <section>
-        <h2 class="title-user">Configurações da Conta</h2>
-        <p>Aqui, você pode editar suas informações pessoais, incluindo seu nome. Basta digitar o novo nome no campo abaixo e clicar em "Salvar" para atualizar suas informações.</p>
+        <h2 class="title-user" id="title-user">Configurações da Conta</h2>
+        <p id="editName">Aqui, você pode editar suas informações pessoais, incluindo seu nome. Basta digitar o novo nome no campo abaixo e clicar em "Salvar" para atualizar suas informações.</p>
 
         <br>
-        <label for="newName">Atualizar nome</label>
+        <label for="newName" id="newNameLabel">Atualizar nome</label>
         <input type="text" id="newName" class="form-control" required>
-
-        
 
         <button id="saveNameButton" class="btn btn-primary">Salvar</button>
 
         <h4 class="title-user" id="danger">Desativar conta</h4>
-        <p>Se você deseja desativar sua conta, tenha em mente que essa ação é irreversível e resultará na exclusão permanente de todas as suas informações e dados associados à sua conta. Certifique-se de ter feito backup de qualquer informação importante antes de prosseguir.</p>
-<p>Para desativar sua conta, clique no botão abaixo. Você será solicitado a confirmar sua ação antes que a conta seja desativada.</p>
+        <p id="alertaExcluir">Se você deseja desativar sua conta, tenha em mente que essa ação é irreversível e resultará na exclusão permanente de todas as suas informações e dados associados à sua conta. Certifique-se de ter feito backup de qualquer informação importante antes de prosseguir. <br> Para desativar sua conta, clique no botão abaixo. Você será solicitado a confirmar sua ação antes que a conta seja desativada.</p>
         <button id="deactivateAccountButton" class="btn btn-secundary">Desativar Minha Conta</button>
 
 
@@ -214,7 +212,7 @@
             <strong class="me-auto">Força do Bem</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>
-          <div class="toast-body">
+          <div class="toast-body" id="toastError">
             Por favor, selecione pelo menos uma opção para descobrir o resultado!
           </div>
         </div>
@@ -231,7 +229,7 @@
         <strong class="me-auto">Força do Bem</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body">
+      <div class="toast-body" id="toastOk">
         Os dados foram adicionados com sucesso!
       </div>
     </div>
@@ -242,12 +240,18 @@
 
   <footer class="footerContainer"></footer>
 
+  <select id="language-select">
+    <option value="portugues">Pt</option>
+    <option value="ingles">En</option>
+  </select>
+
   <script src="/AcessoUser/firebase-init.js"></script>
   <script src="/AcessoUser/Auth.js"></script>
   <script src="/JS/script.js"></script>
   <script src="/JS/user.js"></script>
   <script src="/JS/checklist.js"></script>
   <script src="/JS/text-database.js"></script>
+  <script src="/Idiomas/geral.js"></script>
   </main>
 </body>
 

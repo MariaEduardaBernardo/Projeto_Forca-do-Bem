@@ -5,37 +5,35 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <img src="https://uploaddeimagens.com.br/images/004/457/464/full/imagem_2023-05-08_113702062.png?1683556624" height="45" alt="Icone do projeto">
-    <a class="navbar-brand" href="/index.html">Força do bem</a>
+    <a class="navbar-brand" href="/index.html" id="brand">Força do bem</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="/index.html" id="inicio">Inicio</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="Usuarios">
             Usuários
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/ONGs.html">ONG</a></li>
-            <li><a class="dropdown-item" href="/Voluntarios.html">Voluntário</a></li>
+            <li><a class="dropdown-item" href="/ONGs.html" id="ONG">ONG</a></li>
+            <li><a class="dropdown-item" href="/Voluntarios.html" id="Voluntario">Voluntário</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown" id="accountDropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="accountLink">
-            Entrar na conta
+          Conta
           </a>
           <ul class="dropdown-menu">
-              <li id="registerOption"><a class="dropdown-item" href="AcessoUser.html">Cadastrar</a></li>
-              <li id="loginOption"><a class="dropdown-item" href="AcessoUser.html">Login</a></li>
-              <li id="profileOption"><a class="dropdown-item" href="#" onclick="redirectToProfile()">Perfil</a></li>
+              <li id="registerOption"><a class="dropdown-item" href="AcessoUser.html" id="Cadastrar">Cadastrar</a></li>
+              <li id="loginOption"><a class="dropdown-item" href="AcessoUser.html" id="Login">Login</a></li>
+              <li id="profileOption"><a class="dropdown-item" href="#" onclick="redirectToProfile()" id="Perfil">Perfil</a></li>
           </ul>
-        </li>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
