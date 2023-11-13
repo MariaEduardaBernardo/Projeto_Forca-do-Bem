@@ -910,36 +910,27 @@ CHECKLIST
 /***************
 TERMOS DE USO
 ***************/
-#termos-uso p{
-  font-family: 'Helvetica', sans-serif;
-  font-size: 16px;
-  color: #2f2f2f;
-  line-height: 1.5;
+#TermosOng {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-#termos-uso{
-  margin: 5em;
-  margin-left: 10%;
-  margin-right: 10%;
+#termos-uso p {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
-
-#TermosOng p{
-  text-align: justify;
-  margin: 2% 22% 2% 20%;
+#termos-uso p.d-flex {
+  display: flex;
+  align-items: center;
 }
 
-#TermosOng h3{
-  margin: 2% 0 2% 21.6%;
-}
-
-#TermosOng ul{
-  margin: 0 0 5% 0;
-}
 
 .titleOng{
   margin: 2% 0 5% 0;
 }
+
 /***********************
 PAGINA DOS VOLUNTARIOS
 ***********************/
